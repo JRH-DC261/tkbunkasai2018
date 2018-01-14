@@ -1,9 +1,24 @@
+@charset "UTF-8";
+h1 {
+  text-align: center;
+  font-family: "新ゴ DB","Shin Go Debold",sans-serif; }
+
+h2 {
+  font-family: "新ゴ M","Shin Go Medium",sans-serif; }
+
+h3 {
+  font-family: "新ゴ R","Shin Go Regular",sans-serif; }
+
+p {
+  font-family: "新ゴ R","Shin Go Regular",sans-serif; }
+
+li {
+  font-family: "新ゴ R","Shin Go Regular",sans-serif; }
+
 a {
+  font-family: "新ゴ R","Shin Go Regular",sans-serif;
   text-decoration: none;
   color: #333333; }
-
-h1 {
-  text-align: center; }
 
 .header {
   width: 100%;
@@ -145,6 +160,22 @@ h1 {
       font-size: 20vw; } }
   #HomeDown {
     font-size: 20vw; }
+  .header li a {
+    font-size: 1.5vw; }
+  .header li a {
+    width: 11vw; }
+  #headerSNS a {
+    width: 2vw; }
+  #AccessContainer {
+    display: block; }
+  #AccessText {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%; }
+  #idAccess img {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%; }
   #arrowL {
     font-size: 10vw; }
   #arrowR {

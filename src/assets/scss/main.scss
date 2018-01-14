@@ -1,5 +1,12 @@
+@charset 'utf-8';
+
 $Header-color: rgba(255, 255, 255, 0.9) !default;
 $Header-hover-color: rgba(200, 200, 200, 0.75) !default;
+
+$Header-li-width: 7.5em !default;
+$Header-li-width-sp: 11vw !default;
+$Header-SNS-width: 2em !default;
+$Header-SNS-width-sp: 2vw !default;
 
 //トップページ下矢印
 $HomeDown-size: 10vw !default;
@@ -17,13 +24,27 @@ $iPadPro: 1025px !default;
 $smartphone: 600px !default;
 
 
-a{
-    text-decoration: none;
-    color: #333333
-}
 
 h1{
     text-align: center;
+    font-family: "新ゴ DB","Shin Go Debold",sans-serif;
+}
+h2{
+    font-family: "新ゴ M","Shin Go Medium",sans-serif;
+}
+h3{
+    font-family: "新ゴ R","Shin Go Regular",sans-serif;
+}
+p{
+    font-family: "新ゴ R","Shin Go Regular",sans-serif;
+}
+li{
+    font-family: "新ゴ R","Shin Go Regular",sans-serif;
+}
+a{
+    font-family: "新ゴ R","Shin Go Regular",sans-serif;
+    text-decoration: none;
+    color: #333333
 }
 
 
@@ -48,14 +69,14 @@ h1{
 .header li a{
     display: inline-block;
     position: relative;
-    width: 7.5em;
+    width: $Header-li-width;
     text-align: center;
     padding: 0.5em;
     border-radius: 0.1em;
 }
 
 #headerSNS a{
-    width:2em;
+    width: $Header-SNS-width;
 }
 
 .header li:hover{
@@ -74,7 +95,7 @@ h1{
     text-align: center;
     position: relative;
 }
-
+//TODO 縦画面時の矢印
 @keyframes HomeDown{
     0% {font-size: $HomeDown-size;}
     12.5% {font-size: $HomeDown-size-expand;}
@@ -201,6 +222,31 @@ h1{
     }
     #HomeDown{
         font-size: $HomeDown-size-sp;
+    }
+
+    .header li a{
+        font-size: 1.5vw;
+    }
+    .header li a{
+        width: $Header-li-width-sp;
+    }
+    #headerSNS a{
+        width: $Header-SNS-width-sp;
+    }
+
+    //アクセス
+    #AccessContainer{
+        display: block;
+    }
+    #AccessText{
+        width:90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    #idAccess img{
+        width:90%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     //横スライド矢印
