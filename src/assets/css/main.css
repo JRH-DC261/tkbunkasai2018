@@ -1,0 +1,128 @@
+@charset "UTF-8";
+a {
+  text-decoration: none;
+  color: #333333; }
+
+/*ヘッダー*/
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.9); }
+
+.header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+.header li {
+  margin: 0.25em; }
+
+.header li a {
+  display: inline-block;
+  position: relative;
+  width: 7.5em;
+  text-align: center;
+  padding: 0.5em;
+  border-radius: 0.1em; }
+
+#headerSNS a {
+  width: 2em; }
+
+.header li:hover {
+  background-color: rgba(200, 200, 200, 0.75); }
+
+.header li.active {
+  background-color: rgba(200, 200, 200, 0.75); }
+
+/*トップページ*/
+#idHome {
+  background-image: url("../img/DSC02805-Dev.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  position: relative; }
+
+@keyframes HomeDown {
+  0% {
+    font-size: 10vw; }
+  12.5% {
+    font-size: 12.5vw; }
+  25% {
+    font-size: 10vw; }
+  100% {
+    font-size: 10vw; } }
+
+#HomeDown {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  font-size: 10vw;
+  margin: 0;
+  width: 100%;
+  height: 1em;
+  animation-name: HomeDown;
+  animation-delay: 3s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite; }
+
+/*ご案内*/
+#idInformation {
+  background-image: url("../img/DSC02921-Dev.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+/*アクセス*/
+#idAccess {
+  background-image: url("../img/DSC02639-Dev-2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+/*参加団体*/
+#idGroups {
+  text-align: center; }
+
+.GroupImage {
+  width: 80%;
+  display: block;
+  margin: auto; }
+
+.GroupL {
+  margin-left: 5%;
+  width: 30%; }
+
+.GroupM {
+  width: 30%; }
+
+.GroupR {
+  margin-right: 5%;
+  width: 30%; }
+
+#idTimetable {
+  background-image: url("../img/DSC02992-Dev.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+#arrowL {
+  font-size: 10vw;
+  float: left; }
+
+#arrowR {
+  font-size: 10vw;
+  float: right; }
+
+/*レスポンス*/
+@media only screen and (max-width: 600px) {
+  @keyframes HomeDown {
+    0% {
+      font-size: 20vw; }
+    12.5% {
+      font-size: 25vw; }
+    25% {
+      font-size: 20vw; }
+    100% {
+      font-size: 20vw; } }
+  #HomeDown {
+    font-size: 20vw; } }

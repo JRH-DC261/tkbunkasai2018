@@ -1,0 +1,117 @@
+<!DOCTYPE html><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="stylesheet" type="text/css" href="assets/css/jquery.fullPage.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<head>
+
+</head>
+
+
+
+<body>
+        
+
+    <div class="header">
+            <ul>
+                <li style="float:left"><a href="#Home">ロゴ</a></li>
+
+                <li style="float:right" id="headerSNS"><a href="https://facebook.com/tsukukomafesta/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li style="float:right" id="headerSNS"><a href="https://twitter.com/tsukukomafesta/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li data-menuanchor="Downloads" style="float:right"><a href="#Downloads">ダウンロード</a></li>
+                <li data-menuanchor="Timetable" style="float:right"><a href="#Timetable">タイムテーブル</a></li>
+                <li data-menuanchor="Groups" style="float:right"><a href="#Groups/0">参加団体</a></li>
+                <li data-menuanchor="Access" style="float:right"><a href="#Access">アクセス</a></li>
+                <li data-menuanchor="Information" style="float:right"><a href="#Information">ご案内</a></li>
+            </ul>
+    </div>
+
+    <div id="fullpage">
+            <div class="section" data-anchor="Home" id="idHome">
+                <h1>トップ</h1><br><br>
+                <a id="HomeDown" href="#Information"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            </div>
+            <div class="section" data-anchor="Information" id="idInformation">
+                ご案内
+            </div>
+            <div class="section" data-anchor="Access" id="idAccess">
+                アクセス
+            </div>
+            <div class="section" data-anchor="Groups" id="idGroups">
+                <div class="slide"> 
+                    参加団体
+                    <a href="#Groups/0">Slide 1</a>
+                    <a href="#Groups/1">Slide 2</a>
+                    <a href="#Groups/2">Slide 3</a>
+                    <!-<img class="GroupImage" data-src="assets/img/DSC02203-Dev.jpg">->
+                </div>
+                <div class="slide" id="GroupSlide">
+                    <div style="float:left" class="GroupL">
+                        <img class="GroupImage" data-src="assets/img/DSC01378-Dev.jpg">
+                        <h2>タイトル</h2>
+                        <h3>奈良井宿</h3>
+                        <br>
+                        <p>説明文</p>
+                        <p>説明文</p>
+                        <p>説明文</p>
+                        <p>説明文</p>
+                    </div>
+                    <div style="float:left" class="GroupM">
+                        <img class="GroupImage" data-src="assets/img/DSC02412-Dev.jpg">
+                        <h2>タイトル</h2>
+                        <h3>鋸山展望台</h3>
+                        <br>
+                        <p>説明文</p>
+                        <p>説明文</p>
+                        <p>説明文</p>
+                        <p>説明文</p>
+                    </div>
+                    <div style="float:left" class="GroupR">
+                        <img class="GroupImage" data-src="assets/img/DSC01925-Dev.jpg">
+                        <h2>タイトル</h2>
+                        <h3>妻籠宿</h3>
+                        <br>
+                        <p>説明文</p>
+                        <p>説明文</p>
+                        <p>説明文</p>
+                        <p>説明文</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section" data-anchor="Timetable" id="idTimetable">
+                タイムテーブル
+            </div>
+            <div class="section" data-anchor="Downloads" id="idDownloads">
+                ダウンロード
+            </div>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function() {
+        //レスポンシブ(参加団体)
+        var viewportWidth = $(window).width();
+        if (viewportWidth < 600) {
+            $(".slide div").removeClass("GroupL GroupM GroupR").addClass("slide");
+            $("#GroupSlide").removeClass("slide");
+        }
+
+        //fullpage
+    	$('#fullpage').fullpage({
+            anchors:['Home','Information','Access','Groups','Timetable','Downloads'],
+            menu:'.header'
+        });
+
+        //横スライド矢印
+        $('.fp-prev').append('<span class="fa fa-angle-left" id="arrowL"></span>');
+        $('.fp-next').append('<span class="fa fa-angle-right" id="arrowR"></span>');
+    });
+</script>
