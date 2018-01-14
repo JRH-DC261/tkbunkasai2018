@@ -8,6 +8,9 @@ $HomeDown-size-expand: 12.5vw !default;
 $HomeDown-size-sp: 20vw !default;
 $HomeDown-size-expand-sp: 25vw !default;
 
+$iPadPro: 1024px !default;
+$smartphone: 600px !default;
+
 
 a{
     text-decoration: none;
@@ -147,7 +150,7 @@ a{
 }
 
 /*レスポンス*/
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: $smartphone) {
     //トップページ下矢印
     @keyframes HomeDown{
         0% {font-size: $HomeDown-size-sp;}
