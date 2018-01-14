@@ -1,9 +1,10 @@
-@charset "UTF-8";
 a {
   text-decoration: none;
   color: #333333; }
 
-/*ヘッダー*/
+h1 {
+  text-align: center; }
+
 .header {
   width: 100%;
   position: fixed;
@@ -35,7 +36,6 @@ a {
 .header li.active {
   background-color: rgba(200, 200, 200, 0.75); }
 
-/*トップページ*/
 #idHome {
   background-image: url("../img/DSC02805-Dev.jpg");
   background-repeat: no-repeat;
@@ -68,21 +68,44 @@ a {
   animation-duration: 2s;
   animation-iteration-count: infinite; }
 
-/*ご案内*/
 #idInformation {
-  background-image: url("../img/DSC02921-Dev.jpg");
-  background-repeat: no-repeat;
-  background-size: cover; }
-
-/*アクセス*/
-#idAccess {
   background-image: url("../img/DSC02639-Dev-2.jpg");
   background-repeat: no-repeat;
   background-size: cover; }
 
-/*参加団体*/
+#idAccess {
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+#AccessContainer {
+  display: flex; }
+
+#AccessText {
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%; }
+
+#idAccess h2 {
+  text-align: left; }
+
+#idAccess li {
+  text-align: left; }
+
+#idAccess img {
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto; }
+
 #idGroups {
   text-align: center; }
+
+#arrowL {
+  font-size: 5vw;
+  float: left; }
+
+#arrowR {
+  font-size: 5vw;
+  float: right; }
 
 .GroupImage {
   width: 80%;
@@ -105,16 +128,12 @@ a {
   background-repeat: no-repeat;
   background-size: cover; }
 
-#arrowL {
-  font-size: 10vw;
-  float: left; }
+#idDownloads {
+  background-image: url("../img/DSC02867-Dev.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
 
-#arrowR {
-  font-size: 10vw;
-  float: right; }
-
-/*レスポンス*/
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1025px) {
   @keyframes HomeDown {
     0% {
       font-size: 20vw; }
@@ -125,4 +144,8 @@ a {
     100% {
       font-size: 20vw; } }
   #HomeDown {
-    font-size: 20vw; } }
+    font-size: 20vw; }
+  #arrowL {
+    font-size: 10vw; }
+  #arrowR {
+    font-size: 10vw; } }

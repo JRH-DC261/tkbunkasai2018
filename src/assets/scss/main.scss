@@ -4,11 +4,16 @@ $Header-hover-color: rgba(200, 200, 200, 0.75) !default;
 //トップページ下矢印
 $HomeDown-size: 10vw !default;
 $HomeDown-size-expand: 12.5vw !default;
-//レスポンス用
+//レスポンシブ用
 $HomeDown-size-sp: 20vw !default;
 $HomeDown-size-expand-sp: 25vw !default;
 
-$iPadPro: 1024px !default;
+//横スライド矢印
+$SlideArrow-size: 5vw !default;
+//レスポンシブ用
+$SlideArrow-size-sp: 10vw !default;
+
+$iPadPro: 1025px !default;
 $smartphone: 600px !default;
 
 
@@ -17,8 +22,12 @@ a{
     color: #333333
 }
 
+h1{
+    text-align: center;
+}
 
-/*ヘッダー*/
+
+//ヘッダー
 .header{
     width: 100%;
     position: fixed;
@@ -57,7 +66,7 @@ a{
     background-color: $Header-hover-color;
 }
 
-/*トップページ*/
+//トップページ
 #idHome{
     background-image: url("../img/DSC02805-Dev.jpg");
     background-repeat: no-repeat;
@@ -91,26 +100,59 @@ a{
 }
 
 
-/*ご案内*/
+//ご案内
 #idInformation{
-    background-image: url("../img/DSC02921-Dev.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/*アクセス*/
-#idAccess{
     background-image: url("../img/DSC02639-Dev-2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+//アクセス
+#idAccess{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-/*参加団体*/
+#AccessContainer{
+    display: flex;
+}
+
+#AccessText{
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+}
+
+#idAccess h2{
+    text-align: left;
+}
+
+#idAccess li{
+    text-align: left;
+}
+
+#idAccess img{
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+//参加団体
 #idGroups{
     text-align: center;
 }
 
+//横スライド矢印
+#arrowL{
+    font-size: $SlideArrow-size;
+    float: left;
+}
+
+#arrowR{
+    font-size: $SlideArrow-size;
+    float: right;
+}
 
 .GroupImage{
     width: 80%;
@@ -133,24 +175,23 @@ a{
 }
 
 
+
 #idTimetable{
     background-image: url("../img/DSC02992-Dev.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-#arrowL{
-    font-size: 10vw;
-    float: left;
+#idDownloads{
+    background-image: url("../img/DSC02867-Dev.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-#arrowR{
-    font-size: 10vw;
-    float: right;
-}
 
-/*レスポンス*/
-@media only screen and (max-width: $smartphone) {
+
+//レスポンシブ
+@media only screen and (max-width: $iPadPro) {
     //トップページ下矢印
     @keyframes HomeDown{
         0% {font-size: $HomeDown-size-sp;}
@@ -160,5 +201,13 @@ a{
     }
     #HomeDown{
         font-size: $HomeDown-size-sp;
+    }
+
+    //横スライド矢印
+    #arrowL{
+        font-size: $SlideArrow-size-sp;
+    }
+    #arrowR{
+        font-size: $SlideArrow-size-sp;
     }
 }
