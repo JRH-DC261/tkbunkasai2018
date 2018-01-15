@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<!-食品提供状況
+noInfo:     情報提供休止
+wait[]:     []分待ち
+wait[]~:    []分以上待ち
+lineStop:   行列形成休止
+salesStop:  販売休止
+salesEnd:   販売終了
+A: 朝日 N: 中庭 5: 50周年
+->
+
+<% include _head %>
+<% var foodInfoPath = 'assets/foodInfo/'; %>
+<% var foodA1 = 'noInfo'; %>
+<% var foodA2 = 'wait5'; %>
+<% var foodA3 = 'lineStop'; %>
+<% var foodA4 = 'wait60~'; %>
+<% var foodA5 = 'salesEnd'; %>
+<% var foodN1 = 'wait15'; %>
+<% var foodN2 = 'wait30'; %>
+<% var food51 = 'wait120~'; %>
+<% var food52 = 'wait90'; %>
+
+
+<head>
+    <meta http-equiv="Refresh" content="60">
+    <title>食品提供状況</title>
+</head>
+
+
+<body>
+    <div style="position:absolute" class="header">
+            <ul>
+                <li style="float:left"><a href="index.html">トップ</a></li>
+
+                <li data-menuanchor="H3Cafe" style="float:right"><a href="index.html#Groups">高3喫茶班</a></li>
+                <li data-menuanchor="H3Food" style="float:right"><a href="index.html#Groups">高3食品班</a></li>
+            </ul>
+    </div>
+
+    <div>
+        <div id="foodInfo">
+            <h1>食品提供状況</h1>
+            <h3> 更新：18:00</h3>
+            <div id="foodInfoContainer">
+                <div id="Asahi">
+                    <table class="foodInfoTable">
+                        <tr>
+                            <td colspan="2">
+                                <h2>朝日の広場 (高3食品班)</h2>
+                            </td>
+                        </tr>
+                        <tr class="wait">
+                            <td>Wifiルーター</td>
+                            <td><img class="waitTime" src="<%= foodInfoPath %><%= foodA1 %>.svg"></td>
+                        </tr>
+                        <tr class="wait">
+                            <td>キッチンタイマー</td>
+                            <td><img class="waitTime" src="<%= foodInfoPath %><%= foodA2 %>.svg"></td>
+                        </tr>
+                        <tr class="wait">
+                            <td>プリンター</td>
+                            <td><img class="waitTime" src="<%= foodInfoPath %><%= foodA3 %>.svg"></td>
+                        </tr>
+                        <tr class="wait">
+                            <td>フローシート</td>
+                            <td><img class="waitTime" src="<%= foodInfoPath %><%= foodA4 %>.svg"></td>
+                        </tr>
+                        <tr class="wait">
+                            <td>スマートフォン</td>
+                            <td><img class="waitTime" src="<%= foodInfoPath %><%= foodA5 %>.svg"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="Nakaniwa50th">
+                    <table class="foodInfoTable">
+                        <tr>
+                            <td class="foodPlace" colspan="2">
+                                <h2>中庭 (高3食品班)</h2>
+                            </td>
+                        </tr>
+                        <tr class="wait">
+                            <td>電気</td>
+                            <td><img class="waitTime" src="<%= foodInfoPath %><%= foodN1 %>.svg"></td>
+                        </tr>
+                        <tr class="wait">
+                            <td>魔剤</td>
+                            <td><img class="waitTime" src="<%= foodInfoPath %><%= foodN2 %>.svg"></td>
+                        </tr>
+                        <tr>
+                            <td class="foodPlace" colspan="2">
+                                <h2>50周年記念会館 (高3喫茶班)</h2>
+                            </td>
+                        </tr>
+                        <tr class="wait">
+                            <td>Twitter</td>
+                            <td><img class="waitTime" src="<%= foodInfoPath %><%= food51 %>.svg"></td>
+                        </tr>
+                        <tr class="wait">
+                            <td>やる気</td>
+                            <td><img class="waitTime" src="<%= foodInfoPath %><%= food52 %>.svg"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>                         
+    </div>
+</body>
+
+</html>

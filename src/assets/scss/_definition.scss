@@ -1,0 +1,24 @@
+@charset 'utf-8';
+
+$Header-color: rgba(255, 255, 255, 0.9) !default;
+$Header-hover-color: rgba(200, 200, 200, 0.75) !default;
+
+$Header-li-width: 7.5em !default;
+$Header-li-width-sp: 11vw !default;
+$Header-SNS-width: 2em !default;
+$Header-SNS-width-sp: 2vw !default;
+
+//トップページ下矢印
+$HomeDown-size: 10vw !default;
+$HomeDown-size-expand: 12.5vw !default;
+//レスポンシブ用
+$HomeDown-size-sp: 20vw !default;
+$HomeDown-size-expand-sp: 25vw !default;
+
+//横スライド矢印
+$SlideArrow-size: 5vw !default;
+//レスポンシブ用
+$SlideArrow-size-sp: 10vw !default;
+
+$iPadPro: 1025px !default;
+$smartphone: 600px !default;

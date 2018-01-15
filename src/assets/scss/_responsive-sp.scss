@@ -1,0 +1,49 @@
+@charset 'utf-8';
+
+@import "definition";
+
+@media only screen and (max-width: $iPadPro) {
+    //トップページ下矢印
+    @keyframes HomeDown{
+        0% {font-size: $HomeDown-size-sp;}
+        12.5% {font-size: $HomeDown-size-expand-sp;}
+        25% {font-size: $HomeDown-size-sp;}
+        100% {font-size: $HomeDown-size-sp;}
+    }
+    #HomeDown{
+        font-size: $HomeDown-size-sp;
+    }
+
+    .header li a{
+        font-size: 1.5vw;
+    }
+    .header li a{
+        width: $Header-li-width-sp;
+    }
+    #headerSNS a{
+        width: $Header-SNS-width-sp;
+    }
+
+    //アクセス
+    #AccessContainer{
+        display: block;
+    }
+    #AccessText{
+        width:90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    #idAccess img{
+        width:90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    //横スライド矢印
+    #arrowL{
+        font-size: $SlideArrow-size-sp;
+    }
+    #arrowR{
+        font-size: $SlideArrow-size-sp;
+    }
+}

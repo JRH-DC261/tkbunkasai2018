@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<!-食品提供状況
+noInfo:     情報提供休止
+wait[]:     []分待ち
+wait[]~:    []分以上待ち
+lineStop:   行列形成休止
+salesStop:  販売休止
+salesEnd:   販売終了
+A: 朝日 N: 中庭 5: 50周年
+->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="assets/js/script.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="//typesquare.com/accessor/script/typesquare.js?PmUV0TKqc8Y%3D" charset="utf-8"></script>
+</head>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<head>
+    <meta http-equiv="Refresh" content="60">
+    <title>食品提供状況</title>
+</head>
+
+
+<body>
+    <div style="position:absolute" class="header">
+            <ul>
+                <li style="float:left"><a href="index.html">トップ</a></li>
+
+                <li data-menuanchor="H3Cafe" style="float:right"><a href="index.html#Groups">高3喫茶班</a></li>
+                <li data-menuanchor="H3Food" style="float:right"><a href="index.html#Groups">高3食品班</a></li>
+            </ul>
+    </div>
+
+    <div>
+        <div id="foodInfo">
+            <h1>食品提供状況</h1>
+            <h3> 更新：18:00</h3>
+            <div id="foodInfoContainer">
+                <div id="Asahi">
+                    <table class="foodInfoTable">
+                        <tr>
+                            <td colspan="2">
+                                <h2>朝日の広場 (高3食品班)</h2>
+                            </td>
+                        </tr>
+                        <tr class="wait">
+                            <td>Wifiルーター</td>
+                            <td><img class="waitTime" src="assets/foodInfo/noInfo.svg"></td>
+                        </tr>
+                        <tr class="wait">
+                            <td>キッチンタイマー</td>
+                            <td><img class="waitTime" src="assets/foodInfo/wait5.svg"></td>
+                        </tr>
+                        <tr class="wait">
+                            <td>プリンター</td>
+                            <td><img class="waitTime" src="assets/foodInfo/lineStop.svg"></td>
+                        </tr>
+                        <tr class="wait">
+                            <td>フローシート</td>
+                            <td><img class="waitTime" src="assets/foodInfo/wait60~.svg"></td>
+                        </tr>
+                        <tr class="wait">
+                            <td>スマートフォン</td>
+                            <td><img class="waitTime" src="assets/foodInfo/salesEnd.svg"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="Nakaniwa50th">
+                    <table class="foodInfoTable">
+                        <tr>
+                            <td class="foodPlace" colspan="2">
+                                <h2>中庭 (高3食品班)</h2>
+                            </td>
+                        </tr>
+                        <tr class="wait">
+                            <td>電気</td>
+                            <td><img class="waitTime" src="assets/foodInfo/wait15.svg"></td>
+                        </tr>
+                        <tr class="wait">
+                            <td>魔剤</td>
+                            <td><img class="waitTime" src="assets/foodInfo/wait30.svg"></td>
+                        </tr>
+                        <tr>
+                            <td class="foodPlace" colspan="2">
+                                <h2>50周年記念会館 (高3喫茶班)</h2>
+                            </td>
+                        </tr>
+                        <tr class="wait">
+                            <td>Twitter</td>
+                            <td><img class="waitTime" src="assets/foodInfo/wait120~.svg"></td>
+                        </tr>
+                        <tr class="wait">
+                            <td>やる気</td>
+                            <td><img class="waitTime" src="assets/foodInfo/wait90.svg"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>                         
+    </div>
+</body>
+
+</html>

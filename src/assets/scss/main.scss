@@ -1,28 +1,8 @@
 @charset 'utf-8';
 
-$Header-color: rgba(255, 255, 255, 0.9) !default;
-$Header-hover-color: rgba(200, 200, 200, 0.75) !default;
-
-$Header-li-width: 7.5em !default;
-$Header-li-width-sp: 11vw !default;
-$Header-SNS-width: 2em !default;
-$Header-SNS-width-sp: 2vw !default;
-
-//トップページ下矢印
-$HomeDown-size: 10vw !default;
-$HomeDown-size-expand: 12.5vw !default;
-//レスポンシブ用
-$HomeDown-size-sp: 20vw !default;
-$HomeDown-size-expand-sp: 25vw !default;
-
-//横スライド矢印
-$SlideArrow-size: 5vw !default;
-//レスポンシブ用
-$SlideArrow-size-sp: 10vw !default;
-
-$iPadPro: 1025px !default;
-$smartphone: 600px !default;
-
+@import "_definition";
+@import "_responsive-sp";
+@import "_foodInfo";
 
 
 h1{
@@ -210,50 +190,3 @@ a{
 }
 
 
-
-//レスポンシブ
-@media only screen and (max-width: $iPadPro) {
-    //トップページ下矢印
-    @keyframes HomeDown{
-        0% {font-size: $HomeDown-size-sp;}
-        12.5% {font-size: $HomeDown-size-expand-sp;}
-        25% {font-size: $HomeDown-size-sp;}
-        100% {font-size: $HomeDown-size-sp;}
-    }
-    #HomeDown{
-        font-size: $HomeDown-size-sp;
-    }
-
-    .header li a{
-        font-size: 1.5vw;
-    }
-    .header li a{
-        width: $Header-li-width-sp;
-    }
-    #headerSNS a{
-        width: $Header-SNS-width-sp;
-    }
-
-    //アクセス
-    #AccessContainer{
-        display: block;
-    }
-    #AccessText{
-        width:90%;
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-    #idAccess img{
-        width:90%;
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-
-    //横スライド矢印
-    #arrowL{
-        font-size: $SlideArrow-size-sp;
-    }
-    #arrowR{
-        font-size: $SlideArrow-size-sp;
-    }
-}

@@ -1,0 +1,91 @@
+@charset 'utf-8';
+
+@import "_definition";
+
+#foodInfo{
+    padding: 2.5vh;
+}
+
+#foodInfo h1{
+    font-size: 2.5vw;
+    text-align: center;
+    margin-bottom: -2.5vw;
+}
+
+#foodInfo h2{
+    font-size: 2vw;
+}
+
+#foodInfo h3{
+    font-size: 1vw;
+    text-align: right;
+    margin-top: 1vw;
+    margin-bottom: 0vw;
+}
+
+#foodInfoContainer{
+    display: flex;
+}
+
+#Asahi{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#Nakaniwa50th{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.foodInfoTable{
+    border-collapse: collapse;
+}
+
+
+.foodInfoTable td{
+    display: table-cell;
+    padding: 1vw;
+    text-align: center;
+    font-size: 2vw;
+    white-space: nowrap;
+    width: 15vw;
+    height:3vw;
+}
+
+.wait{
+    background-color: rgb(233, 233, 233);
+}
+
+.waitTime{
+    width: 25vw;
+}
+
+
+@media only screen and (max-width: $iPadPro) {
+    //
+    #foodInfo h1{
+        font-size: 5vw;
+    }
+    
+    #foodInfo h2{
+        font-size: 4vw;
+    }
+    
+    #foodInfo h3{
+        font-size: 2vw;
+    }
+
+    .foodInfoTable{
+        width: 90vw;
+    }
+    .foodInfoTable td{
+        width: 30vw;
+        font-size: 4vw;
+    }
+    .waitTime{
+        width: 50vw;
+    }
+    #foodInfoContainer{
+        display: block;
+    }
+}

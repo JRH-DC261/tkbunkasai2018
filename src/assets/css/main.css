@@ -1,4 +1,100 @@
 @charset "UTF-8";
+@media only screen and (max-width: 1025px) {
+  @keyframes HomeDown {
+    0% {
+      font-size: 20vw; }
+    12.5% {
+      font-size: 25vw; }
+    25% {
+      font-size: 20vw; }
+    100% {
+      font-size: 20vw; } }
+  #HomeDown {
+    font-size: 20vw; }
+  .header li a {
+    font-size: 1.5vw; }
+  .header li a {
+    width: 11vw; }
+  #headerSNS a {
+    width: 2vw; }
+  #AccessContainer {
+    display: block; }
+  #AccessText {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%; }
+  #idAccess img {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%; }
+  #arrowL {
+    font-size: 10vw; }
+  #arrowR {
+    font-size: 10vw; } }
+
+#foodInfo {
+  padding: 2.5vh; }
+
+#foodInfo h1 {
+  font-size: 2.5vw;
+  text-align: center;
+  margin-bottom: -2.5vw; }
+
+#foodInfo h2 {
+  font-size: 2vw; }
+
+#foodInfo h3 {
+  font-size: 1vw;
+  text-align: right;
+  margin-top: 1vw;
+  margin-bottom: 0vw; }
+
+#foodInfoContainer {
+  display: flex; }
+
+#Asahi {
+  margin-left: auto;
+  margin-right: auto; }
+
+#Nakaniwa50th {
+  margin-left: auto;
+  margin-right: auto; }
+
+.foodInfoTable {
+  border-collapse: collapse; }
+
+.foodInfoTable td {
+  display: table-cell;
+  padding: 1vw;
+  text-align: center;
+  font-size: 2vw;
+  white-space: nowrap;
+  width: 15vw;
+  height: 3vw; }
+
+.wait {
+  background-color: #e9e9e9; }
+
+.waitTime {
+  width: 25vw; }
+
+@media only screen and (max-width: 1025px) {
+  #foodInfo h1 {
+    font-size: 5vw; }
+  #foodInfo h2 {
+    font-size: 4vw; }
+  #foodInfo h3 {
+    font-size: 2vw; }
+  .foodInfoTable {
+    width: 90vw; }
+  .foodInfoTable td {
+    width: 30vw;
+    font-size: 4vw; }
+  .waitTime {
+    width: 50vw; }
+  #foodInfoContainer {
+    display: block; } }
+
 h1 {
   text-align: center;
   font-family: "新ゴ DB","Shin Go Debold",sans-serif; }
@@ -147,36 +243,3 @@ a {
   background-image: url("../img/DSC02867-Dev.jpg");
   background-repeat: no-repeat;
   background-size: cover; }
-
-@media only screen and (max-width: 1025px) {
-  @keyframes HomeDown {
-    0% {
-      font-size: 20vw; }
-    12.5% {
-      font-size: 25vw; }
-    25% {
-      font-size: 20vw; }
-    100% {
-      font-size: 20vw; } }
-  #HomeDown {
-    font-size: 20vw; }
-  .header li a {
-    font-size: 1.5vw; }
-  .header li a {
-    width: 11vw; }
-  #headerSNS a {
-    width: 2vw; }
-  #AccessContainer {
-    display: block; }
-  #AccessText {
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%; }
-  #idAccess img {
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%; }
-  #arrowL {
-    font-size: 10vw; }
-  #arrowR {
-    font-size: 10vw; } }
