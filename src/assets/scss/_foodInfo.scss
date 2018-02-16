@@ -2,25 +2,35 @@
 
 @import "_definition";
 
+#foodInfoBody{
+    background-image:url("../img/DSC02203-Dev.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #foodInfo{
     padding: 2.5vh;
+    margin: 0;
+    display: block;
 }
 
 #foodInfo h1{
     font-size: 2.5vw;
     text-align: center;
+    margin-top: 2.5vw;
     margin-bottom: -2.5vw;
 }
 
 #foodInfo h2{
     font-size: 2vw;
+    line-height: 0;
 }
 
 #foodInfo h3{
     font-size: 1vw;
     text-align: right;
     margin-top: 1vw;
-    margin-bottom: 0vw;
+    margin-bottom: 2vw;
 }
 
 #foodInfoContainer{
@@ -38,7 +48,11 @@
 }
 
 .foodInfoTable{
+    margin-left: auto;
+    margin-right: auto;
     border-collapse: collapse;
+    margin-bottom: 1.5vw;
+    background-color: rgba(255, 255, 255, 0.75);
 }
 
 
@@ -48,12 +62,10 @@
     text-align: center;
     font-size: 2vw;
     white-space: nowrap;
-    width: 15vw;
-    height:3vw;
+    width: 17vw;
 }
 
 .wait{
-    background-color: rgb(233, 233, 233);
 }
 
 .waitTime{
@@ -79,7 +91,7 @@
         width: 90vw;
     }
     .foodInfoTable td{
-        width: 30vw;
+        width: 25vw;
         font-size: 4vw;
     }
     .waitTime{

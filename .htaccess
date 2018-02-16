@@ -7,4 +7,4 @@ AddType "text/html; charset=utf-8" .html
 #「index.html」ありのURLをなしに正規化
 RewriteEngine on
 RewriteCond %{THE_REQUEST} ^.*/index.html
-RewriteRule ^(.*)index.html$ http://○○○.com/$1 [R=301,L]
+RewriteRule ^(.*)index.html$ http://2018test.bunkasai.info/$1 [R=301,L]

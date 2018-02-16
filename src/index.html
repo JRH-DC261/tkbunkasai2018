@@ -8,15 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" type="text/css" href="assets/css/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
+    <script src="assets/js/jquery.slicknav.min.js"></script>
 	<script type="text/javascript" src="assets/js/script.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="//typesquare.com/accessor/script/typesquare.js?PmUV0TKqc8Y%3D" charset="utf-8"></script>
 </head>
 </html>
+
 
 <head>
 		<title>2018テスト</title>
@@ -25,7 +28,7 @@
 
 
 <body>
-    <div class="header">
+    <div id="header">
             <ul>
                 <li style="float:left"><a href="#Home">写真館(仮)</a></li>
 
@@ -36,8 +39,24 @@
                 <li data-menuanchor="Groups" style="float:right"><a href="#Groups/0">参加団体</a></li>
                 <li data-menuanchor="Access" style="float:right"><a href="#Access">アクセス</a></li>
                 <li data-menuanchor="Information" style="float:right"><a href="#Information">ご案内</a></li>
-                <li style="float:right"><a href="foodInfo.html">食品提供状況</a></li>
             </ul>
+    </div>
+
+    <div id="header-sp">
+        タイトル
+    </div>
+    <div id="header-currentSection-sp">
+        あ
+    </div>
+
+    <div id="menu-sp">
+        <ul>
+            <li data-menuanchor="Information"><a href="#Information">ご案内</a></li>
+            <li data-menuanchor="Access"><a href="#Access">アクセス</a></li>
+            <li data-menuanchor="Groups"><a href="#Groups/0">参加団体</a></li>
+            <li data-menuanchor="Timetable"><a href="#Timetable">タイムテーブル</a></li>
+            <li data-menuanchor="Downloads"><a href="#Downloads">ダウンロード</a></li>
+        </ul>
     </div>
 
     <div id="fullpage">
@@ -48,7 +67,7 @@
             <div class="section" data-anchor="Information" id="idInformation">
                 <h1 style="color:#fff">ご案内</h1>
             </div>
-            <div class="section" data-anchor="Access" id="idAccess">
+            <div class="section fp-auto-height-responsive" data-anchor="Access" id="idAccess">
                 <h1>アクセス</h1>
                 <div id="AccessContainer">
                 <img src="assets/Map.svg">
@@ -63,13 +82,17 @@
                 </ul>
                 </div></div>
             </div>
-            <div class="section" data-anchor="Groups" id="idGroups">
+            <div class="section fp-auto-height-responsive" data-anchor="Groups" id="idGroups">
                 <div class="slide"> 
                     <h1>参加団体</h1>
-                    <a href="#Groups/0">1枚目</a>
-                    <a href="#Groups/1">2枚目</a>
-                    <a href="#Groups/2">3枚目</a>
-                    <a href="#Groups/3">4枚目</a>
+                    <span class="GroupsList">
+                    <a class="GroupsBlockL1" href="#Groups/0">展示</a>
+                    <a class="GroupsBlockL2" href="#Groups/1">演劇</a>
+                    <a class="GroupsBlockL3" href="#Groups/2">パフォーマンス</a>
+                    <a class="GroupsBlockS1" href="#Groups/3">高3特別班</a>
+                    <a class="GroupsBlockS2" href="#Groups/3">筑駒メッセ</a>
+                    <a class="GroupsBlockS3" href="#Groups/3">中夜祭</a>
+                    </span>
                     <!-<img class="GroupImage" data-src="assets/img/DSC02203-Dev.jpg">
                 </div>
                 <div class="slide" id="GroupSlide">
@@ -114,5 +137,6 @@
             </div>
     </div>
 </body>
+
 
 </html>
