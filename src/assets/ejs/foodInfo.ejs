@@ -31,6 +31,7 @@ A: 朝日 N: 中庭 5: 50周年
 
 
 <body>
+<div id="foodInfoBody">
     <div style="position:absolute" class="header">
             <ul>
                 <li style="float:left"><a href="index.html">トップ</a></li>
@@ -40,7 +41,7 @@ A: 朝日 N: 中庭 5: 50周年
             </ul>
     </div>
 
-    <div>
+
         <div id="foodInfo">
             <h1>食品提供状況</h1>
             <h3> 更新：18:00</h3>
@@ -89,6 +90,8 @@ A: 朝日 N: 中庭 5: 50周年
                             <td>魔剤</td>
                             <td><img class="waitTime" src="<%= foodInfoPath %><%= foodN2 %>.svg"></td>
                         </tr>
+                    </table>
+                    <table class="foodInfoTable">
                         <tr>
                             <td class="foodPlace" colspan="2">
                                 <h2>50周年記念会館 (高3喫茶班)</h2>
@@ -106,7 +109,7 @@ A: 朝日 N: 中庭 5: 50周年
                 </div>
             </div>
         </div>                         
-    </div>
+</div>
 </body>
 
 </html>

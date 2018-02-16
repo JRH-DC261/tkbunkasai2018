@@ -14,14 +14,14 @@
         font-size: $HomeDown-size-sp;
     }
 
-    .header li a{
+    #header li a{
         font-size: 1.5vw;
     }
-    .header li a{
+    #header li a{
         width: $Header-li-width-sp;
     }
     #headerSNS a{
-        width: $Header-SNS-width-sp;
+        width: $Header-SNS-width-sp !important;
     }
 
     //アクセス
@@ -45,5 +45,54 @@
     }
     #arrowR{
         font-size: $SlideArrow-size-sp;
+    }
+}
+
+@media only screen and (max-width: $smartphone) {
+    #header{
+        display: none;
+    }
+    .slicknav_menu{
+        display: block;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+    }
+
+    /*ハンバーガーメニューのエフェクト*/
+    .slicknav_icon,
+    .slicknav_icon span {
+        display: inline-block;
+        transition: all .4s;
+        box-sizing: border-box;
+    }
+    .slicknav_icon {
+        position: relative;
+        width: 50px;
+        height: 44px;
+    }
+    .slicknav_menu .slicknav_icon-bar{
+        position: absolute;
+        left: 0;
+    }
+    .slicknav_icon span:nth-of-type(1) {
+        top: 0;
+    }
+    .slicknav_icon span:nth-of-type(2) {
+        top: 3px;
+    }
+    .slicknav_icon span:nth-of-type(3) {
+        bottom: 0;
+    }
+    .active .slicknav_icon-bar:nth-of-type(1) {
+        -webkit-transform: translateY(6px) rotate(-45deg);
+        transform: translateY(6px) rotate(-45deg);
+    }
+    .active .slicknav_icon-bar:nth-of-type(2) {
+        opacity: 0;
+    }
+    .active .slicknav_icon-bar:nth-of-type(3) {
+        -webkit-transform: translateY(-6px) rotate(45deg);
+        transform: translateY(-6px) rotate(45deg);
     }
 }

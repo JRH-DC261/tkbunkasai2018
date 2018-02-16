@@ -1,9 +1,13 @@
 @charset 'utf-8';
 
 @import "_definition";
-@import "_responsive-sp";
 @import "_foodInfo";
 
+
+
+body{
+    margin: 0;
+}
 
 h1{
     text-align: center;
@@ -29,24 +33,25 @@ a{
 
 
 //ヘッダー
-.header{
+#header{
     width: 100%;
     position: fixed;
+    display: block;
     z-index: 10;
     background-color: $Header-color;
 }
 
-.header ul{
+#header ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.header li{
+#header li{
     margin: 0.25em;
 }
 
-.header li a{
+#header li a{
     display: inline-block;
     position: relative;
     width: $Header-li-width;
@@ -59,13 +64,48 @@ a{
     width: $Header-SNS-width;
 }
 
-.header li:hover{
+#header li:hover{
     background-color: $Header-hover-color;
 }
 
-.header li.active{
+#header li.active{
     background-color: $Header-hover-color;
 }
+
+#header-sp{
+    display: block;
+    position: fixed;
+    width: 35%;
+    padding-left: 10px;
+    height: 39px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 20px;
+    z-index: 110;
+}
+#header-currentSection-sp{
+    display: block;
+    position: fixed;
+    width: 50%;
+    margin-left: 35%;
+    padding-right: 10px;
+    text-align: right;
+    height: 39px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 20px;
+    z-index: 110;
+}
+
+#menu-sp{
+    display: none;
+}
+
+.slicknav_menu{
+    display: none;
+}
+
+
 
 //トップページ
 #idHome{
@@ -75,7 +115,6 @@ a{
     text-align: center;
     position: relative;
 }
-//TODO 縦画面時の矢印
 @keyframes HomeDown{
     0% {font-size: $HomeDown-size;}
     12.5% {font-size: $HomeDown-size-expand;}
@@ -87,7 +126,7 @@ a{
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 2.5vh;
     color:#fff;
     font-size: $HomeDown-size;
     margin: 0;
@@ -144,6 +183,52 @@ a{
     text-align: center;
 }
 
+.GroupsList{
+    margin-left: 7.5vw;
+    margin-right: 7.5vw;
+    display: grid;
+    grid-gap: 2.5vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: $GroupsList-row-width $GroupsList-row-width $GroupsList-row-width $GroupsList-row-width $GroupsList-row-width $GroupsList-row-width;
+}
+
+.GroupsBlockL1{
+    grid-column: 1/2;
+    grid-row: 1/4;
+    background-color: rgba(33,33,33,0.5);
+}
+
+.GroupsBlockL2{
+    grid-column: 2/3;
+    grid-row: 1/4;
+    background-color: rgba(33,33,33,0.5);
+}
+
+.GroupsBlockL3{
+    grid-column: 1/2;
+    grid-row: 4/7;
+    background-color: rgba(33,33,33,0.5);
+}
+
+.GroupsBlockS1{
+    grid-column: 2/3;
+    grid-row: 4/5;
+    background-color: rgba(33,33,33,0.5);
+}
+
+.GroupsBlockS2{
+    grid-column: 2/3;
+    grid-row: 5/6;
+    background-color: rgba(33,33,33,0.5);
+}
+
+.GroupsBlockS3{
+    grid-column: 2/3;
+    grid-row: 6/7;
+    background-color: rgba(33,33,33,0.5);
+}
+
+
 //横スライド矢印
 #arrowL{
     font-size: $SlideArrow-size;
@@ -190,3 +275,4 @@ a{
 }
 
 
+@import "_responsive-sp";
