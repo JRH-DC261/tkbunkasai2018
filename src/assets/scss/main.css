@@ -1,0 +1,39 @@
+/*
+Error: Invalid Windows-31J character "\xE6"
+        on line 14 of C:\Users\t-hor\Documents\bunjitsu.kouhou.sagyo\tkbunkasai2018\src\assets\scss\main.scss
+
+9:     margin: 0;
+10: }
+11:
+12: h1{
+13:     text-align: center;
+14:     font-family: "新ゴ DB","Shin Go Debold",sans-serif;
+15: }
+16: h2{
+17:     font-family: "新ゴ M","Shin Go Medium",sans-serif;
+18: }
+19: h3{
+
+Backtrace:
+C:\Users\t-hor\Documents\bunjitsu.kouhou.sagyo\tkbunkasai2018\src\assets\scss\main.scss:14
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2018/ruby/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/util.rb:1325:in `rescue in block in find_encoding_error'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2018/ruby/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/util.rb:1322:in `block in find_encoding_error'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2018/ruby/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/util.rb:1321:in `each'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2018/ruby/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/util.rb:1321:in `each_with_index'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2018/ruby/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/util.rb:1321:in `find_encoding_error'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2018/ruby/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/util.rb:930:in `check_sass_encoding'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2018/ruby/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/engine.rb:436:in `check_encoding!'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2018/ruby/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/engine.rb:392:in `_to_tree'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2018/ruby/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/engine.rb:281:in `render'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2018/ruby/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/exec/sass_scss.rb:400:in `run'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2018/ruby/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/exec/sass_scss.rb:63:in `process_result'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2018/ruby/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/exec/base.rb:52:in `parse'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2018/ruby/lib/ruby/gems/2.4.0/gems/sass-3.4.24/lib/sass/exec/base.rb:19:in `parse!'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2018/ruby/lib/ruby/gems/2.4.0/gems/sass-3.4.24/bin/sass:13:in `<top (required)>'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2018/ruby/bin/sass:22:in `load'
+C:/Program Files/Adobe/Adobe Dreamweaver CC 2018/ruby/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid Windows-31J character \"\xE6\"\A         on line 14 of C:\Users\t-hor\Documents\bunjitsu.kouhou.sagyo\tkbunkasai2018\src\assets\scss\main.scss\A \A 9:     margin: 0;\A 10: }\A 11: \A 12: h1{\A 13:     text-align: center;\A 14:     font-family: \"新ゴ DB\",\"Shin Go Debold\",sans-serif;\A 15: }\A 16: h2{\A 17:     font-family: \"新ゴ M\",\"Shin Go Medium\",sans-serif;\A 18: }\A 19: h3{"; }
