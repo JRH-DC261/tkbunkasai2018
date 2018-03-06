@@ -30,6 +30,9 @@ a{
     text-decoration: none;
     color: #333333
 }
+ul{
+    list-style-type: none;
+}
 
 
 //ヘッダー
@@ -41,7 +44,6 @@ a{
 }
 
 #header ul{
-    list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
@@ -170,7 +172,7 @@ a{
 }
 
 .InformationText{
-    width: 60%;
+    width: 80%;
     margin: 0 auto 2.5% auto;
     padding: 1px 10px 1px 10px;
     background-color: #ffffff77
@@ -208,57 +210,57 @@ a{
 }
 
 //参加団体
-#idGroups{
+#idGroup{
     text-align: center;
 }
 
 //ナビゲーショングリッド
-.GroupsBlock{
+.GroupBlock{
     margin-left: 10vw;
     margin-right: 10vw;
     display: grid;
     grid-gap: 2.5vw;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: $GroupsBlock-row-width $GroupsBlock-row-width $GroupsBlock-row-width $GroupsBlock-row-width $GroupsBlock-row-width $GroupsBlock-row-width $GroupsBlock-row-width;
+    grid-template-rows: $GroupBlock-row-width $GroupBlock-row-width $GroupBlock-row-width $GroupBlock-row-width $GroupBlock-row-width $GroupBlock-row-width $GroupBlock-row-width;
 }
-.GroupsBlock a{
+.GroupBlock a{
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
 }
 //各ブロック
-.GroupsBlockL1{
+.GroupBlockL1{
     grid-column: 1/2;
     grid-row: 1/4;
     background-color: #321123;
 }
-.GroupsBlockL2{
+.GroupBlockL2{
     grid-column: 2/3;
     grid-row: 1/4;
     background-color: #432234;
 }
-.GroupsBlockL3{
+.GroupBlockL3{
     grid-column: 1/2;
     grid-row: 4/7;
     background-color: #543345;
 }
-.GroupsBlockS1{
+.GroupBlockS1{
     grid-column: 2/3;
     grid-row: 4/5;
     background-color: #654456;
 }
-.GroupsBlockS2{
+.GroupBlockS2{
     grid-column: 2/3;
     grid-row: 5/6;
     background-color: #765567;
 }
-.GroupsBlockS3{
+.GroupBlockS3{
     grid-column: 2/3;
     grid-row: 6/7;
     background-color: #876678;
 }
-.GroupsBlockW1{
+.GroupBlockW1{
     grid-column: 1/3;
     grid-row: 7/8;
     background-color: #987789;
@@ -310,12 +312,44 @@ a{
 }
 
 //参加団体一覧
-#idGroupsList{
+#idGroupList{
     text-align: center;
+}
+
+.GroupList{
+    padding: 0;
+}
+.GroupList li{
+    padding: 7.5px;
 }
 
 .GroupSection {
     background-color: #888;
+    padding: 10px 0 10px 0;
+    margin: 0;
+}
+
+.GroupInfo{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.GroupInfo iframe{
+    height: 100%;
+}
+.GroupInfoClose{
+    display: none;
+    position: fixed;
+    bottom: 5vh;
+    padding: 30px;
+    z-index: 110;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 

@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     if (viewportWidth < iPadPro) {
         $(".slide div").removeClass("GroupL GroupM GroupR").addClass("slide");
-        $("#GroupSlide").removeClass("slide");
+        $("#Grouplide").removeClass("slide");
     }
 
     //画面リサイズ時再読み込み
@@ -37,7 +37,7 @@ $(document).ready(function () {
     $("#header-currentSection-sp").html("ご案内");
     }else if (location.hash == "#Access") {
     $("#header-currentSection-sp").html("アクセス");
-    }else if (location.hash == "#Groups") {
+    }else if (location.hash == "#Group") {
     $("#header-currentSection-sp").html("参加団体");
     }else if (location.hash == "#Timetable") {
     $("#header-currentSection-sp").html("タイムテーブル");
@@ -53,7 +53,7 @@ $(document).ready(function () {
         $("#header-currentSection-sp").html("ご案内");
         }else if (location.hash == "#Access") {
         $("#header-currentSection-sp").html("アクセス");
-        }else if (location.hash == "#Groups") {
+        }else if (location.hash == "#Group") {
         $("#header-currentSection-sp").html("参加団体");
         }else if (location.hash == "#Timetable") {
         $("#header-currentSection-sp").html("タイムテーブル");
@@ -75,11 +75,11 @@ $(document).ready(function () {
 
     //fullpage
     $('#fullpage').fullpage({
-        anchors: ['Home','Information','Access','Groups','Timetable','Downloads'],
+        anchors: ['Home','Information','Access','Group','Timetable','Downloads'],
         menu:'#header',
         scrollOverflow: false,
         slidesNavigation: false,
-        paddingTop: '40px',
+        paddingTop: '39px',
         responsiveHeight: 500,
         autoScrolling: false,
     });
@@ -90,6 +90,19 @@ $(document).ready(function () {
     $('.fp-next').append('<span class="fa fa-angle-right" id="arrowR"></span>');
 
     //団体一覧部門Sticky
-    $(".GroupSection").sticky({topSpacing:20});
+    $(".GroupSection").sticky({topSpacing:39});
+
+    //対応する団体情報を開く
+    $('.GroupExhibit').click(function() {
+        var GroupInfoNumber = $('li.GroupExhibit').index(this);
+        var GroupInfoOpenSrc = 'GroupExhibit.html#Home/' + GroupInfoNumber;
+        $('.GroupInfo').attr('src', GroupInfoOpenSrc);
+        $('.GroupInfo').fadeIn();
+        $('.GroupInfoClose').fadeIn();
+    });
+     $('.GroupInfoClose').click(function() {
+        $('.GroupInfo').fadeOut();
+        $('.GroupInfoClose').fadeOut();
+    });
 
 });
