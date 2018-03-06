@@ -3,12 +3,27 @@ $(document).ready(function () {
     var iPadPro = 1025;
     var smartphone = 600;
 
-    //レスポンシブ(参加団体)
     var viewportWidth = $(window).width();
+
+    //レスポンシブ(参加団体)
+
     if (viewportWidth < iPadPro) {
         $(".slide div").removeClass("GroupL GroupM GroupR").addClass("slide");
         $("#GroupSlide").removeClass("slide");
     }
+
+    //画面リサイズ時再読み込み
+    var timer = false;
+    $(window).resize(function() {
+        if (timer !== false) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(function() {
+            location.reload();
+        }, 200);
+    });
+
+
 
     //Slicknav設定
     $('#menu-sp').slicknav({
@@ -52,19 +67,29 @@ $(document).ready(function () {
         $(this).toggleClass("active");
     });
 
+    $("#fullpage").click(function(){
+        $("#menu-sp").slicknav('close');
+        $(".slicknav_btn").removeClass('active');
+    });
+
 
     //fullpage
     $('#fullpage').fullpage({
         anchors: ['Home','Information','Access','Groups','Timetable','Downloads'],
-        menu:'.header',
-        scrollOverflow: true,
-        slidesNavigation:true,
-        paddingTop: '5vh',
-        responsiveHeight: 500
+        menu:'#header',
+        scrollOverflow: false,
+        slidesNavigation: false,
+        paddingTop: '40px',
+        responsiveHeight: 500,
+        autoScrolling: false,
     });
 
 
     //横スライド矢印
     $('.fp-prev').append('<span class="fa fa-angle-left" id="arrowL"></span>');
     $('.fp-next').append('<span class="fa fa-angle-right" id="arrowR"></span>');
+
+    //団体一覧部門Sticky
+    $(".GroupSection").sticky({topSpacing:20});
+
 });

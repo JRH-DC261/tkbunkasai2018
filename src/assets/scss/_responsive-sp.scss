@@ -17,11 +17,14 @@
     #header li a{
         font-size: 1.5vw;
     }
-    #header li a{
+    .headerTitle a{
         width: $Header-li-width-sp;
     }
-    #headerSNS a{
-        width: $Header-SNS-width-sp !important;
+    .headerText a{
+        width: $Header-li-width-sp;
+    }
+    .headerSNS a{
+        width: $Header-SNS-width-sp;
     }
 
     //アクセス
@@ -52,11 +55,17 @@
     #header{
         display: none;
     }
+    #header-sp{
+        display: block;
+    }
     .slicknav_menu{
         display: block;
     }
     #header-currentSection-sp{
         display: block;
+    }
+    .sectionTitle{
+        display: none;
     }
 
     /*ハンバーガーメニューのエフェクト*/
@@ -94,5 +103,10 @@
     .active .slicknav_icon-bar:nth-of-type(3) {
         -webkit-transform: translateY(-6px) rotate(45deg);
         transform: translateY(-6px) rotate(45deg);
+    }
+
+    #idInformation{
+        background-image: url("../img/1242_2208_01.jpg");
+        background-position: top center;
     }
 }

@@ -5,11 +5,14 @@
     <title>2018テスト</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	<link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/jquery.fullPage.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/scrolloverflow.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.sticky.js"></script>
     <script src="assets/js/jquery.slicknav.min.js"></script>
 	<script type="text/javascript" src="assets/js/script.js"></script>
 
@@ -21,24 +24,22 @@
 <body>
     <div id="header">
             <ul>
-                <li style="float:left"><a href="#Home">写真館(仮)</a></li>
+                <li class="headerTitle"><a href="#Home">写真館(仮)</a></li>
 
-                <li style="float:right" id="headerSNS"><a href="https://facebook.com/tsukukomafesta/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li style="float:right" id="headerSNS"><a href="https://twitter.com/tsukukomafesta/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li data-menuanchor="Downloads" style="float:right"><a href="#Downloads">ダウンロード</a></li>
-                <li data-menuanchor="Timetable" style="float:right"><a href="#Timetable">タイムテーブル</a></li>
-                <li data-menuanchor="Groups" style="float:right"><a href="#Groups/0">参加団体</a></li>
-                <li data-menuanchor="Access" style="float:right"><a href="#Access">アクセス</a></li>
-                <li data-menuanchor="Information" style="float:right"><a href="#Information">ご案内</a></li>
+                <li data-menuanchor="Information" class="headerText headerRight"><a href="#Information">ご案内</a></li>
+                <li data-menuanchor="Access" class="headerText"><a href="#Access">アクセス</a></li>
+                <li data-menuanchor="Groups" class="headerText"><a href="#Groups/0">参加団体</a></li>
+                <li data-menuanchor="Timetable" class="headerText"><a href="#Timetable">タイムテーブル</a></li>
+                <li data-menuanchor="Downloads" class="headerText"><a href="#Downloads">ダウンロード</a></li>
+                <li class="headerSNS"><a href="https://twitter.com/tsukukomafesta/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li class="headerSNS"><a href="https://facebook.com/tsukukomafesta/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
             </ul>
     </div>
 
     <div id="header-sp">
-        タイトル
+        <a href="#Home">タイトル</a>
     </div>
-    <div id="header-currentSection-sp">
-
-    </div>
+    <div id="header-currentSection-sp"></div>
 
     <div id="menu-sp">
         <ul>
@@ -52,38 +53,57 @@
 
     <div id="fullpage">
             <div class="section" data-anchor="Home" id="idHome">
-                <h1>トップページ</h1><br><br>
+                <h1 class="sectionTitle">トップページ</h1><br><br>
                 <a id="HomeDown" href="#Information"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
             </div>
             <div class="section" data-anchor="Information" id="idInformation">
-                <h1 style="color:#fff">ご案内</h1>
+                <h1 class="sectionTitle" style="color:#fff">ご案内</h1>
+                <div class="InformationContainer">
+                    <div class="InformationText">
+                        <h2>公共交通機関をご利用ください</h2>
+                        <p>校内に駐車場・駐輪場はありません。お車・自転車でのご来場はご遠慮ください。<br>ご来場の際は、電車やバスなどの公共交通機関をお利用いただきますようお願いいたします。</p>
+                    </div>
+                    <div class="InformationText">
+                        <h2>焦らず、ゆっくりご来場ください</h2>
+                        <p>文化祭の開場時刻は9:30となっています。開場時刻前のご来場は近隣住民の方々へのご迷惑にもなりますのでご遠慮ください。<br>また、9:30～10:00は校門付近が大変混み合います。入場までに時間がかかる場合もございますのでご了承ください。</p>
+                    </div>
+                    <div class="InformationText">
+                        <h2>任意のご案内</h2>
+                        <p>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br></p>
+                    </div>
+                    <div class="InformationText">
+                        <h2>任意のご案内</h2>
+                        <p>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br>いろはにほへと　ちりぬるを　わかよたれそ　つねならむ　うゐのおくやま　けふこえて　あさきゆめみし　ゑひもせす<br></p>
+                    </div>
+                </div>
             </div>
-            <div class="section fp-auto-height-responsive" data-anchor="Access" id="idAccess">
-                <h1>アクセス</h1>
-                <div id="AccessContainer">
-                <img src="assets/Map.svg">
-                <div id="AccessText"><h2>電車をご利用の方</h2>
-                <ul>
-                    <li>京王井の頭線 駒場東大前駅（IN03）西口より徒歩約7分</li>
-                    <li>東急田園都市線 池尻大橋駅（DT02）北口より徒歩約15分</li>
-                </ul>
-                <h2>バスをご利用の方</h2>
-                <ul>
-                    <li>「駒場」バス停（東急バス渋51/渋52系統・小田急バス渋54系統）より徒歩約1分</li>
-                </ul>
-                </div></div>
+            <div class="section" data-anchor="Access" id="idAccess">
+                <h1 class="sectionTitle">アクセス</h1>
+                <div class="AccessContainer">
+                    <img src="assets/img/map.svg">
+                    <div class="AccessText"><h2>電車をご利用の方</h2>
+                        <ul>
+                            <li>京王井の頭線 駒場東大前駅（IN03）西口より徒歩約7分</li>
+                            <li>東急田園都市線 池尻大橋駅（DT02）北口より徒歩約15分</li>
+                        </ul>
+                        <h2>バスをご利用の方</h2>
+                        <ul>
+                            <li>「駒場」バス停（東急バス渋51/渋52系統・小田急バス渋54系統）より徒歩約1分</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div class="section fp-auto-height-responsive" data-anchor="Groups" id="idGroups">
                 <div class="slide"> 
-                    <h1>参加団体</h1>
-                    <span class="GroupsList">
+                    <h1 class="sectionTitle">参加団体</h1>
+                    <span class="GroupsBlock">
                     <a class="GroupsBlockL1" href="#Groups/0">展示</a>
                     <a class="GroupsBlockL2" href="#Groups/1">演劇</a>
                     <a class="GroupsBlockL3" href="#Groups/2">パフォーマンス</a>
                     <a class="GroupsBlockS1" href="#Groups/3">高3特別班</a>
                     <a class="GroupsBlockS2" href="#">筑駒メッセ</a>
                     <a class="GroupsBlockS3" href="#">中夜祭</a>
-                    <a class="GroupsBlockW1" href="#">一覧から選ぶ</a>
+                    <a class="GroupsBlockW1" href="#">一覧から探す</a>
                     </span>
                     <!-<img class="GroupImage" data-src="assets/img/DSC02203-Dev.jpg">
                 </div>
@@ -93,38 +113,38 @@
                         <h2>ある光と影の革命～ある劇団の最終演目～</h2>
                         <h3>駒場棋院 | Blue館2階東</h3>
                         <br>
-                        <p>正当な理由がある場合、もっと自由に解雇できるなら、</p>
-                        <p>企業にとってはそもそも定年制(ry、人を雇うときも躊躇しないだろう。</p>
-                        <p>正規雇用と非正規雇用の間にある、絶対的とも言える壁も相対化する。</p>
-                        <p>必要 なときに必要な人材を必要な分だけ雇い入れる。</p>
+                        <p>１２３４５６７８９０１２３４５６７８９０</p>
+                        <p>１２３４５６７８９０１２３４５６７８９０</p>
+                        <p>１２３４５６７８９０１２３４５６７８９０</p>
+                        <p>１２３４５６７８９０１２３４５６７８９０</p>
                     </div>
                     <div style="float:left" class="GroupM">
                         <img class="GroupImage" data-src="assets/img/DSC02412-Dev.jpg">
                         <h2>タイトル</h2>
                         <h3>中高パーソナルコンピューター研究部 | Red館1階東</h3>
                         <br>
-                        <p>説明文</p>
-                        <p>説明文</p>
-                        <p>説明文</p>
-                        <p>説明文</p>
+                        <p>１２３４５６７８９０１２３４５６７８９０</p>
+                        <p>１２３４５６７８９０１２３４５６７８９０</p>
+                        <p>１２３４５６７８９０１２３４５６７８９０</p>
+                        <p>１２３４５６７８９０１２３４５６７８９０</p>
                     </div>
                     <div style="float:left" class="GroupR">
                         <img class="GroupImage" data-src="assets/img/DSC01925-Dev.jpg">
                         <h2>人類的展示</h2>
                         <h3>中学1-BHR | Orange館3階東</h3>
                         <br>
-                        <p>説明文</p>
-                        <p>説明文</p>
-                        <p>説明文</p>
-                        <p>説明文</p>
+                        <p>１２３４５６７８９０１２３４５６７８９０</p>
+                        <p>１２３４５６７８９０１２３４５６７８９０</p>
+                        <p>１２３４５６７８９０１２３４５６７８９０</p>
+                        <p>１２３４５６７８９０１２３４５６７８９０</p>
                     </div>
                 </div>
             </div>
             <div class="section" data-anchor="Timetable" id="idTimetable">
-                <h1><a href="https://www.timeanddate.com/worldclock/usa/new-york" target="_blank">時の流れ</a></h1>
+                <h1 class="sectionTitle"><a href="https://www.timeanddate.com/worldclock/usa/new-york" target="_blank">時の流れ</a></h1>
             </div>
             <div class="section" data-anchor="Downloads" id="idDownloads">
-                <h1><a style="color:#fff" href="https://github.com/JRH-DC261/tkbunkasai2018" target="_blank">Welcome to ようこそ Github</a></h1>
+                <h1 class="sectionTitle"><a style="color:#fff" href="https://github.com/JRH-DC261/tkbunkasai2018" target="_blank">Welcome to ようこそ Github</a></h1>
                 
             </div>
     </div>
