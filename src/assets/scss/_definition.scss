@@ -1,34 +1,34 @@
 @charset 'utf-8';
 
-$Header-color: rgba(255, 255, 255, 1) !default;
-$Header-hover-color: rgba(200, 200, 200, 0.75) !default;
+$header-color: rgba(255, 255, 255, 1) !default;
+$header-hover-color: rgba(200, 200, 200, 0.75) !default;
 
-$Palette1: #554455 !default;
-$Palette2: #ffaa99 !default;
-$Palette3: #ffdddd !default;
-$Palette4: #dd9999 !default;
-$Palette5: #aa6666 !default;
+$palette1: #554455 !default;
+$palette2: #ffaa99 !default;
+$palette3: #ffdddd !default;
+$palette4: #dd9999 !default;
+$palette5: #aa6666 !default;
 
-$Header-li-width: 125px !default;
-$Header-li-width-sp: 12vw !default;
-$Header-SNS-width: 30px !default;
-$Header-SNS-width-sp: 3vw !default;
+$header_li-width: 125px !default;
+$header_li-width-sp: 12vw !default;
+$header_SNS-width: 30px !default;
+$header_SNS-width-sp: 3vw !default;
 
 //参加団体一覧
-$GroupBlock-row-height: 150px;
-$GroupBlock-row-height-sp: 7.5vh;
+$group_cnt-row-height: 150px;
+$group_cnt-row-height-sp: 7.5vh;
 
 //トップページ下矢印
-$HomeDown-size: 7.5vw !default;
-$HomeDown-size-expand: 10vw !default;
+$home_down-size: 7.5vw !default;
+$home_down-size-expand: 10vw !default;
 //レスポンシブ用
-$HomeDown-size-sp: 20vw !default;
-$HomeDown-size-expand-sp: 25vw !default;
+$home_down-size-sp: 20vw !default;
+$home_down-size-expand-sp: 25vw !default;
 
 //横スライド矢印
-$SlideArrow-size: 5vw !default;
+$arrow-size: 5vw !default;
 //レスポンシブ用
-$SlideArrow-size-sp: 10vw !default;
+$arrow-size-sp: 10vw !default;
 
 $iPadPro: 1025px !default;
 $smartphone: 600px !default;

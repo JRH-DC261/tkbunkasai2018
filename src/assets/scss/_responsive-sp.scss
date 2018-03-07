@@ -24,85 +24,85 @@
     }
 
     //トップページ下矢印
-    @keyframes HomeDown{
-        0% {font-size: $HomeDown-size-sp;}
-        12.5% {font-size: $HomeDown-size-expand-sp;}
-        25% {font-size: $HomeDown-size-sp;}
-        100% {font-size: $HomeDown-size-sp;}
+    @keyframes home_down{
+        0% {font-size: $home_down-size-sp;}
+        12.5% {font-size: $home_down-size-expand-sp;}
+        25% {font-size: $home_down-size-sp;}
+        100% {font-size: $home_down-size-sp;}
     }
-    #HomeDown{
-        font-size: $HomeDown-size-sp;
+    #home_down{
+        font-size: $home_down-size-sp;
     }
 
     #header li a{
         font-size: 1.5vw;
     }
-    .headerTitle a{
-        width: $Header-li-width-sp;
+    .header_title a{
+        width: $header_li-width-sp;
     }
-    .headerText a{
-        width: $Header-li-width-sp;
+    .header_text a{
+        width: $header_li-width-sp;
     }
-    .headerSNS a{
-        width: $Header-SNS-width-sp;
+    .header_SNS a{
+        width: $header_SNS-width-sp;
     }
 
     //アクセス
-    #idAccess img{
+    #id-access img{
         width: 90%;
         margin-left: 5%;
         margin-right: 5%;
     }
-    .AccessText{
+    .access_text{
         width: 90%;
         margin-left: 5%;
         margin-right: 5%;
     }
 
-    .GroupBlock{
+    .group_cnt{
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: $GroupBlock-row-height-sp $GroupBlock-row-height-sp $GroupBlock-row-height-sp $GroupBlock-row-height-sp $GroupBlock-row-height-sp $GroupBlock-row-height-sp $GroupBlock-row-height-sp;
+        grid-template-rows: $group_cnt-row-height-sp $group_cnt-row-height-sp $group_cnt-row-height-sp $group_cnt-row-height-sp $group_cnt-row-height-sp $group_cnt-row-height-sp $group_cnt-row-height-sp;
         font-size: 4vw;
     }
-    .GroupBlockL1{
+    .group_cnt_1{
         grid-column: 1/2;
         grid-row: 1/4;
     }
-    .GroupBlockL2{
+    .group_cnt_2{
         grid-column: 2/3;
         grid-row: 1/4;
     }
-    .GroupBlockL3{
+    .group_cnt_3{
         grid-column: 1/2;
         grid-row: 4/7;
     }
-    .GroupBlockS1{
+    .group_cnt_4{
         grid-column: 2/3;
         grid-row: 4/5;
     }
-    .GroupBlockS2{
+    .group_cnt_5{
         grid-column: 2/3;
         grid-row: 5/6;
     }
-    .GroupBlockS3{
+    .group_cnt_6{
         grid-column: 2/3;
         grid-row: 6/7;
     }
-    .GroupBlockW1{
+    .group_cnt_7{
         grid-column: 1/3;
         grid-row: 7/8;
     }
 
-    .decoIcon{
+    .deco-icon{
         height: 7.5vw;
     }
 
     //横スライド矢印
     #arrowL{
-        font-size: $SlideArrow-size-sp;
+        font-size: $arrow-size-sp;
     }
     #arrowR{
-        font-size: $SlideArrow-size-sp;
+        font-size: $arrow-size-sp;
     }
 }
 
@@ -136,10 +136,10 @@
     .slicknav_menu{
         display: block;
     }
-    #header-currentSection-sp{
+    #header_current-section-sp{
         display: block;
     }
-    .sectionTitle{
+    .section_title{
         display: none;
     }
 
@@ -180,16 +180,16 @@
         transform: translateY(-6px) rotate(45deg);
     }
 
-    #idHome{
+    #id-home{
         background-image: url("../img/1242_2208_01.jpg");
         background-position: top center;
     }
 
-    .GroupBlock{
+    .group_cnt{
         font-size: 5vw;
     }
 
-    .decoIcon{
+    .deco-icon{
         height: 10vw;
     }
 }
