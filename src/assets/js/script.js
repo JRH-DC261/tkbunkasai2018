@@ -5,15 +5,14 @@ $(document).ready(function () {
 
     var viewportWidth = $(window).width();
 
-    //レスポンシブ(参加団体)
-
     if (viewportWidth < iPadPro) {
+        //1団体表示
         $(".slide div").removeClass("GroupL GroupM GroupR").addClass("slide");
-        $("#Grouplide").removeClass("slide");
+        $(".GroupSlide").removeClass("slide");
     }
 
     //画面リサイズ時再読み込み
-    var timer = false;
+    /*var timer = false;
     $(window).resize(function() {
         if (timer !== false) {
             clearTimeout(timer);
@@ -21,7 +20,7 @@ $(document).ready(function () {
         timer = setTimeout(function() {
             location.reload();
         }, 200);
-    });
+    });*/
 
 
 
@@ -78,10 +77,12 @@ $(document).ready(function () {
         anchors: ['Home','Information','Access','Group','Timetable','Downloads'],
         menu:'#header',
         scrollOverflow: false,
-        slidesNavigation: false,
+        slidesNavigation: true,
         paddingTop: '39px',
         responsiveHeight: 500,
         autoScrolling: false,
+        fitToSection: false,
+        bigSectionsDestination: top,
     });
 
 
@@ -93,16 +94,25 @@ $(document).ready(function () {
     $(".GroupSection").sticky({topSpacing:39});
 
     //対応する団体情報を開く
-    $('.GroupExhibit').click(function() {
-        var GroupInfoNumber = $('li.GroupExhibit').index(this);
-        var GroupInfoOpenSrc = 'GroupExhibit.html#Home/' + GroupInfoNumber;
-        $('.GroupInfo').attr('src', GroupInfoOpenSrc);
-        $('.GroupInfo').fadeIn();
-        $('.GroupInfoClose').fadeIn();
-    });
-     $('.GroupInfoClose').click(function() {
-        $('.GroupInfo').fadeOut();
-        $('.GroupInfoClose').fadeOut();
-    });
+    //団体表示
+    if (viewportWidth < iPadPro) {
+        $('.GroupExhibit').click(function() {
+            var GroupInfoNumber = $('li.GroupExhibit').index(this);
+            var GroupInfoOpenSrc = 'GroupExhibit.html#Home/' + GroupInfoNumber;
+            $('.GroupInfo').attr('src', GroupInfoOpenSrc);
+            $('.GroupInfo').css('visibility','visible').animate({opacity: 1}, 400);
+        });
+    }else{
+        $('.GroupExhibit').click(function() {
+            var GroupInfoNumber = $('li.GroupExhibit').index(this);
+            var GroupInfoOpenSrc = 'GroupExhibit.html#Home/' + Math.floor(GroupInfoNumber / 3);
+            $('.GroupInfo').css('visibility','visible').animate({opacity: 1}, 400);
+        });
+    }
 
+    $('.GroupInfoClose').click(function() {
+        $('.GroupInfo').animate({opacity: 0}, 400, function() {
+            $('.GroupInfo').css('visibility','hidden');
+        });
+    });
 });
