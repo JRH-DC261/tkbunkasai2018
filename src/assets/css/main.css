@@ -77,19 +77,28 @@ body {
 
 h1 {
   text-align: center;
-  font-family: "新ゴ DB","Shin Go Debold",sans-serif; }
+  font-family: "新ゴ DB","Shin Go Debold",sans-serif;
+  font-size: 2.5vw; }
 
 h2 {
-  font-family: "新ゴ M","Shin Go Medium",sans-serif; }
+  font-family: "新ゴ M","Shin Go Medium",sans-serif;
+  font-size: 1.5vw; }
 
 h3 {
-  font-family: "新ゴ R","Shin Go Regular",sans-serif; }
+  font-family: "新ゴ R","Shin Go Regular",sans-serif;
+  font-size: 1vw; }
 
 p {
-  font-family: "新ゴ R","Shin Go Regular",sans-serif; }
+  font-family: "新ゴ R","Shin Go Regular",sans-serif;
+  font-size: 1vw; }
 
 li {
-  font-family: "新ゴ R","Shin Go Regular",sans-serif; }
+  font-family: "新ゴ R","Shin Go Regular",sans-serif;
+  font-size: 1vw; }
+
+td {
+  font-family: "新ゴ R","Shin Go Regular",sans-serif;
+  font-size: 1vw; }
 
 a {
   font-family: "新ゴ R","Shin Go Regular",sans-serif;
@@ -103,7 +112,7 @@ ul {
   width: 100%;
   position: fixed;
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.9); }
+  background-color: #ffdddd; }
 
 #header ul {
   margin: 0;
@@ -114,7 +123,10 @@ ul {
   justify-content: flex-end; }
 
 #header li {
-  margin: 0.25em; }
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 2px;
+  text-align: center; }
 
 #header li:first-child {
   margin-right: auto; }
@@ -122,18 +134,21 @@ ul {
 #header li a {
   display: inline-block;
   position: relative;
-  text-align: center;
-  padding: 0.5em;
-  border-radius: 0.1em; }
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 15px;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+  vertical-align: middle; }
 
 .headerTitle a {
-  width: 7.5em; }
+  width: 125px; }
 
 .headerText a {
-  width: 7.5em; }
+  width: 125px; }
 
 .headerSNS a {
-  width: 2em; }
+  width: 30px; }
 
 #header li:hover {
   background-color: rgba(200, 200, 200, 0.75); }
@@ -179,7 +194,7 @@ ul {
   z-index: 100; }
 
 #idHome {
-  background-image: url("../img/DSC02805-Dev.jpg");
+  background-image: url("../img/1920_1080_00.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -199,7 +214,7 @@ ul {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 10px;
   color: #fff;
   font-size: 7.5vw;
   margin: 0;
@@ -211,7 +226,7 @@ ul {
   animation-iteration-count: infinite; }
 
 #idInformation {
-  background-image: url("../img/1920_1080_00.jpg");
+  background-image: url("../img/DSC02805-Dev.jpg");
   background-position: top left;
   background-repeat: no-repeat;
   background-size: cover;
@@ -265,48 +280,49 @@ ul {
   grid-gap: 2.5vw;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 150px 150px;
-  font-size: 20px; }
+  font-size: 2vw; }
 
 .GroupBlock a {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff; }
+  color: #fff;
+  border-radius: 5px; }
 
 .GroupBlockL1 {
   grid-column: 1/5;
   grid-row: 1/2;
-  background-color: #321123; }
+  background-color: #ffdddd; }
 
 .GroupBlockL2 {
   grid-column: 5/9;
   grid-row: 1/2;
-  background-color: #432234; }
+  background-color: #dd9999; }
 
 .GroupBlockL3 {
   grid-column: 9/13;
   grid-row: 1/2;
-  background-color: #543345; }
+  background-color: #aa6666; }
 
 .GroupBlockS1 {
   grid-column: 1/4;
   grid-row: 2/3;
-  background-color: #654456; }
+  background-color: #ffaa99; }
 
 .GroupBlockS2 {
   grid-column: 4/7;
   grid-row: 2/3;
-  background-color: #765567; }
+  background-color: #554455; }
 
 .GroupBlockS3 {
   grid-column: 7/10;
   grid-row: 2/3;
-  background-color: #876678; }
+  background-color: #554455; }
 
 .GroupBlockW1 {
   grid-column: 10/13;
   grid-row: 2/3;
-  background-color: #987789; }
+  background-color: #554455; }
 
 #arrowL {
   font-size: 5vw;
@@ -349,13 +365,16 @@ ul {
   text-align: center; }
 
 .GroupList {
-  padding: 0; }
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto; }
 
-.GroupList li {
-  padding: 7.5px; }
+.GroupList td {
+  padding: 7.5px 5px 7.5px 5px;
+  text-align: left; }
 
 .GroupSection {
-  background-color: #888;
+  background-color: #dd9999;
   padding: 10px 0 10px 0;
   margin: 0; }
 
@@ -381,7 +400,22 @@ ul {
   left: 50%;
   transform: translateX(-50%); }
 
+.decoIcon {
+  height: 30px; }
+
 @media only screen and (max-width: 1025px) {
+  h1 {
+    font-size: 6vw; }
+  h2 {
+    font-size: 4.5vw; }
+  h3 {
+    font-size: 3vw; }
+  p {
+    font-size: 3vw; }
+  li {
+    font-size: 3vw; }
+  td {
+    font-size: 3vw; }
   @keyframes HomeDown {
     0% {
       font-size: 20vw; }
@@ -400,7 +434,7 @@ ul {
   .headerText a {
     width: 12vw; }
   .headerSNS a {
-    width: 2vw; }
+    width: 3vw; }
   #idAccess img {
     width: 90%;
     margin-left: 5%;
@@ -411,7 +445,8 @@ ul {
     margin-right: 5%; }
   .GroupBlock {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 7.5vh 7.5vh 7.5vh 7.5vh 7.5vh 7.5vh 7.5vh; }
+    grid-template-rows: 7.5vh 7.5vh 7.5vh 7.5vh 7.5vh 7.5vh 7.5vh;
+    font-size: 4vw; }
   .GroupBlockL1 {
     grid-column: 1/2;
     grid-row: 1/4; }
@@ -433,12 +468,26 @@ ul {
   .GroupBlockW1 {
     grid-column: 1/3;
     grid-row: 7/8; }
+  .decoIcon {
+    height: 7.5vw; }
   #arrowL {
     font-size: 10vw; }
   #arrowR {
     font-size: 10vw; } }
 
 @media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 8vw; }
+  h2 {
+    font-size: 6vw; }
+  h3 {
+    font-size: 4vw; }
+  p {
+    font-size: 4vw; }
+  li {
+    font-size: 4vw; }
+  td {
+    font-size: 4vw; }
   #header {
     display: none; }
   #header-sp {
@@ -476,8 +525,12 @@ ul {
   .active .slicknav_icon-bar:nth-of-type(3) {
     -webkit-transform: translateY(-6px) rotate(45deg);
     transform: translateY(-6px) rotate(45deg); }
-  #idInformation {
+  #idHome {
     background-image: url("../img/1242_2208_01.jpg");
-    background-position: top center; } }
+    background-position: top center; }
+  .GroupBlock {
+    font-size: 5vw; }
+  .decoIcon {
+    height: 10vw; } }
 
 /*# sourceMappingURL=main.css.map */

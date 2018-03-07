@@ -3,6 +3,26 @@
 @import "definition";
 
 @media only screen and (max-width: $iPadPro) {
+
+    h1{
+        font-size: 6vw;
+    }
+    h2{
+        font-size: 4.5vw;
+    }
+    h3{
+        font-size: 3vw;
+    }
+    p{
+        font-size: 3vw;
+    }
+    li{
+        font-size: 3vw;
+    }
+    td{
+        font-size: 3vw;
+    }
+
     //トップページ下矢印
     @keyframes HomeDown{
         0% {font-size: $HomeDown-size-sp;}
@@ -41,7 +61,8 @@
 
     .GroupBlock{
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: $GroupBlock-row-height-sp $GroupBlock-row-height-sp $GroupBlock-row-height-sp $GroupBlock-row-height-sp $GroupBlock-row-height-sp $GroupBlock-row-height-sp $GroupBlock-row-height-sp
+        grid-template-rows: $GroupBlock-row-height-sp $GroupBlock-row-height-sp $GroupBlock-row-height-sp $GroupBlock-row-height-sp $GroupBlock-row-height-sp $GroupBlock-row-height-sp $GroupBlock-row-height-sp;
+        font-size: 4vw;
     }
     .GroupBlockL1{
         grid-column: 1/2;
@@ -72,6 +93,10 @@
         grid-row: 7/8;
     }
 
+    .decoIcon{
+        height: 7.5vw;
+    }
+
     //横スライド矢印
     #arrowL{
         font-size: $SlideArrow-size-sp;
@@ -82,6 +107,26 @@
 }
 
 @media only screen and (max-width: $smartphone) {
+
+    h1{
+        font-size: 8vw;
+    }
+    h2{
+        font-size: 6vw;
+    }
+    h3{
+        font-size: 4vw;
+    }
+    p{
+        font-size: 4vw;
+    }
+    li{
+        font-size: 4vw;
+    }
+    td{
+        font-size: 4vw;
+    }
+
     #header{
         display: none;
     }
@@ -135,8 +180,16 @@
         transform: translateY(-6px) rotate(45deg);
     }
 
-    #idInformation{
+    #idHome{
         background-image: url("../img/1242_2208_01.jpg");
         background-position: top center;
+    }
+
+    .GroupBlock{
+        font-size: 5vw;
+    }
+
+    .decoIcon{
+        height: 10vw;
     }
 }

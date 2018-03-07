@@ -97,14 +97,14 @@ $(document).ready(function () {
     //団体表示
     if (viewportWidth < iPadPro) {
         $('.GroupExhibit').click(function() {
-            var GroupInfoNumber = $('li.GroupExhibit').index(this);
+            var GroupInfoNumber = $(this).closest('tr').index();
             var GroupInfoOpenSrc = 'GroupExhibit.html#Home/' + GroupInfoNumber;
             $('.GroupInfo').attr('src', GroupInfoOpenSrc);
             $('.GroupInfo').css('visibility','visible').animate({opacity: 1}, 400);
         });
     }else{
         $('.GroupExhibit').click(function() {
-            var GroupInfoNumber = $('li.GroupExhibit').index(this);
+            var GroupInfoNumber = $(this).closest('tr').index();
             var GroupInfoOpenSrc = 'GroupExhibit.html#Home/' + Math.floor(GroupInfoNumber / 3);
             $('.GroupInfo').css('visibility','visible').animate({opacity: 1}, 400);
         });

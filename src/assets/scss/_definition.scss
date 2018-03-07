@@ -1,12 +1,18 @@
 @charset 'utf-8';
 
-$Header-color: rgba(255, 255, 255, 0.9) !default;
+$Header-color: rgba(255, 255, 255, 1) !default;
 $Header-hover-color: rgba(200, 200, 200, 0.75) !default;
 
-$Header-li-width: 7.5em !default;
+$Palette1: #554455 !default;
+$Palette2: #ffaa99 !default;
+$Palette3: #ffdddd !default;
+$Palette4: #dd9999 !default;
+$Palette5: #aa6666 !default;
+
+$Header-li-width: 125px !default;
 $Header-li-width-sp: 12vw !default;
-$Header-SNS-width: 2em !default;
-$Header-SNS-width-sp: 2vw !default;
+$Header-SNS-width: 30px !default;
+$Header-SNS-width-sp: 3vw !default;
 
 //参加団体一覧
 $GroupBlock-row-height: 150px;
