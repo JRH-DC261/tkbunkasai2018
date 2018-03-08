@@ -255,30 +255,46 @@ ul {
 
 #arrowL {
   font-size: 5vw;
-  float: left; }
+  position: fixed;
+  top: 50%;
+  transform: translateU(-50%);
+  left: 20px; }
 
 #arrowR {
   font-size: 5vw;
-  float: right; }
+  position: fixed;
+  top: 50%;
+  transform: translateU(-50%);
+  right: 20px; }
 
 .group-info_img {
   width: 80%;
   display: block;
   margin: auto; }
 
-.group-info_L {
+.group-info.__display3.__L1, .group-info.__display3.__L2 {
   float: left;
   margin-left: 5%;
   width: 30%; }
 
-.group-info_M {
+.group-info.__display3.__M1, .group-info.__display3.__M2 {
   float: left;
   width: 30%; }
 
-.group-info_R {
+.group-info.__display3.__R1, .group-info.__display3.__R2 {
   float: left;
   margin-right: 5%;
   width: 30%; }
+
+.group-info.__display2.__L {
+  float: left;
+  margin-left: 5%;
+  width: 45%; }
+
+.group-info.__display2.__R {
+  float: left;
+  margin-right: 5%;
+  width: 45%; }
 
 #id-timetable {
   background-image: url("../img/DSC02992-Dev.jpg");
@@ -307,7 +323,7 @@ ul {
   padding: 10px 0 10px 0;
   margin: 0; }
 
-.group-info {
+.group-info_cnt {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -319,14 +335,20 @@ ul {
   opacity: 0; }
 
 .group-info_iframe {
-  height: 100%;
-  width: 100%; }
+  position: fixed;
+  height: calc(100% - 40px);
+  width: 100%;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-style: none; }
 
 .group-info_close {
   position: fixed;
-  bottom: 5vh;
-  padding: 30px;
+  bottom: -5px;
+  padding: 10px;
   z-index: 110;
+  font-size: 40px;
   left: 50%;
   transform: translateX(-50%); }
 
@@ -335,17 +357,17 @@ ul {
 
 @media only screen and (max-width: 1025px) {
   h1 {
-    font-size: 6vw; }
-  h2 {
     font-size: 4.5vw; }
+  h2 {
+    font-size: 3.5vw; }
   h3 {
-    font-size: 3vw; }
+    font-size: 2.5vw; }
   p {
-    font-size: 3vw; }
+    font-size: 2vw; }
   li {
-    font-size: 3vw; }
+    font-size: 2vw; }
   td {
-    font-size: 3vw; }
+    font-size: 2vw; }
   @keyframes home_down {
     0% {
       font-size: 20vw; }
@@ -400,6 +422,10 @@ ul {
     grid-row: 7/8; }
   .deco-icon {
     height: 7.5vw; }
+  .group-info_img {
+    width: 90%; }
+  .group-info_close {
+    font-size: 30px; }
   #arrowL {
     font-size: 10vw; }
   #arrowR {
@@ -428,7 +454,12 @@ ul {
     display: block; }
   .section_title {
     display: none; }
-  /*ハンバーガーメニューのエフェクト*/
+  .group-info_close {
+    font-size: 5vw; }
+  .slicknav_menu {
+    background-color: #ffdddd; }
+  .slicknav_btn {
+    background-color: #dd9999; }
   .slicknav_icon,
   .slicknav_icon span {
     display: inline-block;
@@ -460,6 +491,8 @@ ul {
     background-position: top center; }
   .group_cnt {
     font-size: 5vw; }
+  .group-info_img {
+    width: 75%; }
   .deco-icon {
     height: 10vw; } }
 

@@ -78,7 +78,7 @@
 .slicknav_menu {
   font-size: 16px;
   box-sizing: border-box;
-  background: #555;
+  /*background: #555;*/
   padding: 0px; }
   .slicknav_menu * {
     box-sizing: border-box; }
@@ -96,7 +96,7 @@
   -webkit-border-radius: 0.1em;
   -moz-border-radius: 0.1em;
   border-radius: 0.1em;
-  background-color: #222; }
+  /*background-color: #222;*/ }
 
 .slicknav_nav {
   color: #fff;

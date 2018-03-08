@@ -5,22 +5,22 @@
 @media only screen and (max-width: $iPadPro) {
 
     h1{
-        font-size: 6vw;
-    }
-    h2{
         font-size: 4.5vw;
     }
+    h2{
+        font-size: 3.5vw;
+    }
     h3{
-        font-size: 3vw;
+        font-size: 2.5vw;
     }
     p{
-        font-size: 3vw;
+        font-size: 2vw;
     }
     li{
-        font-size: 3vw;
+        font-size: 2vw;
     }
     td{
-        font-size: 3vw;
+        font-size: 2vw;
     }
 
     //トップページ下矢印
@@ -97,6 +97,13 @@
         height: 7.5vw;
     }
 
+    .group-info_img{
+        width: 90%;
+    }
+    .group-info_close{
+        font-size: 30px;
+    }
+
     //横スライド矢印
     #arrowL{
         font-size: $arrow-size-sp;
@@ -142,8 +149,19 @@
     .section_title{
         display: none;
     }
+    .group-info_close{
+        font-size: 5vw;
+    }
 
-    /*ハンバーガーメニューのエフェクト*/
+    //ハンバーガーメニュー背景色
+    .slicknav_menu{
+        background-color: $palette3;
+    }
+    .slicknav_btn{
+        background-color: $palette4;
+    }
+
+    //ハンバーガーメニューのエフェクト
     .slicknav_icon,
     .slicknav_icon span {
         display: inline-block;
@@ -187,6 +205,10 @@
 
     .group_cnt{
         font-size: 5vw;
+    }
+
+    .group-info_img{
+        width: 75%;
     }
 
     .deco-icon{
