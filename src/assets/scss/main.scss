@@ -292,14 +292,14 @@ ul{
     font-size: $arrow-size;
     position: fixed;
     top: 50%;
-    transform: translateU(-50%);
+    transform: translateY(-50%);
     left: 20px;
 }
 #arrowR{
     font-size: $arrow-size;
     position: fixed;
     top: 50%;
-    transform: translateU(-50%);
+    transform: translateY(-50%);
     right: 20px;
 }
 
@@ -310,19 +310,21 @@ ul{
     margin: auto;
 }
 
+.group-info{
+    display: inline-block;
+    vertical-align: top;
+}
+
 //PC用デコ3団体表示
 .group-info.__display3.__L1{
-    float: left;
-    margin-left: 5%;
+    margin-left: 4.5%;
     width: 30%;
 }
 .group-info.__display3.__M1{
-    float: left;
     width: 30%;
 }
 .group-info.__display3.__R1{
-    float: left;
-    margin-right: 5%;
+    margin-right: 4.5%;
     width: 30%;
 }
 .group-info.__display3.__L2{
@@ -336,13 +338,11 @@ ul{
 }
 //PC用デコ2団体表示
 .group-info.__display2.__L{
-    float: left;
-    margin-left: 5%;
+    margin-left: 4.5%;
     width: 45%;
 }
 .group-info.__display2.__R{
-    float: left;
-    margin-right: 5%;
+    margin-right: 4.5%;
     width: 45%;
 }
 
@@ -385,25 +385,27 @@ ul{
     height: 100%;
     border: 0;
     margin: 0;
-    z-index: 100;
+    z-index: 1000;
     visibility: hidden;
     background-color: rgba(255, 255, 255, 0.9);
     opacity: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 .group-info_iframe{
-    position: fixed;
-    height: calc(100% - 40px);
+    position: absolute;
+    height: 100%;
     width: 100%;
-    bottom: 40px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     border-style: none;
 }
 .group-info_close{
     position: fixed;
-    bottom: -5px;
+    bottom: 0;
     padding: 10px;
-    z-index: 110;
+    z-index: 1100;
     font-size: 40px;
     left: 50%;
     transform: translateX(-50%);

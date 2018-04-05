@@ -4,12 +4,14 @@ $(document).ready(function () {
     var smartphone = 600;
 
     var viewportWidth = $(window).width();
+    var viewportHeight = $(window).height();
+    var widthRatio = viewportWidth / viewportHeight;
 
-    if (viewportWidth < smartphone) {
+    if (widthRatio < '0.7') {
         //1団体表示
         $('.group-slide div').removeClass('__display3 __L1 __M1 __R1 __L2 __M2 __R2').addClass('slide __display1');
         $('.group-slide').removeClass('slide');
-    }else if (viewportWidth < iPadPro) {
+    } else if (widthRatio < '1.7') {
         //2団体表示
         $('.group-slide__extra').addClass('slide');
         $('.group-slide__extra').append($('.group-slide .__R1'));
@@ -23,9 +25,15 @@ $(document).ready(function () {
     }
 
     //スクロールバー幅取得
-    function getScrollBarWidth () {
-        var $outer = $('<div>').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
-            widthWithScroll = $('<div>').css({width: '100%'}).appendTo($outer).outerWidth();
+    function getScrollBarWidth() {
+        var $outer = $('<div>').css({
+                visibility: 'hidden',
+                width: 100,
+                overflow: 'scroll'
+            }).appendTo('body'),
+            widthWithScroll = $('<div>').css({
+                width: '100%'
+            }).appendTo($outer).outerWidth();
         $outer.remove();
         return 100 - widthWithScroll;
     };
@@ -33,8 +41,22 @@ $(document).ready(function () {
     var headerWidth = viewportWidth - scrollBarWidth;
 
     //あらかじめヘッダーにスクロールバー幅を入れる
-    $('#header').css('width',headerWidth);
-    $('#header').css('padding-right',scrollBarWidth);
+    $('#header').css('width', headerWidth);
+    $('#header').css('padding-right', scrollBarWidth);
+
+    //画面スクロール禁止
+    var freezeVp = function (e) {
+        e.preventDefault();
+    };
+
+    function stopBodyScrolling(bool) {
+        if (bool === true) {
+            document.body.addEventListener("touchmove", freezeVp, false);
+        } else {
+            document.body.removeEventListener("touchmove", freezeVp, false);
+        }
+    }
+
 
     //画面回転時再読み込み
     /*$(window).bind('orientationchange',function() {
@@ -61,42 +83,46 @@ $(document).ready(function () {
 
     //ロード時のセクション名を表示
     if (location.hash == '#Home') {
-    $('#header_current-section-sp').html('ホーム');
-    }else if (location.hash == '#Information') {
-    $('#header_current-section-sp').html('ご案内');
-    }else if (location.hash == '#Access') {
-    $('#header_current-section-sp').html('アクセス');
-    }else if (location.hash == '#Group') {
-    $('#header_current-section-sp').html('参加団体');
-    }else if (location.hash == '#Timetable') {
-    $('#header_current-section-sp').html('タイムテーブル');
-    }else if (location.hash == '#Downloads') {
-    $('#header_current-section-sp').html('ダウンロード');
+        $('#header_current-section-sp').html('');
+    } else if (location.hash == '#Information') {
+        $('#header_current-section-sp').html('ご案内');
+    } else if (location.hash == '#Access') {
+        $('#header_current-section-sp').html('アクセス');
+    } else if (location.hash == '#Group') {
+        $('#header_current-section-sp').html('参加団体');
+    } else if (location.hash == '#Timetable') {
+        $('#header_current-section-sp').html('タイムテーブル');
+    } else if (location.hash == '#Downloads') {
+        $('#header_current-section-sp').html('ダウンロード');
+    } else {
+        $('#header_current-section-sp').html('');
     }
 
     //スクロール先のセクション名に切り替え
-    $(window).on('hashchange', function(){
+    $(window).on('hashchange', function () {
         if (location.hash == '#Home') {
-        $('#header_current-section-sp').html('ホーム');
-        }else if (location.hash == '#Information') {
-        $('#header_current-section-sp').html('ご案内');
-        }else if (location.hash == '#Access') {
-        $('#header_current-section-sp').html('アクセス');
-        }else if (location.hash == '#Group') {
-        $('#header_current-section-sp').html('参加団体');
-        }else if (location.hash == '#Timetable') {
-        $('#header_current-section-sp').html('タイムテーブル');
-        }else if (location.hash == '#Downloads') {
-        $('#header_current-section-sp').html('ダウンロード');
+            $('#header_current-section-sp').html('');
+        } else if (location.hash == '#Information') {
+            $('#header_current-section-sp').html('ご案内');
+        } else if (location.hash == '#Access') {
+            $('#header_current-section-sp').html('アクセス');
+        } else if (location.hash == '#Group') {
+            $('#header_current-section-sp').html('参加団体');
+        } else if (location.hash == '#Timetable') {
+            $('#header_current-section-sp').html('タイムテーブル');
+        } else if (location.hash == '#Downloads') {
+            $('#header_current-section-sp').html('ダウンロード');
+        } else {
+            $('#header_current-section-sp').html('');
         }
     });
 
     //ハンバーガー→Xアニメーション
-    $('.slicknav_btn').click(function(){
+    $('.slicknav_btn').click(function () {
         $(this).toggleClass('active');
     });
 
-    $('#fullpage').click(function(){
+    $('#fullpage').click(function () {
         $('#menu-sp').slicknav('close');
         $('.slicknav_btn').removeClass('active');
     });
@@ -104,8 +130,8 @@ $(document).ready(function () {
 
     //fullpage
     $('#fullpage').fullpage({
-        anchors: ['Home','Information','Access','Group','Timetable','Downloads'],
-        menu:'#header',
+        anchors: ['Home', 'Information', 'Access', 'Group', 'Timetable', 'Downloads'],
+        menu: '#header',
         scrollOverflow: false,
         slidesNavigation: false,
         paddingTop: '39px',
@@ -113,6 +139,7 @@ $(document).ready(function () {
         autoScrolling: false,
         fitToSection: false,
         bigSectionsDestination: top,
+        verticalCentered: true,
     });
 
 
@@ -121,48 +148,87 @@ $(document).ready(function () {
     $('.fp-next').append('<span class="fa fa-angle-right" id="arrowR"></span>');
 
     //団体一覧部門Sticky
-    $('.group-section').sticky({topSpacing:39});
+    $('.group-section').stick_in_parent({
+        offset_top: 39
+    });
 
+    var scrollTopValue = $('.fullpage_group-info').scrollTop();
+    var scrollPosition = scrollTopValue + 'px';
 
+    function openGroupInfo() {
+        $('.group-info_cnt').css('visibility', 'visible').animate({
+            opacity: 1
+        }, 400);
+        //bodyのスクロール禁止
+        $('.fullpage_group-info').css('top', scrollPosition);
+        $('.fullpage_group-info').css('position', 'fixed');
+        $('.fullpage_group-info').css('margin-right', scrollBarWidth);
+    }
 
+    function closeGroupInfo() {
+        $('.group-info_cnt').animate({
+            opacity: 0
+        }, 400, function () {
+            $('.group-info_cnt').css('visibility', 'hidden');
+
+            //bodyのスクロール禁止解除
+            $('.fullpage_group-info').css('position', 'static');
+            $('.fullpage_group-info').css('top', '0');
+            $('.fullpage_group-info').scrollTop(scrollTopValue);
+            $('.fullpage_group-info').css('margin-right', '0');
+            $('.fullpage_group-info').css('top', '0');
+        });
+    }
 
 
     //対応する団体情報を開く
     //団体表示
-    if (viewportWidth < smartphone) {
-        $('.group-exhibit').click(function() {
+
+    if (widthRatio < '0.7') {
+        $('.group-exhibit').click(function () {
             var groupInfoNumber = $(this).closest('tr').index();
             var groupInfoOpenSrc = 'GroupExhibit.html#Home/' + groupInfoNumber;
             $('.group-info_iframe').attr('src', groupInfoOpenSrc);
-            $('.group-info_cnt').css('visibility','visible').animate({opacity: 1}, 400);
-            $('body').css('overflow', 'hidden');
-            $('body').css('margin-right', scrollBarWidth);
+            openGroupInfo();
         });
-    }else if (viewportWidth < iPadPro) {
-        $('.group-exhibit').click(function() {
+    } else if (widthRatio < '1.7') {
+        $('.group-exhibit').click(function () {
             var groupInfoNumber = $(this).closest('tr').index();
             var groupInfoOpenSrc = 'GroupExhibit.html#Home/' + Math.floor(groupInfoNumber / 2);
             $('.group-info_iframe').attr('src', groupInfoOpenSrc);
-            $('.group-info_cnt').css('visibility','visible').animate({opacity: 1}, 400);
-            $('body').css('overflow', 'hidden');
-            $('body').css('margin-right', scrollBarWidth);
+            openGroupInfo();
         });
-    }else{
-        $('.group-exhibit').click(function() {
+    } else {
+        $('.group-exhibit').click(function () {
             var groupInfoNumber = $(this).closest('tr').index();
             var groupInfoOpenSrc = 'GroupExhibit.html#Home/' + Math.floor(groupInfoNumber / 3);
             $('.group-info_iframe').attr('src', groupInfoOpenSrc);
-            $('.group-info_cnt').css('visibility','visible').animate({opacity: 1}, 400);
-            $('body').css('overflow', 'hidden');
-            $('body').css('margin-right', scrollBarWidth);
+            openGroupInfo();
         });
     }
 
-    $('.group-info_close').click(function() {
-        $('.group-info_cnt').animate({opacity: 0}, 400, function() {
-            $('.group-info_cnt').css('visibility','hidden');
-            $('body').css('overflow', 'auto');
-            $('body').css('margin-right', '0');
-        });
+    //閉じるボタン
+    $('.group-info_close').click(function () {
+        closeGroupInfo();
     });
+
+    //キー押下で閉じる
+    $(document).keyup(function () {
+        closeGroupInfo();
+    });
+
+    //上下スワイプで閉じる
+    /*$(document).hammer()
+        .data('hammer')
+        .get('swipe')
+        .set({
+            direction: Hammer.DIRECTION_VERTICAL
+        });
+        on('swipeup', function () {
+            closeGroupInfo();
+        });
+        on('tap', function () {
+            closeGroupInfo();
+        });
+    */
 });
