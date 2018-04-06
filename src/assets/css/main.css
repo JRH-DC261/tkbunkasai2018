@@ -274,7 +274,8 @@ ul {
 
 .group-info {
   display: inline-block;
-  vertical-align: top; }
+  vertical-align: top;
+  overflow: hidden; }
 
 .group-info.__display3.__L1, .group-info.__display3.__L2 {
   margin-left: 4.5%;
@@ -306,7 +307,9 @@ ul {
   background-size: cover; }
 
 #id-group-list {
-  text-align: center; }
+  text-align: center;
+  padding-top: 39px;
+  width: 100%; }
 
 .group-list {
   padding: 0;
@@ -317,10 +320,19 @@ ul {
   padding: 7.5px 5px 7.5px 5px;
   text-align: left; }
 
+a.anchor {
+  display: block;
+  position: relative;
+  top: -39px;
+  visibility: hidden; }
+
 .group-section {
   background-color: #dd9999;
   padding: 10px 0 10px 0;
-  margin: 0; }
+  margin: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 39px; }
 
 .group-info_cnt {
   position: fixed;
@@ -331,9 +343,7 @@ ul {
   z-index: 1000;
   visibility: hidden;
   background-color: rgba(255, 255, 255, 0.9);
-  opacity: 0;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch; }
+  opacity: 0; }
 
 .group-info_iframe {
   position: absolute;
@@ -346,7 +356,7 @@ ul {
 
 .group-info_close {
   position: fixed;
-  bottom: 0;
+  bottom: -10px;
   padding: 10px;
   z-index: 1100;
   font-size: 40px;

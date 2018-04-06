@@ -8,3 +8,4 @@ src/_notes/dwsync.xml
 node_modules/**/*
 .htaccess
 /src/.ftpsync_settings
+/src/assets/img/

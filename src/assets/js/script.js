@@ -44,20 +44,6 @@ $(document).ready(function () {
     $('#header').css('width', headerWidth);
     $('#header').css('padding-right', scrollBarWidth);
 
-    //画面スクロール禁止
-    var freezeVp = function (e) {
-        e.preventDefault();
-    };
-
-    function stopBodyScrolling(bool) {
-        if (bool === true) {
-            document.body.addEventListener("touchmove", freezeVp, false);
-        } else {
-            document.body.removeEventListener("touchmove", freezeVp, false);
-        }
-    }
-
-
     //画面回転時再読み込み
     /*$(window).bind('orientationchange',function() {
         location.reload();
@@ -136,9 +122,10 @@ $(document).ready(function () {
         slidesNavigation: false,
         paddingTop: '39px',
         responsiveHeight: 500,
+        scrollBar: true,
         autoScrolling: false,
         fitToSection: false,
-        bigSectionsDestination: top,
+        bigSectionsDestination: 'top',
         verticalCentered: true,
     });
 
@@ -148,21 +135,24 @@ $(document).ready(function () {
     $('.fp-next').append('<span class="fa fa-angle-right" id="arrowR"></span>');
 
     //団体一覧部門Sticky
-    $('.group-section').stick_in_parent({
+    /*$('.group-section').stick_in_parent({
         offset_top: 39
-    });
+    });*/
 
-    var scrollTopValue = $('.fullpage_group-info').scrollTop();
-    var scrollPosition = scrollTopValue + 'px';
 
     function openGroupInfo() {
         $('.group-info_cnt').css('visibility', 'visible').animate({
             opacity: 1
         }, 400);
+
         //bodyのスクロール禁止
-        $('.fullpage_group-info').css('top', scrollPosition);
-        $('.fullpage_group-info').css('position', 'fixed');
-        $('.fullpage_group-info').css('margin-right', scrollBarWidth);
+        scrollPosition = window.pageYOffset;
+        var scrollPositionTop = -scrollPosition + 'px';
+        $('#id-group-list').css('position', 'fixed');
+        $('#id-group-list').css('margin-top', scrollPositionTop);
+
+        //スクロールバー分の余白挿入
+        $('body').css('margin-right', scrollBarWidth);
     }
 
     function closeGroupInfo() {
@@ -170,14 +160,14 @@ $(document).ready(function () {
             opacity: 0
         }, 400, function () {
             $('.group-info_cnt').css('visibility', 'hidden');
-
-            //bodyのスクロール禁止解除
-            $('.fullpage_group-info').css('position', 'static');
-            $('.fullpage_group-info').css('top', '0');
-            $('.fullpage_group-info').scrollTop(scrollTopValue);
-            $('.fullpage_group-info').css('margin-right', '0');
-            $('.fullpage_group-info').css('top', '0');
         });
+
+        //bodyのスクロール禁止解除
+        $('#id-group-list').css('position', 'static');
+        $('#id-group-list').css('margin-top', '0');
+        $(window).scrollTop(scrollPosition);
+        //スクロールバー分の余白削除
+        $('body').css('margin-right', '0');
     }
 
 
@@ -189,6 +179,7 @@ $(document).ready(function () {
             var groupInfoNumber = $(this).closest('tr').index();
             var groupInfoOpenSrc = 'GroupExhibit.html#Home/' + groupInfoNumber;
             $('.group-info_iframe').attr('src', groupInfoOpenSrc);
+            var scrollPosition = window.pageYOffset;
             openGroupInfo();
         });
     } else if (widthRatio < '1.7') {
@@ -196,6 +187,7 @@ $(document).ready(function () {
             var groupInfoNumber = $(this).closest('tr').index();
             var groupInfoOpenSrc = 'GroupExhibit.html#Home/' + Math.floor(groupInfoNumber / 2);
             $('.group-info_iframe').attr('src', groupInfoOpenSrc);
+            var scrollPosition = window.pageYOffset;
             openGroupInfo();
         });
     } else {
@@ -203,6 +195,7 @@ $(document).ready(function () {
             var groupInfoNumber = $(this).closest('tr').index();
             var groupInfoOpenSrc = 'GroupExhibit.html#Home/' + Math.floor(groupInfoNumber / 3);
             $('.group-info_iframe').attr('src', groupInfoOpenSrc);
+            var scrollPosition = window.pageYOffset;
             openGroupInfo();
         });
     }

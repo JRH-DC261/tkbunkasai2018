@@ -313,6 +313,7 @@ ul{
 .group-info{
     display: inline-block;
     vertical-align: top;
+    overflow: hidden;
 }
 
 //PC用デコ3団体表示
@@ -361,6 +362,8 @@ ul{
 //参加団体一覧
 #id-group-list{
     text-align: center;
+    padding-top: 39px;
+    width: 100%;
 }
 
 .group-list{
@@ -368,15 +371,26 @@ ul{
     margin-left: auto;
     margin-right: auto;
 }
+
 .group-list td{
     padding: 7.5px 5px 7.5px 5px;
     text-align: left;
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -39px;
+  visibility: hidden;
 }
 
 .group-section {
     background-color: $palette4;
     padding: 10px 0 10px 0;
     margin: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 39px;
 }
 
 .group-info_cnt{
@@ -389,8 +403,8 @@ ul{
     visibility: hidden;
     background-color: rgba(255, 255, 255, 0.9);
     opacity: 0;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
+    //overflow: auto;
+    //-webkit-overflow-scrolling: touch;
 }
 .group-info_iframe{
     position: absolute;
@@ -403,7 +417,7 @@ ul{
 }
 .group-info_close{
     position: fixed;
-    bottom: 0;
+    bottom: -10px;
     padding: 10px;
     z-index: 1100;
     font-size: 40px;
