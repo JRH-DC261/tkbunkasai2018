@@ -367,7 +367,7 @@ a.anchor {
   padding: 10px 10px 0px 10px;
   z-index: 1100;
   font-size: 40px;
-  left: 50%;
+  left: 50vw;
   transform: translateX(-50%);
   visibility: hidden;
   opacity: 0; }

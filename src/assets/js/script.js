@@ -30,7 +30,7 @@ $(document).ready(function () {
         $('.group-slide .__M2').removeClass('__display3 __M2').addClass('__display2 __L');
         $('.group-slide .__R2').removeClass('__display3 __R2').addClass('__display2 __R');
         //addCloseButton();
-    }else{
+    } else {
         //addCloseButton();
     }
 
@@ -162,7 +162,7 @@ $(document).ready(function () {
 
         //スクロールバー分の余白挿入
         //$('body').css('margin-right', scrollBarWidth);
-        $('#id-group-list').css('width', headerWidth+scrollBarWidth);
+        $('#id-group-list').css('width', headerWidth + scrollBarWidth);
         $('#id-group-list').css('margin-right', scrollBarWidth);
     }
 
