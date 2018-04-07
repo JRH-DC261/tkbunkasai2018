@@ -161,7 +161,9 @@ $(document).ready(function () {
         $('#id-group-list').css('margin-top', scrollPositionTop);
 
         //スクロールバー分の余白挿入
-        $('body').css('margin-right', scrollBarWidth);
+        //$('body').css('margin-right', scrollBarWidth);
+        $('#id-group-list').css('width', headerWidth+scrollBarWidth);
+        $('#id-group-list').css('margin-right', scrollBarWidth);
     }
 
     function closeGroupInfo() {
@@ -176,7 +178,8 @@ $(document).ready(function () {
         $('#id-group-list').css('margin-top', '0');
         $(window).scrollTop(scrollPosition);
         //スクロールバー分の余白削除
-        $('body').css('margin-right', '0');
+        //$('body').css('margin-right', '0');
+        $('#id-group-list').css('width', '100%');
     }
 
 
