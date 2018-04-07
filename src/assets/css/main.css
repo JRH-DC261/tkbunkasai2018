@@ -273,9 +273,7 @@ ul {
   margin: auto; }
 
 .group-info {
-  display: inline-block;
-  vertical-align: top;
-  overflow: hidden; }
+  display: inline-block; }
 
 .group-info.__display3.__L1, .group-info.__display3.__L2 {
   margin-left: 4.5%;
@@ -305,6 +303,12 @@ ul {
   background-image: url("../img/DSC02867-Dev.jpg");
   background-repeat: no-repeat;
   background-size: cover; }
+
+#id-group-info {
+  text-align: center;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  width: 100%; }
 
 #id-group-list {
   text-align: center;
@@ -336,32 +340,37 @@ a.anchor {
 
 .group-info_cnt {
   position: fixed;
-  width: 100%;
-  height: 100%;
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
   border: 0;
-  margin: 0;
   z-index: 1000;
   visibility: hidden;
   background-color: rgba(255, 255, 255, 0.9);
-  opacity: 0; }
+  opacity: 0;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
 
 .group-info_iframe {
   position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 0;
+  max-height: 90%;
+  max-width: 100%;
+  min-height: 90%;
+  min-width: 100%;
+  width: 0;
   border-style: none; }
 
 .group-info_close {
   position: fixed;
-  bottom: -10px;
-  padding: 10px;
+  bottom: 0px;
+  padding: 10px 10px 0px 10px;
   z-index: 1100;
   font-size: 40px;
   left: 50%;
-  transform: translateX(-50%); }
+  transform: translateX(-50%);
+  visibility: hidden;
+  opacity: 0; }
 
 .deco-icon {
   height: 30px; }

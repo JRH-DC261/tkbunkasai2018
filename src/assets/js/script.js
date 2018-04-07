@@ -7,11 +7,18 @@ $(document).ready(function () {
     var viewportHeight = $(window).height();
     var widthRatio = viewportWidth / viewportHeight;
 
-    if (widthRatio < '0.7') {
+    //画面高が小さいときは参加団体情報スクロール可
+    if (viewportHeight < 500) {
+        $('#id-group-info').addClass('fp-auto-height');
+    }
+
+    //参加団体の1画面当たり表示数決定
+    if (viewportWidth < smartphone) {
         //1団体表示
         $('.group-slide div').removeClass('__display3 __L1 __M1 __R1 __L2 __M2 __R2').addClass('slide __display1');
         $('.group-slide').removeClass('slide');
-    } else if (widthRatio < '1.7') {
+        //addCloseButton();
+    } else if (viewportWidth < iPadPro) {
         //2団体表示
         $('.group-slide__extra').addClass('slide');
         $('.group-slide__extra').append($('.group-slide .__R1'));
@@ -22,6 +29,9 @@ $(document).ready(function () {
         $('.group-slide .__L2').removeClass('__display3 __L2').addClass('__display2 __R');
         $('.group-slide .__M2').removeClass('__display3 __M2').addClass('__display2 __L');
         $('.group-slide .__R2').removeClass('__display3 __R2').addClass('__display2 __R');
+        //addCloseButton();
+    }else{
+        //addCloseButton();
     }
 
     //スクロールバー幅取得
@@ -59,7 +69,6 @@ $(document).ready(function () {
             location.reload();
         }, 200);
     });*/
-
 
 
     //Slicknav設定
@@ -114,7 +123,7 @@ $(document).ready(function () {
     });
 
 
-    //fullpage
+    //fullpage設定
     $('#fullpage').fullpage({
         anchors: ['Home', 'Information', 'Access', 'Group', 'Timetable', 'Downloads'],
         menu: '#header',
@@ -139,9 +148,9 @@ $(document).ready(function () {
         offset_top: 39
     });*/
 
-
+    //参加団体情報開閉
     function openGroupInfo() {
-        $('.group-info_cnt').css('visibility', 'visible').animate({
+        $('.group-info_cnt, .group-info_close').css('visibility', 'visible').animate({
             opacity: 1
         }, 400);
 
@@ -156,10 +165,10 @@ $(document).ready(function () {
     }
 
     function closeGroupInfo() {
-        $('.group-info_cnt').animate({
+        $('.group-info_cnt, .group-info_close').animate({
             opacity: 0
         }, 400, function () {
-            $('.group-info_cnt').css('visibility', 'hidden');
+            $('.group-info_cnt, .group-info_close').css('visibility', 'hidden');
         });
 
         //bodyのスクロール禁止解除
@@ -171,10 +180,7 @@ $(document).ready(function () {
     }
 
 
-    //対応する団体情報を開く
-    //団体表示
-
-    if (widthRatio < '0.7') {
+    if (viewportWidth < smartphone) {
         $('.group-exhibit').click(function () {
             var groupInfoNumber = $(this).closest('tr').index();
             var groupInfoOpenSrc = 'GroupExhibit.html#Home/' + groupInfoNumber;
@@ -182,7 +188,7 @@ $(document).ready(function () {
             var scrollPosition = window.pageYOffset;
             openGroupInfo();
         });
-    } else if (widthRatio < '1.7') {
+    } else if (viewportWidth < iPadPro) {
         $('.group-exhibit').click(function () {
             var groupInfoNumber = $(this).closest('tr').index();
             var groupInfoOpenSrc = 'GroupExhibit.html#Home/' + Math.floor(groupInfoNumber / 2);
