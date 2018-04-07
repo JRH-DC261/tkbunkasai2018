@@ -36,6 +36,9 @@ a {
 ul {
   list-style-type: none; }
 
+.br-sp {
+  display: none; }
+
 #header {
   width: 100%;
   position: fixed;
@@ -109,6 +112,7 @@ ul {
   height: 39px;
   line-height: 40px;
   color: #fff;
+  font-family: "新ゴ R","Shin Go Regular",sans-serif;
   font-size: 20px;
   z-index: 110; }
 
@@ -415,6 +419,8 @@ a.anchor {
     width: 90%;
     margin-left: 5%;
     margin-right: 5%; }
+  .access_text ul {
+    padding-left: 7.5%; }
   .deco-icon {
     height: 7.5vw; }
   .group-info_img {
@@ -439,6 +445,8 @@ a.anchor {
     font-size: 4vw; }
   td {
     font-size: 4vw; }
+  .br-sp {
+    display: inline; }
   #header {
     display: none; }
   #header-sp {
