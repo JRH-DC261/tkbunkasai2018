@@ -77,7 +77,7 @@ $(document).ready(function () {
     });
 
     //現在位置表示(スマホ)
-    function locationHashDefault(){
+    function locationHashChanged() {
         if (location.hash == '#Home') {
             $('#header_current-section-sp').html('');
         } else if (location.hash == '#Information') {
@@ -90,45 +90,12 @@ $(document).ready(function () {
             $('#header_current-section-sp').html('タイムテーブル');
         } else if (location.hash == '#Downloads') {
             $('#header_current-section-sp').html('ダウンロード');
-        } else {
-            $('#header_current-section-sp').html('');
-        }
-    }
-    function locationHashChangeDown(){
-        if (location.hash == '#Home') {
-            $('#header_current-section-sp').html('ご案内');
-        } else if (location.hash == '#Information') {
-            $('#header_current-section-sp').html('アクセス');
-        } else if (location.hash == '#Access') {
-            $('#header_current-section-sp').html('参加団体');
-        } else if (location.hash == '#Group') {
-            $('#header_current-section-sp').html('タイムテーブル');
-        } else if (location.hash == '#Timetable') {
-            $('#header_current-section-sp').html('ダウンロード');
-        } else if (location.hash == '#Downloads') {
-            $('#header_current-section-sp').html('');
-        } else {
-            $('#header_current-section-sp').html('');
-        }
-    }function locationHashChangeUp(){
-        if (location.hash == '#Home') {
-            $('#header_current-section-sp').html('');
-        } else if (location.hash == '#Information') {
-            $('#header_current-section-sp').html('');
-        } else if (location.hash == '#Access') {
-            $('#header_current-section-sp').html('ご案内');
-        } else if (location.hash == '#Group') {
-            $('#header_current-section-sp').html('アクセス');
-        } else if (location.hash == '#Timetable') {
-            $('#header_current-section-sp').html('参加団体');
-        } else if (location.hash == '#Downloads') {
-            $('#header_current-section-sp').html('タイムテーブル');
         } else {
             $('#header_current-section-sp').html('');
         }
     }
     //ロード時に表示
-    locationHashDefault();
+    locationHashChanged();
 
 
     //ハンバーガー→Xアニメーション
@@ -157,24 +124,28 @@ $(document).ready(function () {
         verticalCentered: true,
 
         //スクロール時に現在位置表示変更(スマホ)
-        onLeave: function(index, nextIndex, direction){
-            if(direction == 'up'){
-                locationHashChangeUp();
-            }else if(direction == 'down'){
-                locationHashChangeDown();
+        onLeave: function (index, nextIndex, direction) {
+            if (nextIndex == 1) {
+                $('#header_current-section-sp').html('');
+            } else if (nextIndex == 2) {
+                $('#header_current-section-sp').html('ご案内');
+            } else if (nextIndex == 3) {
+                $('#header_current-section-sp').html('アクセス');
+            } else if (nextIndex == 4) {
+                $('#header_current-section-sp').html('参加団体');
+            } else if (nextIndex == 5) {
+                $('#header_current-section-sp').html('タイムテーブル');
+            } else if (nextIndex == 6) {
+                $('#header_current-section-sp').html('ダウンロード');
+            } else {
+                $('#header_current-section-sp').html('');
             }
         }
     });
 
-
     //横スライド矢印
     $('.fp-prev').append('<span class="fa fa-angle-left" id="arrowL"></span>');
     $('.fp-next').append('<span class="fa fa-angle-right" id="arrowR"></span>');
-
-    //団体一覧部門Sticky
-    /*$('.group-section').stick_in_parent({
-        offset_top: 39
-    });*/
 
     //参加団体情報開閉
     function openGroupInfo() {
