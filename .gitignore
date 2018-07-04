@@ -10,3 +10,9 @@ node_modules/**/*
 /src/.ftpsync_settings
 /src/assets/img/
 /src/.brackets.json
+/package-lock.json
+/package - コピー.json
+/package.json
+/gulpfile_Old.js
+/gulpfile - コピー.js
+/gulpfile.js
