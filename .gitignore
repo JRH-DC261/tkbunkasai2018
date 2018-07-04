@@ -16,3 +16,4 @@ node_modules/**/*
 /gulpfile_Old.js
 /gulpfile - コピー.js
 /gulpfile.js
+/.brackets.json
