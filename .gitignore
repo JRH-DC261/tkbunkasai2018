@@ -9,3 +9,4 @@ node_modules/**/*
 .htaccess
 /src/.ftpsync_settings
 /src/assets/img/
+/src/.brackets.json

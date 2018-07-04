@@ -22,6 +22,9 @@
     <script type="text/javascript" src="assets/js/scrolloverflow.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
     <script type="text/javascript" src="assets/js/jquery.slicknav.min.js"></script>
+    <script type="text/javascript" src="assets/js/hammer.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.hammer.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.touchSwipe.min.js"></script>
 	<script type="text/javascript" src="assets/js/script.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -34,9 +37,9 @@
             <ul>
                 <li class="header_title"><a href="index.html#Home">写真館(仮)</a></li>
 
-                <li data-menuanchor="Information" class="header_text header_right"><a href="index.html#Information">ご案内</a></li>
-                <li data-menuanchor="Access" class="header_text"><a href="index.html#Access">アクセス</a></li>
-                <li data-menuanchor="Group" class="header_text"><a href="index.html#Group">参加団体</a></li>
+                <li data-menuanchor="Information" class="header_text header_right"><a href="index.html#About" class="__short">概要</a></li><li data-menuanchor="Information" class="header_text header_right"><a href="index.html#Information" class="__short">ご案内</a></li>
+                <li data-menuanchor="Access" class="header_text"><a href="index.html#Access" class="__short">アクセス</a></li>
+                <li data-menuanchor="Group" class="header_text"><a href="index.html#Group" class="__short">参加団体</a></li>
                 <li data-menuanchor="Timetable" class="header_text"><a href="index.html#Timetable">タイムテーブル</a></li>
                 <li data-menuanchor="Downloads" class="header_text"><a href="index.html#Downloads">ダウンロード</a></li>
                 <li class="header_SNS"><a href="https://twitter.com/tsukukomafesta/" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a></li>
@@ -45,29 +48,29 @@
     </div>
 
     <div id="header-sp">
-        <a href="#Home">タイトル</a>
+        <a href="index.html"#Home>タイトル</a>
     </div>
     <div id="header_current-section-sp"></div>
 
     <div id="menu-sp">
         <ul>
-            <li data-menuanchor="Information"><a href="index.html#Information">ご案内</a></li>
-            <li data-menuanchor="Access"><a href="index.html#Access">アクセス</a></li>
-            <li data-menuanchor="Group"><a href="index.html#Group">参加団体</a></li>
-            <li data-menuanchor="Timetable"><a href="index.html#Timetable">タイムテーブル</a></li>
-            <li data-menuanchor="Downloads"><a href="index.html#Downloads">ダウンロード</a></li>
+            <li data-menuanchor="About"><a href="index.html#About" class="menu_link">概要</a></li><li data-menuanchor="Information"><a href="index.html#Information" class="menu_link">ご案内</a></li>
+            <li data-menuanchor="Access"><a href="index.html#Access" class="menu_link">アクセス</a></li>
+            <li data-menuanchor="Group"><a href="index.html#Group" class="menu_link">参加団体</a></li>
+            <li data-menuanchor="Timetable"><a href="index.html#Timetable" class="menu_link">タイムテーブル</a></li>
+            <li data-menuanchor="Downloads"><a href="index.html#Downloads" class="menu_link">ダウンロード</a></li>
         </ul>
     </div>
 
     <div class="group-info_cnt">
         <iframe src="GroupExhibit.html" class="group-info_iframe"></iframe>
     </div>
-    <div class="group-info_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+    <div class="group-info_close" title="閉じる"><i class="fa fa-times" aria-hidden="true"></i></div>
 
     <div id="">
         <div class="" id="id-group-list">
             <div>
-                <a class="anchor" id="Exhibit"></a>
+                <a class="group-section_anchor" id="Exhibit"></a>
                 <h1 class="section_title">参加団体</h1>
                 <h2 class="group-section">
                     展示部門
@@ -75,91 +78,111 @@
                 <table class="group-list">
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_1.png"></td>
-                        <td>任意の団体1　１２３４５６７８９０</td>
+                        <td>高3縁日班</td>
+                        <td>THE ENNICHI M@STER</td>
                     </tr>
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_2.png"></td>
-                        <td>団体2</td>
+                        <td>高3食品班</td>
+                        <td>Food Lovers</td>
                     </tr>
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_3.png"></td>
-                        <td>団体3</td>
+                        <td>高3喫茶班</td>
+                        <td>Cafe Nuage</td>
                     </tr>
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_4.png"></td>
-                        <td>団体4</td>
+                        <td>高3コント班</td>
+                        <td>笑舞</td>
                     </tr>
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_5.png"></td>
-                        <td>団体5</td>
+                        <td>高3演劇班</td>
+                        <td>66期高3演劇班±</td>
                     </tr>
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_6.png"></td>
-                        <td>団体6</td>
+                        <td>高3ステージ班</td>
+                        <td>台家族</td>
                     </tr>
                 </table>
+                <br>
             </div>
             <div>
-                <a class="anchor" id="Theater"></a>
+                <a class="group-section_anchor" id="Theater"></a>
                 <h2 class="group-section">
                     演劇部門
                 </h2>
                 <table class="group-list">
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_1.png"></td>
-                        <td>任意の団体1　１２３４５６７８９０</td>
+                        <td>高3縁日班</td>
+                        <td>THE ENNICHI M@STER</td>
                     </tr>
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_2.png"></td>
-                        <td>団体2</td>
+                        <td>高3食品班</td>
+                        <td>Food Lovers</td>
                     </tr>
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_3.png"></td>
-                        <td>団体3</td>
+                        <td>高3喫茶班</td>
+                        <td>Cafe Nuage</td>
                     </tr>
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_4.png"></td>
-                        <td>団体4</td>
+                        <td>高3コント班</td>
+                        <td>笑舞</td>
                     </tr>
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_5.png"></td>
-                        <td>団体5</td>
+                        <td>高3演劇班</td>
+                        <td>66期高3演劇班±</td>
                     </tr>
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_6.png"></td>
-                        <td>団体6</td>
+                        <td>高3ステージ班</td>
+                        <td>台家族</td>
                     </tr>
                 </table>
+                <br>
             </div>
             <div>
-                <a class="anchor" id="Perform"></a>
+                <a class="group-section_anchor" id="Perform"></a>
                 <h2 class="group-section">
                     パフォーマンス部門
                 </h2>
                 <table class="group-list">
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_1.png"></td>
-                        <td>任意の団体1　１２３４５６７８９０</td>
+                        <td>高3縁日班</td>
+                        <td>THE ENNICHI M@STER</td>
                     </tr>
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_2.png"></td>
-                        <td>団体2</td>
+                        <td>高3食品班</td>
+                        <td>Food Lovers</td>
                     </tr>
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_3.png"></td>
-                        <td>団体3</td>
+                        <td>高3喫茶班</td>
+                        <td>Cafe Nuage</td>
                     </tr>
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_4.png"></td>
-                        <td>団体4</td>
+                        <td>高3コント班</td>
+                        <td>笑舞</td>
                     </tr>
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_5.png"></td>
-                        <td>団体5</td>
+                        <td>高3演劇班</td>
+                        <td>66期高3演劇班±</td>
                     </tr>
                     <tr class="group-exhibit">
                         <td><img class="deco-icon" src="assets/img/deco-icon/deco-icon_6.png"></td>
-                        <td>団体6</td>
+                        <td>高3ステージ班</td>
+                        <td>台家族</td>
                     </tr>
                 </table>
             </div>

@@ -43,10 +43,19 @@
     .header_text a{
         width: $header_li-width-sp;
     }
+    .header_text .__short{
+        width: $header_li__short-width-sp;
+    }
     .header_SNS a{
         width: $header_SNS-width-sp;
     }
 
+
+    //ご案内
+    .information_text{
+        width: 90%;
+        margin: 0 auto 2.5% auto;
+    }
 
     //アクセス
     #id-access img{
@@ -59,12 +68,8 @@
         margin-left: 5%;
         margin-right: 5%;
     }
-    .access_text ul{
-        padding-left: 7.5%;
-    }
-
     .deco-icon{
-        height: 7.5vw;
+        height: 5vw;
     }
 
     .group-info_img{
@@ -121,56 +126,6 @@
     }
     .section_title{
         display: none;
-    }
-
-    //ハンバーガーメニュー背景色
-    .slicknav_menu{
-        background-color: $palette3;
-    }
-    .slicknav_btn{
-        background-color: $palette4;
-    }
-
-    //ハンバーガーメニューのエフェクト
-    .slicknav_icon,
-    .slicknav_icon span {
-        display: inline-block;
-        transition: all .4s;
-        box-sizing: border-box;
-    }
-    .slicknav_icon {
-        position: relative;
-        width: 50px;
-        height: 44px;
-    }
-    .slicknav_menu .slicknav_icon-bar{
-        position: absolute;
-        left: 0;
-    }
-    .slicknav_icon span:nth-of-type(1) {
-        top: 0;
-    }
-    .slicknav_icon span:nth-of-type(2) {
-        top: 3px;
-    }
-    .slicknav_icon span:nth-of-type(3) {
-        bottom: 0;
-    }
-    .active .slicknav_icon-bar:nth-of-type(1) {
-        -webkit-transform: translateY(6px) rotate(-45deg);
-        transform: translateY(6px) rotate(-45deg);
-    }
-    .active .slicknav_icon-bar:nth-of-type(2) {
-        opacity: 0;
-    }
-    .active .slicknav_icon-bar:nth-of-type(3) {
-        -webkit-transform: translateY(-6px) rotate(45deg);
-        transform: translateY(-6px) rotate(45deg);
-    }
-
-    #id-home{
-        background-image: url("../img/1242_2208_01.jpg");
-        background-position: top center;
     }
 
     .group_cnt{

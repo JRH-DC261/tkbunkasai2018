@@ -55,9 +55,9 @@ $(document).ready(function () {
     $('#header').css('padding-right', scrollBarWidth);
 
     //画面回転時再読み込み
-    /*$(window).bind('orientationchange',function() {
+    $(window).bind('orientationchange',function() {
         location.reload();
-    });*/
+    });
 
     //画面リサイズ時再読み込み
     /*var timer = false;
@@ -103,7 +103,7 @@ $(document).ready(function () {
         $(this).toggleClass('active');
     });
 
-    $('#fullpage').click(function () {
+    $('#fullpage, #id-group-list, .menu_link').click(function () {
         $('#menu-sp').slicknav('close');
         $('.slicknav_btn').removeClass('active');
     });
@@ -111,7 +111,7 @@ $(document).ready(function () {
 
     //fullpage設定
     $('#fullpage').fullpage({
-        anchors: ['Home', 'Information', 'Access', 'Group', 'Timetable', 'Downloads'],
+        anchors: ['Home', 'About', 'Information', 'Access', 'Group', 'Timetable', 'Downloads'],
         menu: '#header',
         scrollOverflow: false,
         slidesNavigation: false,
@@ -128,14 +128,16 @@ $(document).ready(function () {
             if (nextIndex == 1) {
                 $('#header_current-section-sp').html('');
             } else if (nextIndex == 2) {
-                $('#header_current-section-sp').html('ご案内');
+                $('#header_current-section-sp').html('概要');
             } else if (nextIndex == 3) {
-                $('#header_current-section-sp').html('アクセス');
+                $('#header_current-section-sp').html('ご案内');
             } else if (nextIndex == 4) {
-                $('#header_current-section-sp').html('参加団体');
+                $('#header_current-section-sp').html('アクセス');
             } else if (nextIndex == 5) {
-                $('#header_current-section-sp').html('タイムテーブル');
+                $('#header_current-section-sp').html('参加団体');
             } else if (nextIndex == 6) {
+                $('#header_current-section-sp').html('タイムテーブル');
+            } else if (nextIndex == 7) {
                 $('#header_current-section-sp').html('ダウンロード');
             } else {
                 $('#header_current-section-sp').html('');
@@ -185,7 +187,7 @@ $(document).ready(function () {
     if (viewportWidth < smartphone) {
         $('.group-exhibit').click(function () {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'GroupExhibit.html#Home/' + groupInfoNumber;
+            var groupInfoOpenSrc = 'GroupExhibit.html#1/' + groupInfoNumber;
             $('.group-info_iframe').attr('src', groupInfoOpenSrc);
             var scrollPosition = window.pageYOffset;
             openGroupInfo();
@@ -193,7 +195,7 @@ $(document).ready(function () {
     } else if (viewportWidth < iPadPro) {
         $('.group-exhibit').click(function () {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'GroupExhibit.html#Home/' + Math.floor(groupInfoNumber / 2);
+            var groupInfoOpenSrc = 'GroupExhibit.html#1/' + Math.floor(groupInfoNumber / 2);
             $('.group-info_iframe').attr('src', groupInfoOpenSrc);
             var scrollPosition = window.pageYOffset;
             openGroupInfo();
@@ -201,7 +203,7 @@ $(document).ready(function () {
     } else {
         $('.group-exhibit').click(function () {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'GroupExhibit.html#Home/' + Math.floor(groupInfoNumber / 3);
+            var groupInfoOpenSrc = 'GroupExhibit.html#1/' + Math.floor(groupInfoNumber / 3);
             $('.group-info_iframe').attr('src', groupInfoOpenSrc);
             var scrollPosition = window.pageYOffset;
             openGroupInfo();
@@ -219,17 +221,21 @@ $(document).ready(function () {
     });
 
     //上下スワイプで閉じる
-    /*$(document).hammer()
-        .data('hammer')
-        .get('swipe')
-        .set({
-            direction: Hammer.DIRECTION_VERTICAL
-        });
-        on('swipeup', function () {
-            closeGroupInfo();
-        });
-        on('tap', function () {
-            closeGroupInfo();
-        });
-    */
+    /*var hammertime = $('#id-group-list').hammer();
+    hammertime.get('swipe').set({
+        direction: Hammer.DIRECTION_VERTICAL
+    });
+    hammertime.on('swipe', function () {
+        openGroupInfo();
+        $('#header_current-section-sp').html('あ');
+        alert('あ');
+    });*/
+    /*$('#id-group-list, .group-info').swipe({
+        swipeDown:function() {
+            openGroupInfo();
+            alert('You swiped') ;
+        },
+        threshold:10,
+        allowPageScroll:"vertical"
+    });*/
 });
