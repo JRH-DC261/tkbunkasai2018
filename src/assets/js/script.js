@@ -123,8 +123,10 @@ $(document).ready(function () {
             var loadedSection = this;
             if(destination == 1){
                 $('#menu').removeClass('active');
+                $.fn.fullpage.setAllowScrolling(true);
             }else{
                 $('#menu').addClass('active');
+                $.fn.fullpage.setAllowScrolling(true);
             }
         },
         onLeave: function(origin, destination, direction){
@@ -137,20 +139,18 @@ $(document).ready(function () {
         },
         onSlideLeave: function(section, origin, destination, direction){
             var leavingSlide = this;
-            if(destination == 0){
+            if(destination == 1){
                 $.fn.fullpage.setAllowScrolling(false);
-            }else{
-                $.fn.fullpage.setAllowScrolling(true);
             }
         },
-        /*afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
+        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
             var loadedSlide = this;
             if(slideIndex == 1){
                 $.fn.fullpage.setAllowScrolling(false);
             }else{
                 $.fn.fullpage.setAllowScrolling(true);
             }
-        }*/
+        }
     });
 
     //横スライド矢印
