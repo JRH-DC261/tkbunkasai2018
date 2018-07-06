@@ -34,22 +34,9 @@
         font-size: $home_down-size-sp;
     }
 
-    #header li a{
+    #menu li a{
         font-size: 1.5vw;
     }
-    .header_title a{
-        width: $header_li-width-sp;
-    }
-    .header_text a{
-        width: $header_li-width-sp;
-    }
-    .header_text .__short{
-        width: $header_li__short-width-sp;
-    }
-    .header_SNS a{
-        width: $header_SNS-width-sp;
-    }
-
 
     //ご案内
     .information_text{
@@ -112,18 +99,10 @@
         display: inline;
     }
 
-    #header{
+    #menu{
         display: none;
     }
-    #header-sp{
-        display: block;
-    }
-    .slicknav_menu{
-        display: block;
-    }
-    #header_current-section-sp{
-        display: block;
-    }
+
     .section_title{
         display: none;
     }

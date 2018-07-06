@@ -1,8 +1,8 @@
 @charset 'utf-8';
 
-$header-color: rgba(255, 255, 255, 0.9) !default;
-//$header-hover-color: rgba(200, 200, 200, 0.75) !default;
-$header-hover-color: rgba(76, 161, 212, 0.75) !default;
+$menu-color: rgba(255, 255, 255, 0.9) !default;
+//$menu-hover-color: rgba(200, 200, 200, 0.75) !default;
+$menu-hover-color: rgba(76, 161, 212, 0.75) !default;
 
 $palette1: #283e6f !default;
 $palette2: #134186 !default;
@@ -22,11 +22,6 @@ $palette3: #6ab259 !default;//鮮緑
 $palette4: #357743 !default;//常盤色
 $palette5: #23532d !default;//深緑*/
 
-$header_li-width: 125px !default;
-$header_li-width-sp: 12vw !default;
-$header_li__short-width-sp: 9vw !default;
-$header_SNS-width: 30px !default;
-$header_SNS-width-sp: 3vw !default;
 
 //参加団体一覧
 $group_cnt-row-height: 20vh;

@@ -14,4 +14,3 @@ node_modules/**/*
 /gulpfile_Old.js
 /gulpfile.js
 /.brackets.json
-/.gitignore

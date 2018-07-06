@@ -71,11 +71,7 @@ $(document).ready(function () {
     });*/
 
 
-    //Slicknav設定
-    $('#menu-sp').slicknav({
-        label: ''
-    });
-
+    /*
     //現在位置表示(スマホ)
     function locationHashChanged() {
         if (location.hash == '#Home') {
@@ -96,8 +92,9 @@ $(document).ready(function () {
     }
     //ロード時に表示
     locationHashChanged();
+    */
 
-
+    /*
     //ハンバーガー→Xアニメーション
     $('.slicknav_btn').click(function () {
         $(this).toggleClass('active');
@@ -107,50 +104,100 @@ $(document).ready(function () {
         $('#menu-sp').slicknav('close');
         $('.slicknav_btn').removeClass('active');
     });
-
+    */
 
     //fullpage設定
     $('#fullpage').fullpage({
-        anchors: ['Home', 'About', 'Information', 'Access', 'Group', 'Timetable', 'Downloads'],
+        anchors: ['Home', 'About', 'Information', 'Group', 'Timetable', 'Downloads'],
         menu: '#header',
-        scrollOverflow: false,
+        scrollOverflow: true,
         slidesNavigation: false,
-        paddingTop: '39px',
         responsiveHeight: 500,
-        scrollBar: true,
-        autoScrolling: false,
+        scrollBar: false,
+        autoScrolling: true,
         fitToSection: false,
         bigSectionsDestination: 'top',
         verticalCentered: true,
 
-        //スクロール時に現在位置表示変更(スマホ)
-        onLeave: function (index, nextIndex, direction) {
-            if (nextIndex == 1) {
-                $('#header_current-section-sp').html('');
-            } else if (nextIndex == 2) {
-                $('#header_current-section-sp').html('概要');
-            } else if (nextIndex == 3) {
-                $('#header_current-section-sp').html('ご案内');
-            } else if (nextIndex == 4) {
-                $('#header_current-section-sp').html('アクセス');
-            } else if (nextIndex == 5) {
-                $('#header_current-section-sp').html('参加団体');
-            } else if (nextIndex == 6) {
-                $('#header_current-section-sp').html('タイムテーブル');
-            } else if (nextIndex == 7) {
-                $('#header_current-section-sp').html('ダウンロード');
-            } else {
-                $('#header_current-section-sp').html('');
+        afterLoad: function(origin, destination, direction){
+            var loadedSection = this;
+            if(destination == 1){
+                $('#menu').removeClass('active');
+            }else{
+                $('#menu').addClass('active');
             }
-        }
+        },
+        onLeave: function(origin, destination, direction){
+            var leavingSection = this;
+            if(origin == 1){
+                $('#menu').addClass('active');
+            }else if(destination == 1){
+                $('#menu').removeClass('active');
+            }
+        },
+        onSlideLeave: function(section, origin, destination, direction){
+            var leavingSlide = this;
+            if(destination == 0){
+                $.fn.fullpage.setAllowScrolling(false);
+            }else{
+                $.fn.fullpage.setAllowScrolling(true);
+            }
+        },
+        /*afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
+            var loadedSlide = this;
+            if(slideIndex == 1){
+                $.fn.fullpage.setAllowScrolling(false);
+            }else{
+                $.fn.fullpage.setAllowScrolling(true);
+            }
+        }*/
     });
 
     //横スライド矢印
     $('.fp-prev').append('<span class="fa fa-angle-left" id="arrowL"></span>');
     $('.fp-next').append('<span class="fa fa-angle-right" id="arrowR"></span>');
 
+    //参加団体一覧開閉
+    function openGroupList() {
+        $('.group-list_cnt, .group-list_close').css('visibility', 'visible').animate({
+            opacity: 1
+        }, 400);
+
+        //スクロール禁止
+        $.fn.fullpage.setAllowScrolling(false);
+    }
+    function closeGroupList() {
+        $('.group-list_cnt, .group-list_close').animate({
+            opacity: 0
+        }, 400, function () {
+            $('.group-list_cnt, .group-list_close').css('visibility', 'hidden');
+        });
+
+        //スクロール禁止
+        $.fn.fullpage.setAllowScrolling(true);
+    }
+    //開く
+    $('.group_cnt_exhibit').click(function () {
+        $('.group-list_iframe').attr('src','GroupInfo.html#Exhibit');
+        openGroupList();
+    });
+    $('.group_cnt_theater').click(function () {
+        $('.group-list_iframe').attr('src','GroupInfo.html#Theater');
+        openGroupList();
+    });
+    //閉じるボタン
+    $('.group-list_close').click(function () {
+        closeGroupList();
+    });
+
     //参加団体情報開閉
     function openGroupInfo() {
+        $('.group-list_close', parent.document).animate({
+            opacity: 0
+        }, 400, function () {
+            $('.group-list_close', parent.document).css('visibility', 'hidden');
+        });
+
         $('.group-info_cnt, .group-info_close').css('visibility', 'visible').animate({
             opacity: 1
         }, 400);
@@ -181,6 +228,10 @@ $(document).ready(function () {
         //スクロールバー分の余白削除
         //$('body').css('margin-right', '0');
         $('#id-group-list').css('width', '100%');
+
+        $('.group-list_close', parent.document).css('visibility', 'visible').animate({
+            opacity: 1
+        }, 400);
     }
 
 
@@ -216,9 +267,9 @@ $(document).ready(function () {
     });
 
     //キー押下で閉じる
-    $(document).keyup(function () {
+    /*$(document).keyup(function () {
         closeGroupInfo();
-    });
+    });*/
 
     //上下スワイプで閉じる
     /*var hammertime = $('#id-group-list').hammer();
