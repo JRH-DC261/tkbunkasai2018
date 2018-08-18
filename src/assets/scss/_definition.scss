@@ -1,6 +1,6 @@
 @charset 'utf-8';
 
-$menu-color: rgba(255, 255, 255, 0.9) !default;
+$menu-color: rgba(255, 255, 255, 0.75) !default;
 //$menu-hover-color: rgba(200, 200, 200, 0.75) !default;
 $menu-hover-color: rgba(76, 161, 212, 0.75) !default;
 
@@ -31,6 +31,8 @@ $group_cnt-row-height-sp: 7.5vh;
 $home_down-size: 7.5vw !default;
 $home_down-size-expand: 10vw !default;
 //レスポンシブ用
+$home_down-size-tb: 15vw !default;
+$home_down-size-expand-tb: 20vw !default;
 $home_down-size-sp: 20vw !default;
 $home_down-size-expand-sp: 25vw !default;
 
@@ -40,4 +42,5 @@ $arrow-size: 5vw !default;
 $arrow-size-sp: 10vw !default;
 
 $iPadPro: 1025px !default;
+$iPad: 770px !default;
 $smartphone: 600px !default;

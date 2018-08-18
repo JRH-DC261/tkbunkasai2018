@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="utf-8">
-    <title>2018テスト</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ©筑波大学付属駒場中・高等学校文化祭実行委員会 2018 -->
+    <title>第67回筑駒文化祭公式サイト</title>
+    <meta name="description" content="第67回筑駒文化祭は2018年11月2日(金)～4日(日)に開催予定です。皆様のご来場をお待ちしております。">
+    <meta name="keywords" content="文化祭,筑駒,駒場,筑波,高校,中学,中学校,高等学校,つくこま,ぶんかさい">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116927226-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-116927226-1');
+
+    </script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
@@ -12,6 +30,18 @@
     <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#316544">
     <meta name="msapplication-TileColor" content="#316544">
     <meta name="theme-color" content="#ffffff">
+
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="第67回筑駒文化祭公式サイト">
+    <meta property="og:image" content="http://bunkasai.info/tkkm/2018pre/assets/og.png">
+    <meta property="og:url" content="http://bunkasai.info/tkkm/2018pre/">
+    <meta property="fb:app_id" content="210053346147406">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@tsukukomafesta">
+    <meta name="twitter:description" content="第67回筑駒文化祭は2018年11月2日(金)～4日(日)に開催予定です。皆様のご来場をお待ちしております。">
+    <meta name="twitter:image" content="http://bunkasai.info/tkkm/2018pre/assets/og.png">
+    <meta name="format-detection" content="telephone=no">-->
 
     <link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/jquery.fullPage.css" />
@@ -26,33 +56,43 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="//typesquare.com/accessor/script/typesquare.js?PmUV0TKqc8Y%3D" charset="utf-8"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 </head>
 
 
-<body>
-    <div id="menu">
-        <ul>
-            <li class="menu_title"><a href="#Home">タイトル</a></li>
-
-            <li data-menuanchor="About" class="menu_text"><a href="#About">概要</a></li>
-            <li data-menuanchor="Access" class="menu_text"><a href="#Information/Access">アクセス</a></li>
-            <li data-menuanchor="Group" class="menu_text"><a href="#Group">参加団体</a></li>
-            <li data-menuanchor="Timetable" class="menu_text"><a href="#Timetable">タイムテーブル</a></li>
-            <li data-menuanchor="Downloads" class="menu_text"><a href="#Downloads">ダウンロード</a></li>
-            <li class="menu_SNS"><a href="https://twitter.com/tsukukomafesta/" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a></li>
-            <li class="menu_SNS"><a href="https://facebook.com/tsukukomafesta/" target="_blank"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a></li>
-        </ul>
+<body id="index">
+    <div id="loader">
+        <img src="">
     </div>
+    <div id="blackout"></div>
+
+    <ul id="menu">
+        <li data-menuanchor="About" class="menu_text"><a class="menu_about">概&nbsp;要</a></li>
+        <li data-menuanchor="Access" class="menu_text"><a class="menu_access">アクセス</a></li>
+        <li data-menuanchor="Group" class="menu_text"><a class="menu_group">参加団体</a></li>
+        <li data-menuanchor="Timetable" class="menu_text"><a class="menu_timetable">タイムテーブル</a></li>
+        <li data-menuanchor="Downloads" class="menu_text"><a class="menu_downloads">ダウンロード</a></li>
+        <li class="menu_SNS"><a href="https://twitter.com/tsukukomafesta/" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
+            <a href="https://facebook.com/tsukukomafesta/" target="_blank"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a></li>
+        <li><a class="menu_home menu_nohover"><img src="assets/img/logo_black.svg"></a></li>
+    </ul>
 
     <div id="menu-sp">
-        <ul>
-            <li data-menuanchor="About"><a href="#About" class="menu_link">概要</a></li>
-            <li data-menuanchor="information"><a href="#information" class="menu_link">ご案内</a></li>
-            <li data-menuanchor="Access"><a href="#Information/Access" class="menu_link">アクセス</a></li>
-            <li data-menuanchor="Group"><a href="#Group" class="menu_link">参加団体</a></li>
-            <li data-menuanchor="Timetable"><a href="#Timetable" class="menu_link">タイムテーブル</a></li>
-            <li data-menuanchor="Downloads"><a href="#Downloads" class="menu_link">ダウンロード</a></li>
+        <div class="menu-sp_icon __open"></div>
+        <div class="menu-sp_icon __close"></div>
+        <ul id="menu-sp_nav">
+            <li><a class="menu_home menu_nohover"><img src="assets/img/logo_black.svg"></a></li>
+            <li data-menuanchor="About" class="menu-sp_text"><a class="menu_about">概&nbsp;要</a></li>
+            <li data-menuanchor="Access" class="menu-sp_text"><a class="menu_access">アクセス</a></li>
+            <li data-menuanchor="Group" class="menu-sp_text"><a class="menu_group">参加団体</a></li>
+            <li data-menuanchor="Timetable" class="menu-sp_text"><a class="menu_timetable">タイムテーブル</a></li>
+            <li data-menuanchor="Downloads" class="menu-sp_text"><a class="menu_downloads">ダウンロード</a></li>
+            <li class="menu-sp_SNS">
+                <a href="https://twitter.com/tsukukomafesta/" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
+                <a href="https://facebook.com/tsukukomafesta/" target="_blank"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a>
+            </li>
         </ul>
+        <a class="menu-sp_section"></1>
     </div>
 
     <div class="group-list_cnt">
@@ -60,39 +100,60 @@
     </div>
     <div class="group-list_close" title="閉じる"><i class="fa fa-times" aria-hidden="true"></i></div>
 
+
+
     <div id="fullpage">
         <div class="section" data-anchor="Home" id="id-home">
-            <h1 class="section_title">トップページ</h1><br><br>
-            <a id="home_down" href="#About"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <img class="home_logo" src="assets/img/logo.svg">
+            <h1 class="section_title"></h1>
+            <div class="home_content">
+                <div class="countdown">
+                    <div class="countdown_text __alignL">筑駒文化祭まで</div>
+                    <span class="countdown_text">&nbsp;</span>
+                    <span class="countdown_days"></span>
+                    <span class="countdown_text">&nbsp;日</span>
+                </div>
+                <div class="news">
+                    <div class="news_headline">新着情報</div>
+                    <div class="news_text"><span class="news_date">09/04</span><span class="news_content">公式サイトをリニューアルしました</span></div>
+                </div>
+            </div>
+            <a id="home_down"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
         </div>
         <div class="section" data-anchor="About" id="id-about">
-            <div class="slide">
-                <h1 class="section_title">筑駒文化祭について</h1><br><br>
+            <div class="content __narrow">
+                <h1 class="section_title">筑駒文化祭について</h1>
+                <h3>筑駒文化祭は、年に一度開催される筑波大学附属駒場中・高等学校の文化祭です。</h3>
+                <h3>生徒組織である文化祭実行委員会と高校3年生が主導し、生徒が一丸となって企画・運営をします。</h3>
+                <h3>昨年度はXXXXX人の方々にご来場いただきました。</h3>
+                <br class="br">
+                <h2>開催概要</h2>
+                <h3>日時</h3>
+                <p>2018年11月2日（金）～5日（月）</p>
+                <p>2日：09:30～16:30<br> 3日：09:30～16:00（中夜祭：16:30～18:30）
+                    <br> 4日：09:30～16:30
+                </p>
+                <br class="br-pc">
+                <h3>場所</h3>
+                <p>筑波大学附属駒場中・高等学校<br class="br-sp">（<a href="https://www.google.co.jp/maps?q=%e7%ad%91%e6%b3%a2%e5%a4%a7%e5%ad%a6%e9%99%84%e5%b1%9e%e9%a7%92%e5%a0%b4%e4%b8%ad%e5%ad%a6%e6%a0%a1%e3%83%bb%e9%ab%98%e7%ad%89%e5%ad%a6%e6%a0%a1" target="_blank">東京都世田谷区池尻4-7-1</a>）</p>
             </div>
-            <div class="slide" data-anchor="News">新着情報</div>
         </div>
-        <div class="section" data-anchor="Information" id="id-information">
-            <div class="slide" data-anchor="Access" id="id-access">
+        <div class="section" data-anchor="Access" id="id-access">
+            <div class="content">
                 <h1 class="section_title">アクセス</h1>
                 <div class="access_cnt">
                     <img src="assets/img/map.svg">
                     <div class="access_text">
                         <h2>電車をご利用の方</h2>
-                        <ul>
-                            <li>京王井の頭線 駒場東大前駅（IN03）<br class="br-sp">西口より徒歩約7分</li>
-                            <br>
-                            <li>東急田園都市線 池尻大橋駅（DT02）<br class="br-sp">北口より徒歩約15分</li>
-                        </ul>
+                        <p>京王井の頭線 駒場東大前駅（IN03）<br class="br-sp">西口より徒歩約7分</p>
+                        <p>東急田園都市線 池尻大橋駅（DT02）<br class="br-sp">北口より徒歩約15分</p>
                         <h2>バスをご利用の方</h2>
-                        <ul>
-                            <li>「駒場」バス停（東急バス渋51/渋52系統・<br class="br-sp">小田急バス渋54系統）より徒歩約1分</li>
-                        </ul>
-
-                        <h2><a href="#Information/Notice">ご来場の際の注意</a></h2>
+                        <p>東急バス渋51/渋52系統・小田急バス渋54系統<br>「駒場」バス停より徒歩約1分</p>
+                        <!--<h2>ご来場の際のお願い</h2>-->
                     </div>
                 </div>
             </div>
-            <div class="slide" id="id-notice" data-anchor="Notice">
+            <!--<div id="id-notice" data-anchor="Notice">
                 <h1 class="section_title" style="color:#fff">ご案内</h1>
             <div class="notice_cnt">
                 <div class="notice_text">
@@ -115,11 +176,10 @@
                     <h2>お帰りの際は</h2>
                     <p>お帰り口にて大衆賞投票を行なっております。皆さまの投票によって受賞団体が決定します。ぜひご投票ください。<br><br>また、次年度以降の参考とするため来場者アンケートも行っております。アンケートの方は景品もご用意しておりますので、こちらもご協力をお願い致します。</p>
                 </div>
-            </div>
-            </div>
+            </div>-->
         </div>
         <div class="section" data-anchor="Group" id="id-group">
-            <div class="slide">
+            <div class="content">
                 <h1 class="section_title">参加団体</h1>
                 <span class="group_cnt">
                     <a class="group_cnt_exhibit">展示</a>
@@ -129,7 +189,7 @@
                     <a class="group_cnt_messe">筑駒メッセ</a>
                     <a class="group_cnt_chuya">中夜祭</a>
                     <a class="group_cnt_list">一覧から探す</a>
-                    </span>
+                </span>
             </div>
         </div>
         <div class="section" data-anchor="Timetable" id="id-timetable">

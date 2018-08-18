@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    $('#loader').addClass('loaded');
+
     //各端末画面横幅
     var iPadPro = 1025;
     var smartphone = 600;
@@ -46,18 +48,18 @@ $(document).ready(function () {
             }).appendTo($outer).outerWidth();
         $outer.remove();
         return 100 - widthWithScroll;
-    };
+    }
     var scrollBarWidth = getScrollBarWidth();
     var headerWidth = viewportWidth - scrollBarWidth;
 
-    //あらかじめヘッダーにスクロールバー幅を入れる
+    /*//あらかじめヘッダーにスクロールバー幅を入れる
     $('#header').css('width', headerWidth);
     $('#header').css('padding-right', scrollBarWidth);
 
     //画面回転時再読み込み
-    $(window).bind('orientationchange',function() {
+    $(window).bind('orientationchange', function () {
         location.reload();
-    });
+    });*/
 
     //画面リサイズ時再読み込み
     /*var timer = false;
@@ -70,46 +72,11 @@ $(document).ready(function () {
         }, 200);
     });*/
 
-
-    /*
-    //現在位置表示(スマホ)
-    function locationHashChanged() {
-        if (location.hash == '#Home') {
-            $('#header_current-section-sp').html('');
-        } else if (location.hash == '#Information') {
-            $('#header_current-section-sp').html('ご案内');
-        } else if (location.hash == '#Access') {
-            $('#header_current-section-sp').html('アクセス');
-        } else if (location.hash == '#Group') {
-            $('#header_current-section-sp').html('参加団体');
-        } else if (location.hash == '#Timetable') {
-            $('#header_current-section-sp').html('タイムテーブル');
-        } else if (location.hash == '#Downloads') {
-            $('#header_current-section-sp').html('ダウンロード');
-        } else {
-            $('#header_current-section-sp').html('');
-        }
-    }
-    //ロード時に表示
-    locationHashChanged();
-    */
-
-    /*
-    //ハンバーガー→Xアニメーション
-    $('.slicknav_btn').click(function () {
-        $(this).toggleClass('active');
-    });
-
-    $('#fullpage, #id-group-list, .menu_link').click(function () {
-        $('#menu-sp').slicknav('close');
-        $('.slicknav_btn').removeClass('active');
-    });
-    */
-
     //fullpage設定
     $('#fullpage').fullpage({
-        anchors: ['Home', 'About', 'Information', 'Group', 'Timetable', 'Downloads'],
-        menu: '#header',
+        anchors: ['Home', 'About', 'Access', 'Group', 'Timetable', 'Downloads'],
+        lockAnchors: true,
+        menu: '#menu',
         scrollOverflow: true,
         slidesNavigation: false,
         responsiveHeight: 500,
@@ -119,25 +86,25 @@ $(document).ready(function () {
         bigSectionsDestination: 'top',
         verticalCentered: true,
 
-        afterLoad: function(origin, destination, direction){
+        afterLoad: function (origin, destination, direction) {
             var loadedSection = this;
-            if(destination == 1){
+            if (destination === 1) {
                 $('#menu').removeClass('active');
-                $.fn.fullpage.setAllowScrolling(true);
-            }else{
+                //$.fn.fullpage.setAllowScrolling(true);
+            } else {
                 $('#menu').addClass('active');
-                $.fn.fullpage.setAllowScrolling(true);
+                //$.fn.fullpage.setAllowScrolling(true);
             }
         },
-        onLeave: function(origin, destination, direction){
+        onLeave: function (origin, destination, direction) {
             var leavingSection = this;
-            if(origin == 1){
+            if (origin === 1) {
                 $('#menu').addClass('active');
-            }else if(destination == 1){
+            } else if (destination === 1) {
                 $('#menu').removeClass('active');
             }
-        },
-        onSlideLeave: function(section, origin, destination, direction){
+        }
+        /*onSlideLeave: function(section, origin, destination, direction){
             var leavingSlide = this;
             if(destination == 1){
                 $.fn.fullpage.setAllowScrolling(false);
@@ -150,7 +117,59 @@ $(document).ready(function () {
             }else{
                 $.fn.fullpage.setAllowScrolling(true);
             }
-        }
+        }*/
+    });
+
+
+    //メニュー
+    $('.menu_home').click(function () {
+        $.fn.fullpage.moveTo('Home');
+    });
+    $('.menu_about').click(function () {
+        $.fn.fullpage.moveTo('About');
+    });
+    $('.menu_access').click(function () {
+        $.fn.fullpage.moveTo('Access');
+    });
+    $('.menu_group').click(function () {
+        $.fn.fullpage.moveTo('Group');
+    });
+    $('.menu_timetable').click(function () {
+        $.fn.fullpage.moveTo('Timetable');
+    });
+    $('.menu_downloads').click(function () {
+        $.fn.fullpage.moveTo('Downloads');
+    });
+
+    $('.menu-sp_icon.__open').click(function () {
+        $('#menu-sp').css('left', '0vw');
+        $('.menu-sp_icon.__open').css('display', 'none');
+        $('.menu-sp_icon.__close').css('display', 'block');
+        $('#blackout').addClass('active');
+    });
+    $('.menu-sp_icon.__close, #blackout').click(function () {
+        $('#menu-sp').css('left', '-70vw');
+        $('.menu-sp_icon.__open').css('display', 'block');
+        $('.menu-sp_icon.__close').css('display', 'none');
+        $('#blackout').removeClass('active');
+    });
+    $('#menu-sp_nav li').click(function () {
+        $('#menu-sp').css('left', '-70vw');
+        $('.menu-sp_icon.__open').css('display', 'block');
+        $('.menu-sp_icon.__close').css('display', 'none');
+        $('#blackout').removeClass('active');
+    });
+
+    //カウントダウン
+    var targetTime = new Date("Nov 2, 2018").getTime();
+    var currentTime = new Date().getTime();
+    var remainingTime = targetTime - currentTime;
+    var remainingDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+    $('.countdown_days').append(remainingDays);
+
+    //トップページ矢印
+    $('#home_down').click(function () {
+        $.fn.fullpage.moveTo('About');
     });
 
     //横スライド矢印
@@ -166,6 +185,7 @@ $(document).ready(function () {
         //スクロール禁止
         $.fn.fullpage.setAllowScrolling(false);
     }
+
     function closeGroupList() {
         $('.group-list_cnt, .group-list_close').animate({
             opacity: 0
@@ -178,11 +198,11 @@ $(document).ready(function () {
     }
     //開く
     $('.group_cnt_exhibit').click(function () {
-        $('.group-list_iframe').attr('src','GroupInfo.html#Exhibit');
+        $('.group-list_iframe').attr('src', 'GroupInfo.html#Exhibit');
         openGroupList();
     });
     $('.group_cnt_theater').click(function () {
-        $('.group-list_iframe').attr('src','GroupInfo.html#Theater');
+        $('.group-list_iframe').attr('src', 'GroupInfo.html#Theater');
         openGroupList();
     });
     //閉じるボタン
@@ -203,7 +223,7 @@ $(document).ready(function () {
         }, 400);
 
         //bodyのスクロール禁止
-        scrollPosition = window.pageYOffset;
+        var scrollPosition = window.pageYOffset;
         var scrollPositionTop = -scrollPosition + 'px';
         $('#id-group-list').css('position', 'fixed');
         $('#id-group-list').css('margin-top', scrollPositionTop);
@@ -265,28 +285,4 @@ $(document).ready(function () {
     $('.group-info_close').click(function () {
         closeGroupInfo();
     });
-
-    //キー押下で閉じる
-    /*$(document).keyup(function () {
-        closeGroupInfo();
-    });*/
-
-    //上下スワイプで閉じる
-    /*var hammertime = $('#id-group-list').hammer();
-    hammertime.get('swipe').set({
-        direction: Hammer.DIRECTION_VERTICAL
-    });
-    hammertime.on('swipe', function () {
-        openGroupInfo();
-        $('#header_current-section-sp').html('あ');
-        alert('あ');
-    });*/
-    /*$('#id-group-list, .group-info').swipe({
-        swipeDown:function() {
-            openGroupInfo();
-            alert('You swiped') ;
-        },
-        threshold:10,
-        allowPageScroll:"vertical"
-    });*/
 });
