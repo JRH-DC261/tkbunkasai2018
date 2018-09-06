@@ -14,6 +14,21 @@ $palette5: #23532d !default;//深緑*/
   -webkit-user-select: none;
   user-select: none; }
 
+html::before {
+  content: ' ';
+  display: block;
+  background-image: url("../../assets/img/bg.png");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: -10; }
+
 body {
   margin: 0;
   padding: 0;
@@ -88,7 +103,7 @@ ul {
   transition: .75s;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
   z-index: 40; }
 
 #blackout.active {
@@ -124,6 +139,9 @@ ul {
   width: 90%;
   padding: 10% 5%; }
 
+.__coming-soon a {
+  color: #888; }
+
 .menu_SNS a {
   width: 25%;
   padding: 10% 2.5%; }
@@ -151,14 +169,15 @@ ul {
   transform: scale(1, 1); }
 
 #menu img {
-  width: 100%; }
+  width: 100%;
+  padding-top: 0.5vw; }
 
 #menu-sp {
   display: none;
   position: fixed;
   z-index: 50;
   transition: .75s;
-  left: -70vw; }
+  left: -50vw; }
 
 #menu-sp_nav {
   position: absolute;
@@ -166,8 +185,8 @@ ul {
   top: 0;
   left: 0;
   margin: 0;
-  padding: 5vw;
-  width: 60vw;
+  padding: 2.5vw;
+  width: 45vw;
   background-color: rgba(255, 255, 255, 0.75);
   text-align: center; }
 
@@ -189,7 +208,7 @@ ul {
   width: 10vw;
   height: 10vw;
   margin-top: 2.5vw;
-  margin-left: 72.5vw; }
+  margin-left: 52.5vw; }
 
 .menu-sp_icon.__open {
   background: url("../img/nav_open.svg") no-repeat;
@@ -198,11 +217,6 @@ ul {
 .menu-sp_icon.__close {
   background: url("../img/nav_close.svg") no-repeat;
   display: none; }
-
-body#index {
-  background-image: url("../img/bg.png");
-  background-repeat: no-repeat;
-  background-size: cover; }
 
 body.popup {
   background-color: rgba(255, 255, 255, 0); }
@@ -223,27 +237,27 @@ body.popup {
 
 .home_logo {
   position: absolute;
-  left: 50%;
+  left: 49%;
   transform: translateX(-50%);
   width: 40%;
-  top: 15%; }
+  top: 12.5%; }
 
 .home_content {
   display: flex;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 50%;
-  width: 80%;
+  top: 47.5%;
+  width: 75%;
   justify-content: space-around; }
 
 .countdown {
-  width: 30%;
+  width: 32.5%;
   text-align: center;
   color: #fff;
   background-color: rgba(255, 255, 255, 0.25);
   line-height: 1.25;
-  padding: 30px; }
+  padding: 2.5% 3.75%; }
 
 .countdown_text {
   font-size: 2.5vw; }
@@ -252,15 +266,15 @@ body.popup {
   font-size: 7.5vw; }
 
 .news {
-  width: 40%;
+  width: 37.5%;
   text-align: center;
   color: #fff;
   background-color: rgba(255, 255, 255, 0.25);
   line-height: 1.5;
-  padding: 30px; }
+  padding: 2.5% 1.25%; }
 
 .news_headline {
-  font-size: 2vw;
+  font-size: 1.75vw;
   margin-bottom: 5px; }
 
 .news_text {
@@ -558,6 +572,42 @@ $palette2: #9fc367 !default;//若葉色
 $palette3: #6ab259 !default;//鮮緑
 $palette4: #357743 !default;//常盤色
 $palette5: #23532d !default;//深緑*/
+.student_content {
+  min-width: 50%;
+  margin: 5% auto;
+  padding: 2.5%; }
+
+.student_content h1 {
+  line-height: 1.5; }
+
+.student_content h3 {
+  padding-left: 1em; }
+
+.student_content p {
+  padding-left: 2em; }
+
+h2.accordion_nav::before {
+  background: url("../img/nav_expand.svg") no-repeat; }
+
+h2.accordion_nav.active::before {
+  background: url("../img/nav_fold.svg") no-repeat; }
+
+.accordion_content {
+  display: none; }
+
+.accordion_content.active {
+  display: block; }
+
+/*$palette1: #554455 !default;
+$palette2: #ffaa99 !default;
+$palette3: #ffdddd !default;
+$palette4: #dd9999 !default;
+$palette5: #aa6666 !default;*/
+/*$palette1: #82b028 !default;//萌黄色
+$palette2: #9fc367 !default;//若葉色
+$palette3: #6ab259 !default;//鮮緑
+$palette4: #357743 !default;//常盤色
+$palette5: #23532d !default;//深緑*/
 @media only screen and (max-width: 1025px) and (max-aspect-ratio: 6 / 5) {
   h1 {
     font-size: 4.5vw; }
@@ -697,6 +747,16 @@ $palette5: #23532d !default;//深緑*/
     display: inline; }
   .br-pc {
     display: none; }
+  #menu-sp {
+    left: -70vw; }
+  #menu-sp_nav {
+    padding: 5vw;
+    width: 60vw; }
+  .menu-sp_icon {
+    position: absolute;
+    width: 12.5vw;
+    height: 12.5vw;
+    margin-left: 72.5vw; }
   .home_logo {
     width: 80%;
     top: 15%; }
@@ -731,8 +791,6 @@ $palette5: #23532d !default;//深緑*/
       font-size: 20vw; } }
   #home_down {
     font-size: 20vw; }
-  .content {
-    min-height: 82.5vh; }
   .content h2::before {
     width: 4.5vw;
     margin-top: -1.25vw;

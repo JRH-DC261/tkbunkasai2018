@@ -88,36 +88,28 @@
 
     .content {
         width: 85vw;
-        //min-height: 85vh;
         padding: 1.25vw 2.5vw;
     }
     .content.__narrow {
         width: 85vw;
         padding: 1.25vw 2.5vw;
-    }
-    //行頭文字
+    } //行頭文字
     .content h2::before {
         width: 3.5vw;
         margin-top: -1vw;
         margin-right: 1vw;
-    }
-
-    //概要
+    } //概要
     #id-about h3 {
         margin-left: 2vw;
     }
 
     #id-about p {
         margin-left: 4vw;
-    }
-
-    //ご案内
+    } //ご案内
     .information_text {
         width: 90%;
         margin: 0 auto 2.5% auto;
-    }
-
-    //アクセス
+    } //アクセス
     #id-access img {
         width: 70%;
         margin-left: 15%;
@@ -128,7 +120,7 @@
         margin-left: 2vw;
     }
 
-    .access_cnt{
+    .access_cnt {
         //flex-direction: column;
     }
     .access_text {
@@ -218,6 +210,22 @@
         display: none;
     }
 
+    #menu-sp {
+        left: -70vw;
+    }
+
+    #menu-sp_nav {
+        padding: 5vw;
+        width: 60vw;
+    }
+    .menu-sp_icon {
+        position: absolute;
+        width: 12.5vw;
+        height: 12.5vw;
+        margin-left: 72.5vw;
+    }
+
+
     .home_logo {
         width: 80%;
         top: 15%;
@@ -249,9 +257,7 @@
     }
     .news_text {
         font-size: 3.5vw;
-    }
-
-    //トップページ下矢印
+    } //トップページ下矢印
     @keyframes home_down {
         0% {
             font-size: $home_down-size-sp;
@@ -268,12 +274,7 @@
     }
     #home_down {
         font-size: $home_down-size-sp;
-    }
-
-    .content {
-        min-height: 82.5vh;
-    }
-    //行頭文字
+    } //行頭文字
     .content h2::before {
         width: 4.5vw;
         margin-top: -1.25vw;

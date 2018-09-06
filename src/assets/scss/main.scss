@@ -8,6 +8,22 @@
     user-select: none;
 }
 
+html::before {
+    content: ' ';
+    display: block;
+    background-image: url('../../assets/img/bg.png');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: -10;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -99,7 +115,7 @@ ul {
     transition: .75s;
     height: 100vh;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.75);
     z-index: 40;
 }
 
@@ -137,11 +153,17 @@ ul {
     display: inline-block;
     font-size: 1vw;
 }
-.menu_text a{
+
+.menu_text a {
     width: 90%;
     padding: 10% 5%;
 }
-.menu_SNS a{
+
+.__coming-soon a{
+    color: #888;
+}
+
+.menu_SNS a {
     width: 25%;
     padding: 10% 2.5%;
 }
@@ -174,6 +196,7 @@ ul {
 
 #menu img {
     width: 100%;
+    padding-top: 0.5vw;
 }
 
 #menu-sp {
@@ -181,7 +204,7 @@ ul {
     position: fixed;
     z-index: 50;
     transition: .75s;
-    left: -70vw;
+    left: -50vw;
 }
 
 #menu-sp_nav {
@@ -190,8 +213,8 @@ ul {
     top: 0;
     left: 0;
     margin: 0;
-    padding: 5vw;
-    width: 60vw;
+    padding: 2.5vw;
+    width: 45vw;
     background-color: $menu-color;
     text-align: center;
 }
@@ -217,7 +240,7 @@ ul {
     width: 10vw;
     height: 10vw;
     margin-top: 2.5vw;
-    margin-left: 72.5vw;
+    margin-left: 52.5vw;
 }
 
 .menu-sp_icon.__open {
@@ -228,12 +251,6 @@ ul {
 .menu-sp_icon.__close {
     background: url("../img/nav_close.svg") no-repeat;
     display: none;
-}
-
-body#index {
-    background-image: url("../img/bg.png");
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 body.popup {
@@ -264,10 +281,10 @@ body.popup {
 
 .home_logo {
     position: absolute;
-    left: 50%;
+    left: 49%;
     transform: translateX(-50%);
     width: 40%;
-    top: 15%;
+    top: 12.5%;
 }
 
 //下部コンテンツ
@@ -276,19 +293,19 @@ body.popup {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 50%;
-    width: 80%;
+    top: 47.5%;
+    width: 75%;
     justify-content: space-around;
 }
 
 //カウントダウンクロック
 .countdown {
-    width: 30%;
+    width: 32.5%;
     text-align: center;
     color: #fff;
     background-color: rgba(255, 255, 255, 0.25);
     line-height: 1.25;
-    padding: 30px;
+    padding: 2.5% 3.75%;
 }
 
 .countdown_text {
@@ -301,16 +318,16 @@ body.popup {
 
 //新着情報
 .news {
-    width: 40%;
+    width: 37.5%;
     text-align: center;
     color: #fff;
     background-color: rgba(255, 255, 255, 0.25);
     line-height: 1.5;
-    padding: 30px;
+    padding: 2.5% 1.25%;
 }
 
 .news_headline {
-    font-size: 2vw;
+    font-size: 1.75vw;
     margin-bottom: 5px;
 }
 
@@ -344,7 +361,6 @@ body.popup {
     position: relative;
     margin: auto;
     width: 65vw;
-    //min-height: 75vh;
     padding: 2.5vh 2.5vw;
     background-color: rgba(255, 255, 255, 0.5);
 }
@@ -378,7 +394,6 @@ body.popup {
 
 //アクセス
 #id-access {
-    //background-color: $palette3;
     background-repeat: repeat-y;
     background-size: cover;
 }
@@ -389,11 +404,6 @@ body.popup {
 
 #id-access p {
     margin-left: 1vw;
-}
-
-.access_cnt{
-    //display: flex;
-    //justify-content: space-around;
 }
 
 #id-access img {
@@ -417,7 +427,6 @@ body.popup {
 
 //ご案内
 #id-notice {
-    //background-color: $palette5;
     background-position: top left;
     background-repeat: repeat-y;
     background-size: cover;
@@ -647,17 +656,14 @@ body.popup {
 
 .group-list_iframe,
 .group-info_iframe {
-    //display: block;
     position: absolute;
     height: 0;
     max-height: 90%;
     max-width: 100%;
     min-height: 90%;
     min-width: 100%;
-    width: 0; //top: 50%;
-    //left: 50%;
-    //transform: translate(-50%, -50%);
-    border-style: none; //vertical-align: bottom;
+    width: 0;
+    border-style: none;
 }
 
 .group-list_iframe {
@@ -695,4 +701,6 @@ body.popup {
 }
 
 
+
+@import "_student";
 @import "_responsive-sp";

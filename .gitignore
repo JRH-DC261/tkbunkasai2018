@@ -14,3 +14,7 @@ node_modules/**/*
 /gulpfile_Old.js
 /gulpfile.js
 /.brackets.json
+/src/- コピー.htaccess
+/src/.htaccess_release
+/src/.htaccess_dev
+/src/.htaccess

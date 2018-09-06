@@ -77,11 +77,11 @@ $(document).ready(function () {
         anchors: ['Home', 'About', 'Access', 'Group', 'Timetable', 'Downloads'],
         lockAnchors: true,
         menu: '#menu',
-        scrollOverflow: true,
+        scrollOverflow: false,
         slidesNavigation: false,
         responsiveHeight: 500,
         scrollBar: false,
-        autoScrolling: true,
+        autoScrolling: false,
         fitToSection: false,
         bigSectionsDestination: 'top',
         verticalCentered: true,
@@ -148,13 +148,13 @@ $(document).ready(function () {
         $('#blackout').addClass('active');
     });
     $('.menu-sp_icon.__close, #blackout').click(function () {
-        $('#menu-sp').css('left', '-70vw');
+        $('#menu-sp').removeAttr('style');
         $('.menu-sp_icon.__open').css('display', 'block');
         $('.menu-sp_icon.__close').css('display', 'none');
         $('#blackout').removeClass('active');
     });
     $('#menu-sp_nav li').click(function () {
-        $('#menu-sp').css('left', '-70vw');
+        $('#menu-sp').removeAttr('style');
         $('.menu-sp_icon.__open').css('display', 'block');
         $('.menu-sp_icon.__close').css('display', 'none');
         $('#blackout').removeClass('active');
