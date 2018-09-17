@@ -3,37 +3,6 @@
 @import "definition";
 
 @media only screen and (max-width: $iPadPro) and (max-aspect-ratio: 6/5) {
-
-    h1 {
-        font-size: 4.5vw;
-    }
-    h2 {
-        font-size: 3.5vw;
-    }
-    h3 {
-        font-size: 2.5vw;
-    }
-    p {
-        font-size: 2vw;
-    }
-    li {
-        font-size: 2vw;
-    }
-    td {
-        font-size: 2vw;
-    }
-    #menu {
-        display: none;
-    }
-    #menu-sp {
-        display: block;
-    }
-    #menu li a {
-        font-size: 1.5vw;
-    }
-    /*.section_title{
-        display: none;
-    }*/
     //トップページ下矢印
     @keyframes home_down {
         0% {
@@ -51,8 +20,8 @@
     }
     #home_down {
         font-size: $home_down-size-tb;
+        bottom: 15px;
     }
-
     .home_logo {
         width: 60%;
         top: 10%;
@@ -93,27 +62,25 @@
     .content.__narrow {
         width: 85vw;
         padding: 1.25vw 2.5vw;
-    } //行頭文字
-    .content h2::before {
-        width: 3.5vw;
-        margin-top: -1vw;
-        margin-right: 1vw;
-    } //概要
+    }
+    //概要
     #id-about h3 {
         margin-left: 2vw;
     }
 
     #id-about p {
         margin-left: 4vw;
-    } //ご案内
+    }
+    //ご案内
     .information_text {
         width: 90%;
         margin: 0 auto 2.5% auto;
-    } //アクセス
+    }
+    //アクセス
     #id-access img {
-        width: 70%;
-        margin-left: 15%;
-        margin-right: 15%;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
         margin-bottom: 2.5%;
     }
     #id-access p {
@@ -139,7 +106,8 @@
 
     .group-info_close {
         font-size: 30px;
-    } //横スライド矢印
+    }
+    //横スライド矢印
     #arrowL {
         font-size: $arrow-size-sp;
     }
@@ -185,31 +153,6 @@
 
 @media only screen and (max-width: $smartphone) {
 
-    h1 {
-        font-size: 6vw;
-    }
-    h2 {
-        font-size: 4.5vw;
-    }
-    h3 {
-        font-size: 3.5vw;
-    }
-    p {
-        font-size: 3.25vw;
-    }
-    li {
-        font-size: 3.25vw;
-    }
-    td {
-        font-size: 3.25vw;
-    }
-    .br-sp {
-        display: inline;
-    }
-    .br-pc {
-        display: none;
-    }
-
     #menu-sp {
         left: -70vw;
     }
@@ -223,6 +166,10 @@
         width: 12.5vw;
         height: 12.5vw;
         margin-left: 72.5vw;
+    }
+
+    #fp-nav ul li a span{
+        display: none;
     }
 
 
@@ -257,7 +204,8 @@
     }
     .news_text {
         font-size: 3.5vw;
-    } //トップページ下矢印
+    }
+    //トップページ下矢印
     @keyframes home_down {
         0% {
             font-size: $home_down-size-sp;
@@ -274,11 +222,6 @@
     }
     #home_down {
         font-size: $home_down-size-sp;
-    } //行頭文字
-    .content h2::before {
-        width: 4.5vw;
-        margin-top: -1.25vw;
-        margin-right: 1.5vw;
     }
 
     .access_text {

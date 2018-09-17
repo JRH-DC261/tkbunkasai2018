@@ -10,47 +10,42 @@ $palette3: #6ab259 !default;//鮮緑
 $palette4: #357743 !default;//常盤色
 $palette5: #23532d !default;//深緑*/
 * {
-  -ms-user-select: none;
-  -webkit-user-select: none;
-  user-select: none; }
-
-html::before {
-  content: ' ';
-  display: block;
-  background-image: url("../../assets/img/bg.png");
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  position: fixed;
-  z-index: -10; }
+  margin: 0;
+  line-height: 1.5; }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: "Open Sans", "こぶりなゴシック W3 JIS2004", sans-serif;
-  font-weight: 400;
-  line-height: 1; }
+  font-weight: 400; }
 
 h1 {
   text-align: center;
   font-family: "Open Sans", "こぶりなゴシック W6 JIS2004", sans-serif;
   font-weight: 600;
-  font-size: 2.5vw; }
+  font-size: 2.5vw;
+  margin: 0.5em; }
 
 h2 {
-  font-size: 1.5vw; }
+  font-size: 1.5vw;
+  margin: 0.5em; }
+
+.content h2::before {
+  content: "　";
+  display: inline-block;
+  background: url("../img/ringS_black.svg") no-repeat;
+  background-size: contain;
+  width: 1.5vw;
+  margin-top: 0.4vw;
+  margin-right: 0.5vw;
+  vertical-align: middle; }
 
 h3 {
   font-size: 1.25vw;
-  font-weight: 400; }
+  font-weight: 400;
+  margin: 0.5em; }
 
 p {
-  font-size: 1vw; }
+  font-size: 1vw;
+  margin: 0.5em; }
 
 li {
   font-size: 1vw; }
@@ -73,6 +68,81 @@ ul {
 
 .__alignR {
   text-align: right; }
+
+.__indent1 {
+  margin-left: 1em; }
+
+.__indent2 {
+  margin-left: 2em; }
+
+@media only screen and (max-width: 1025px) and (max-aspect-ratio: 6 / 5) {
+  h1 {
+    font-size: 4.5vw; }
+  h2 {
+    font-size: 3.5vw; }
+  .content h2::before {
+    width: 3.5vw;
+    margin-top: 1vw;
+    margin-right: 1vw; }
+  h3 {
+    font-size: 2.5vw; }
+  p {
+    font-size: 2vw; }
+  li {
+    font-size: 2vw; }
+  td {
+    font-size: 2vw; }
+  #menu {
+    display: none; }
+  #menu-sp {
+    display: block; }
+  #menu li a {
+    font-size: 1.5vw; } }
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 6vw; }
+  h2 {
+    font-size: 4.5vw; }
+  .content h2::before {
+    width: 4.5vw;
+    margin-top: 1vw;
+    margin-right: 1.5vw; }
+  h3 {
+    font-size: 3.5vw; }
+  p {
+    font-size: 3.25vw; }
+  li {
+    font-size: 3.25vw; }
+  td {
+    font-size: 3.25vw; }
+  .br-sp {
+    display: inline; }
+  .br-pc {
+    display: none; } }
+
+* {
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none; }
+
+html::before {
+  content: ' ';
+  display: block;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: -10; }
+
+body {
+  margin: 0;
+  padding: 0; }
 
 #loader {
   position: fixed;
@@ -101,8 +171,10 @@ ul {
   opacity: 0;
   position: fixed;
   transition: .75s;
-  height: 100vh;
-  width: 100vw;
+  width: 150vw;
+  height: 150vh;
+  top: -25vh;
+  left: -25vw;
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 40; }
 
@@ -221,6 +293,9 @@ ul {
 body.popup {
   background-color: rgba(255, 255, 255, 0); }
 
+#fp-nav ul li a span {
+  background-color: #fff; }
+
 #id-home {
   text-align: center;
   position: relative; }
@@ -263,14 +338,14 @@ body.popup {
   font-size: 2.5vw; }
 
 .countdown_days {
-  font-size: 7.5vw; }
+  font-size: 7.5vw;
+  line-height: 1.25; }
 
 .news {
   width: 37.5%;
   text-align: center;
   color: #fff;
   background-color: rgba(255, 255, 255, 0.25);
-  line-height: 1.5;
   padding: 2.5% 1.25%; }
 
 .news_headline {
@@ -278,7 +353,8 @@ body.popup {
   margin-bottom: 5px; }
 
 .news_text {
-  font-size: 1.25vw; }
+  font-size: 1.25vw;
+  text-align: left; }
 
 .news span {
   padding: 10px; }
@@ -309,31 +385,9 @@ body.popup {
   width: 60vw;
   padding: 2.5vh 5vw; }
 
-.content h2::before {
-  content: "　";
-  display: inline-block;
-  background: url("../img/ringS_black.svg") no-repeat;
-  background-size: contain;
-  width: 1.5vw;
-  margin-top: -0.25vw;
-  margin-right: 0.5vw;
-  vertical-align: middle; }
-
-#id-about h3 {
-  margin-left: 1vw; }
-
-#id-about p {
-  margin-left: 2vw; }
-
 #id-access {
   background-repeat: repeat-y;
   background-size: cover; }
-
-#id-access h2 {
-  text-align: left; }
-
-#id-access p {
-  margin-left: 1vw; }
 
 #id-access img {
   display: inline-block;
@@ -346,33 +400,10 @@ body.popup {
   width: 50%;
   vertical-align: top; }
 
-.access_text ul {
-  margin-left: 2.5%;
-  padding: 0; }
-
-#id-notice {
-  background-position: top left;
-  background-repeat: repeat-y;
-  background-size: cover; }
-
-.notice_cnt {
-  display: block; }
-
-.notice_text {
-  width: 60%;
-  margin: 0 auto 2.5% auto;
-  padding: 1px 10px 1px 10px;
-  background-color: rgba(255, 255, 255, 0.75); }
-
-.notice_text p {
-  margin-left: 2.5%; }
-
 #id-group {
   text-align: center; }
 
 .group_cnt {
-  margin-left: 10vw;
-  margin-right: 10vw;
   display: grid;
   grid-gap: 2.5vw;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -475,8 +506,6 @@ body.popup {
 
 #id-group-info {
   text-align: center;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
   width: 100%; }
 
 #id-group-list {
@@ -511,24 +540,30 @@ body.popup {
 .group-list_cnt,
 .group-info_cnt {
   position: fixed;
-  display: inline-block;
-  width: 100vw;
-  height: 100vh;
   border: 0;
   z-index: 1000;
   visibility: hidden;
-  background-color: rgba(255, 255, 255, 0.95);
-  opacity: 0;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch; }
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 0; }
+
+.group-list_cnt {
+  width: 80vw;
+  height: 90vh;
+  left: 10vw;
+  top: 2.5vh; }
+
+.group-info_cnt {
+  width: 100vw;
+  height: 100vh;
+  top: 0; }
 
 .group-list_iframe,
 .group-info_iframe {
   position: absolute;
   height: 0;
-  max-height: 90%;
+  max-height: 95%;
   max-width: 100%;
-  min-height: 90%;
+  min-height: 95%;
   min-width: 100%;
   width: 0;
   border-style: none; }
@@ -548,6 +583,9 @@ body.popup {
   transform: translateX(-50%);
   visibility: hidden;
   opacity: 0; }
+
+.group-list_close {
+  color: #fff; }
 
 .group-list_footer {
   position: fixed;
@@ -609,27 +647,6 @@ $palette3: #6ab259 !default;//鮮緑
 $palette4: #357743 !default;//常盤色
 $palette5: #23532d !default;//深緑*/
 @media only screen and (max-width: 1025px) and (max-aspect-ratio: 6 / 5) {
-  h1 {
-    font-size: 4.5vw; }
-  h2 {
-    font-size: 3.5vw; }
-  h3 {
-    font-size: 2.5vw; }
-  p {
-    font-size: 2vw; }
-  li {
-    font-size: 2vw; }
-  td {
-    font-size: 2vw; }
-  #menu {
-    display: none; }
-  #menu-sp {
-    display: block; }
-  #menu li a {
-    font-size: 1.5vw; }
-  /*.section_title{
-        display: none;
-    }*/
   @keyframes home_down {
     0% {
       font-size: 15vw; }
@@ -640,7 +657,8 @@ $palette5: #23532d !default;//深緑*/
     100% {
       font-size: 15vw; } }
   #home_down {
-    font-size: 15vw; }
+    font-size: 15vw;
+    bottom: 15px; }
   .home_logo {
     width: 60%;
     top: 10%; }
@@ -671,10 +689,6 @@ $palette5: #23532d !default;//深緑*/
   .content.__narrow {
     width: 85vw;
     padding: 1.25vw 2.5vw; }
-  .content h2::before {
-    width: 3.5vw;
-    margin-top: -1vw;
-    margin-right: 1vw; }
   #id-about h3 {
     margin-left: 2vw; }
   #id-about p {
@@ -683,9 +697,9 @@ $palette5: #23532d !default;//深緑*/
     width: 90%;
     margin: 0 auto 2.5% auto; }
   #id-access img {
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
     margin-bottom: 2.5%; }
   #id-access p {
     margin-left: 2vw; }
@@ -731,22 +745,6 @@ $palette5: #23532d !default;//深緑*/
     font-size: 2.5vw; } }
 
 @media only screen and (max-width: 600px) {
-  h1 {
-    font-size: 6vw; }
-  h2 {
-    font-size: 4.5vw; }
-  h3 {
-    font-size: 3.5vw; }
-  p {
-    font-size: 3.25vw; }
-  li {
-    font-size: 3.25vw; }
-  td {
-    font-size: 3.25vw; }
-  .br-sp {
-    display: inline; }
-  .br-pc {
-    display: none; }
   #menu-sp {
     left: -70vw; }
   #menu-sp_nav {
@@ -757,6 +755,8 @@ $palette5: #23532d !default;//深緑*/
     width: 12.5vw;
     height: 12.5vw;
     margin-left: 72.5vw; }
+  #fp-nav ul li a span {
+    display: none; }
   .home_logo {
     width: 80%;
     top: 15%; }
@@ -791,10 +791,6 @@ $palette5: #23532d !default;//深緑*/
       font-size: 20vw; } }
   #home_down {
     font-size: 20vw; }
-  .content h2::before {
-    width: 4.5vw;
-    margin-top: -1.25vw;
-    margin-right: 1.5vw; }
   .access_text {
     margin: 0;
     width: 100%; }

@@ -1,7 +1,10 @@
-#arrowR {
-  visibility: hidden; }
-
-#arrowL {
-  visibility: hidden; }
-
-/*# sourceMappingURL=index-only.css.map */
+html::before {
+    background-image: url('../../assets/img/bg.png');
+}
+//横スライド矢印
+#arrowR{
+    visibility: hidden;
+}
+#arrowL{
+    visibility: hidden;
+}

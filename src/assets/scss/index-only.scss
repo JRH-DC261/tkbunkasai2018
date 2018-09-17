@@ -1,6 +1,8 @@
 @charset 'utf-8';
 
-
+html::before {
+    background-image: url('../../assets/img/bg.png');
+}
 //横スライド矢印
 #arrowR{
     visibility: hidden;
