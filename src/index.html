@@ -55,7 +55,7 @@
     <script type="text/javascript" src="assets/js/script.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="//typesquare.com/accessor/script/typesquare.js?PmUV0TKqc8Y%3D" charset="utf-8"></script>
+    <script async type="text/javascript" src="//typesquare.com/accessor/script/typesquare.js?PmUV0TKqc8Y%3D" charset="utf-8"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 </head>
 
@@ -63,11 +63,12 @@
 <body id="index">
     <div id="loader"></div>
     <div id="blackout"></div>
+    <div id="blackout_group-info"></div>
 
     <ul id="menu">
         <li data-menuanchor="About" class="menu_text"><a class="menu_about">概&nbsp;要</a></li>
         <li data-menuanchor="Access" class="menu_text"><a class="menu_access">アクセス</a></li>
-        <li data-menuanchor="Group" class="menu_text"><a class="menu_group">参加団体</a></li>
+        <li data-menuanchor="Group" class="menu_text __coming-soon"><a class="menu_group menu_nohover">参加団体</a></li>
         <li data-menuanchor="Timetable" class="menu_text __coming-soon"><a class="menu_timetable menu_nohover">タイムテーブル</a></li>
         <li data-menuanchor="Downloads" class="menu_text"><a class="menu_downloads">ダウンロード</a></li>
         <li class="menu_SNS"><a href="https://twitter.com/intent/tweet?text=%E7%AC%AC67%E5%9B%9E%E7%AD%91%E9%A7%92%E6%96%87%E5%8C%96%E7%A5%AD%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%EF%BD%9C&url=https%3A//tsukukoma.bunkasai.info/&via=tsukukomafesta" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
@@ -82,7 +83,7 @@
             <li><a class="menu_home menu_nohover"><img src="assets/img/logo_black.svg"></a></li>
             <li data-menuanchor="About" class="menu-sp_text"><a class="menu_about">概&nbsp;要</a></li>
             <li data-menuanchor="Access" class="menu-sp_text"><a class="menu_access">アクセス</a></li>
-            <li data-menuanchor="Group" class="menu-sp_text"><a class="menu_group">参加団体</a></li>
+            <li data-menuanchor="Group" class="menu-sp_text __coming-soon"><a class="menu_group menu_nohover">参加団体</a></li>
             <li data-menuanchor="Timetable" class="menu-sp_text __coming-soon"><a class="menu_timetable menu_nohover">タイムテーブル</a></li>
             <li data-menuanchor="Downloads" class="menu-sp_text"><a class="menu_downloads">ダウンロード</a></li>
             <li class="menu-sp_SNS">
@@ -92,13 +93,6 @@
         </ul>
         <a class="menu-sp_section"></a>
     </div>
-
-    <div class="group-list_cnt">
-        <iframe src="GroupInfo.html" class="group-list_iframe"></iframe>
-    </div>
-    <div class="group-list_close" title="閉じる"><i class="fa fa-times" aria-hidden="true"></i></div>
-
-
 
     <div id="fullpage">
         <div class="section" data-anchor="Home" id="id-home">
@@ -208,6 +202,15 @@
             </div>
         </div>
     </div>
+
+    <div class="group-list_cnt">
+        <iframe src=" " class="group-list_iframe"></iframe>
+    </div>
+    <div class="group-list_close"></div>
+    <div class="group-info_cnt">
+        <iframe src=" " class="group-info_iframe"></iframe>
+    </div>
+    <div class="group-info_close"></div>
 </body>
 
 
