@@ -58,20 +58,19 @@
 
 <body id="index">
     <div id="loader">
-        <img src="">
+        <img src=" ">
     </div>
     <div id="blackout"></div>
 
     <div class="content student_content">
         <h1 style="text-align: left">第67回筑駒文化祭開場まで</h1>
-        <h2 class="countdown_full"></h2>
-        <h2 class="countdown_hours"></h2>
-        <h2 class="countdown_minutes"></h2>
-        <h2 class="countdown_seconds"></h2>
-        <h2 class="countdown_miliseconds miliseconds"></h2>
+        <h2><span class="countdown_full"></span><a class="countdown_twitter_full" href=" " target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a></h2>
+        <h2><span class="countdown_hours"></span><a class="countdown_twitter_hours" href=" " target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a></h2>
+        <h2><span class="countdown_minutes"></span><a class="countdown_twitter_minutes" href=" " target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a></h2>
+        <h2><span class="countdown_seconds"></span><a class="countdown_twitter_seconds" href=" " target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a></h2>
+        <h2 class="section_miliseconds"><span class="countdown_miliseconds miliseconds"></span><a class="countdown_twitter_miliseconds" href=" " target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a></h2>
         <br>
         <h3 style="padding-left: 0">更新速度　<span class="refreshRate_Selection refreshRate_1">0.001秒</span>　<span class="refreshRate_Selection refreshRate_10">0.01秒</span>　<span class="refreshRate_Selection refreshRate_100">0.1秒</span>　<span class="refreshRate_Selection refreshRate_1000">1秒</span>　<span class="refreshRate_Selection refreshRate_10000">10秒</span></h3>
-        <h1 style="text-align: left"><a class="countdown_share_twitter" href="https://twitter.com/intent/tweet?text=%E7%AC%AC67%E5%9B%9E%E7%AD%91%E9%A7%92%E6%96%87%E5%8C%96%E7%A5%AD%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%EF%BD%9C&url=https%3A//tsukukoma.bunkasai.info/&via=tsukukomafesta" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a></h1>
 
         <script>
             $(document).ready(function() {
@@ -86,7 +85,7 @@
                     var remainingTime = targetTime - currentTime;
                     var remainingDays = ('00' + Math.floor(remainingTime / (1000 * 60 * 60 * 24))).slice(-2);
                     var remainingHours = ('00' + Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).slice(-2);
-                    var remainingMinutes = ('00' + Math.floor((remainingTime % (1000 * 60 * 24)) / (1000 * 60))).slice(-2);
+                    var remainingMinutes = ('00' + Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60))).slice(-2);
                     var remainingSeconds = ('00' + Math.floor((remainingTime % (1000 * 60)) / 1000)).slice(-2);
                     var remainingMiliseconds = ('000' + Math.floor(remainingTime % 1000)).slice(-3);
                     var remainingHoursRaw = Math.floor(remainingTime / (1000 * 60 * 60));
@@ -99,7 +98,11 @@
                     $('.countdown_minutes').html(remainingMinutesRaw + '分');
                     $('.countdown_seconds').html(remainingSecondsRaw + '秒');
                     $('.countdown_miliseconds').html(remainingMilisecondsRaw + '<span class="miliseconds">ミリ秒</span>');
-                    $('.countdown_share_twitter').attr('href', 'https://twitter.com/intent/tweet?text=第67回筑駒文化祭開場まで' + remainingDays + '日' + remainingHours + '時間' + remainingMinutes + '分' + remainingSeconds + '秒' + remainingMiliseconds + '&url=https%3A//tsukukoma.bunkasai.info/&via=tsukukomafesta')
+                    $('.countdown_twitter_full').attr('href', 'https://twitter.com/intent/tweet?text=第67回筑駒文化祭開場まで' + remainingDays + '日' + remainingHours + '時間' + remainingMinutes + '分' + remainingSeconds + '秒' + remainingMiliseconds + '&url=https%3A//tsukukoma.bunkasai.info/&via=tsukukomafesta')
+                    $('.countdown_twitter_hours').attr('href', 'https://twitter.com/intent/tweet?text=第67回筑駒文化祭開場まで' + remainingHoursRaw + '時間'+ '&url=https%3A//tsukukoma.bunkasai.info/&via=tsukukomafesta')
+                    $('.countdown_twitter_minutes').attr('href', 'https://twitter.com/intent/tweet?text=第67回筑駒文化祭開場まで' + remainingMinutesRaw + '分'+ '&url=https%3A//tsukukoma.bunkasai.info/&via=tsukukomafesta')
+                    $('.countdown_twitter_seconds').attr('href', 'https://twitter.com/intent/tweet?text=第67回筑駒文化祭開場まで' + remainingSecondsRaw + '秒'+ '&url=https%3A//tsukukoma.bunkasai.info/&via=tsukukomafesta')
+                    $('.countdown_twitter_miliseconds').attr('href', 'https://twitter.com/intent/tweet?text=第67回筑駒文化祭開場まで' + remainingMilisecondsRaw + 'ミリ秒'+ '&url=https%3A//tsukukoma.bunkasai.info/&via=tsukukomafesta')
                 };
 
                 function countdown_light() {
@@ -119,12 +122,15 @@
                     $('.countdown_hours').html(remainingHoursRaw + '時間');
                     $('.countdown_minutes').html(remainingMinutesRaw + '分');
                     $('.countdown_seconds').html(remainingSecondsRaw + '秒');
-                    $('.countdown_share_twitter').attr('href', 'https://twitter.com/intent/tweet?text=第67回筑駒文化祭開場まで' + remainingDays + '日' + remainingHours + '時間' + remainingMinutes + '分' + remainingSeconds + '秒' + '&url=https%3A//tsukukoma.bunkasai.info/&via=tsukukomafesta')
+                    $('.countdown_twitter_full').attr('href', 'https://twitter.com/intent/tweet?text=第67回筑駒文化祭開場まで' + remainingDays + '日' + remainingHours + '時間' + remainingMinutes + '分' + remainingSeconds + '秒' + '&url=https%3A//tsukukoma.bunkasai.info/&via=tsukukomafesta')
+                    $('.countdown_twitter_hours').attr('href', 'https://twitter.com/intent/tweet?text=第67回筑駒文化祭開場まで' + remainingHoursRaw + '時間'+ '&url=https%3A//tsukukoma.bunkasai.info/&via=tsukukomafesta')
+                    $('.countdown_twitter_minutes').attr('href', 'https://twitter.com/intent/tweet?text=第67回筑駒文化祭開場まで' + remainingMinutesRaw + '分'+ '&url=https%3A//tsukukoma.bunkasai.info/&via=tsukukomafesta')
+                    $('.countdown_twitter_seconds').attr('href', 'https://twitter.com/intent/tweet?text=第67回筑駒文化祭開場まで' + remainingSecondsRaw + '秒'+ '&url=https%3A//tsukukoma.bunkasai.info/&via=tsukukomafesta')
                 };
                 var runCountdown = setInterval(countdown, refreshRate);
 
                 function refreshCountdown() {
-                    $('.miliseconds').css('visibility', 'visible');
+                    $('.section_miliseconds').css('visibility', 'visible');
                     clearInterval(runCountdown);
                     clearInterval(runCountdown);
                     runCountdown = setInterval(countdown, refreshRate);
@@ -132,7 +138,7 @@
                 };
 
                 function refreshCountdownLight() {
-                    $('.miliseconds').css('visibility', 'hidden');
+                    $('.section_miliseconds').css('visibility', 'hidden');
                     clearInterval(runCountdown);
                     runCountdown = setInterval(countdown_light, refreshRate);
                     $('.refreshRate_Selection').css('color', '#555');

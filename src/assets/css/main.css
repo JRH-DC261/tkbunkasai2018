@@ -25,6 +25,8 @@ h1 {
   margin: 0.5em; }
 
 h2 {
+  font-family: "Open Sans", "こぶりなゴシック W3 JIS2004", sans-serif;
+  font-weight: 400;
   font-size: 1.5vw;
   margin: 0.5em; }
 
@@ -555,15 +557,16 @@ body.popup {
   width: 90%;
   height: 90%;
   left: 5vw;
-  top: 2.5vh;
+  top: 2.5vh; }
+
+.group-list_cnt {
+  z-index: 1000;
   -webkit-overflow-scrolling: touch !important;
   overflow-y: scroll !important; }
 
-.group-list_cnt {
-  z-index: 1000; }
-
 .group-info_cnt {
-  z-index: 2000; }
+  z-index: 2000;
+  overflow-x: hidden; }
 
 .group-list_iframe {
   display: block;

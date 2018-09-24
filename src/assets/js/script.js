@@ -14,19 +14,28 @@ $(document).ready(function () {
         //1団体表示
         $('.group-slide div').removeClass('__display3 __L1 __M1 __R1 __L2 __M2 __R2').addClass('slide __display1');
         $('.group-slide').removeClass('slide');
-    } else if (viewportWidth < iPadPro && widthRatio < 6/5) {
+    } else if (viewportWidth < iPadPro && widthRatio < 6 / 5) {
         //2団体表示
         $('.group-slide__extra').addClass('slide');
-        $('.group-slide__extra').append($('.group-slide .__R1'));
-        $('.group-slide__extra').append($('.group-slide .__L2'));
+        $('.group-slide__extra.__extra1').append($('.group-slide .__R1.__extra1'));
+        $('.group-slide__extra.__extra1').append($('.group-slide .__L2.__extra1'));
+        $('.group-slide__extra.__extra2').append($('.group-slide .__R1.__extra2'));
+        $('.group-slide__extra.__extra2').append($('.group-slide .__L2.__extra2'));
+        $('.group-slide__extra.__extra3').append($('.group-slide .__R1.__extra3'));
+        $('.group-slide__extra.__extra3').append($('.group-slide .__L2.__extra3'));
+        /*$('.group-slide .__R1').each(function(){
+            $(this).closest('.group-slide__extra').append(this);
+        });
+        $('.group-slide .__L2').each(function(){
+            $(this).closest('.group-slide__extra').append(this);
+        });*/
         $('.group-slide .__L1').removeClass('__display3 __L1').addClass('__display2 __L');
         $('.group-slide .__M1').removeClass('__display3 __M1').addClass('__display2 __R');
         $('.group-slide .__R1').removeClass('__display3 __R1').addClass('__display2 __L');
         $('.group-slide .__L2').removeClass('__display3 __L2').addClass('__display2 __R');
         $('.group-slide .__M2').removeClass('__display3 __M2').addClass('__display2 __L');
         $('.group-slide .__R2').removeClass('__display3 __R2').addClass('__display2 __R');
-    } else {
-    }
+    } else {}
 
     //スクロールバー幅取得
     function getScrollBarWidth() {
@@ -45,9 +54,10 @@ $(document).ready(function () {
     var pageWidth = viewportWidth - scrollBarWidth;
 
     //fullpage設定
-    $('#fullpage').fullpage({
+    $('.fullpage_index').fullpage({
         //anchors: ['Home', 'About', 'Access', 'Group', 'Timetable', 'Downloads'],
-        anchors: ['Home', 'About', 'Access', 'Group', 'Downloads'],
+        //anchors: ['Home', 'About', 'Access', 'Group', 'Downloads'],
+        anchors: ['Home', 'About', 'Access', 'Downloads'],
         lockAnchors: true,
         menu: '#menu',
         slidesNavigation: false,
@@ -75,7 +85,11 @@ $(document).ready(function () {
             }
         }
     });
-
+    $('.fullpage_group-info').fullpage({
+        lockAnchors: false,
+        //scrolloverflow: false,
+        autoScrolling: false,
+    });
 
     //メニュー
     $('.menu_home').click(function () {
@@ -204,33 +218,84 @@ $(document).ready(function () {
 
         $('.group-list_close', parent.document).css('display', 'block').animate({
             opacity: 1
-        }, 400, function(){
-            $('.group-info_iframe', parent.document).attr('src', ' ');
+        }, 400, function () {
+            //$('.group-info_iframe', parent.document).attr('src', ' ');
         });
     }
 
-    if (viewportWidth < smartphone) {
-        $('.group-exhibit').click(function () {
+    $('.group-exhibit').click(function () {
+        if (viewportWidth < smartphone) {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'groupExhibit.html#1/' + groupInfoNumber;
+            var groupInfoOpenSrc = 'groupExhibit.html#0/' + groupInfoNumber;
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
-        });
-    } else if (viewportWidth < iPadPro && widthRatio < 6/5) {
-        $('.group-exhibit').click(function () {
+        } else if (viewportWidth < iPadPro && widthRatio < 6 / 5) {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'groupExhibit.html#1/' + Math.floor(groupInfoNumber / 2);
+            var groupInfoOpenSrc = 'groupExhibit.html#0/' + Math.floor(groupInfoNumber / 2);
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
-        });
-    } else {
-        $('.group-exhibit').click(function () {
+        } else {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'groupExhibit.html#1/' + Math.floor(groupInfoNumber / 3);
+            var groupInfoOpenSrc = 'groupExhibit.html#0/' + Math.floor(groupInfoNumber / 3);
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
-        });
-    }
+        }
+    });
+    $('.group-theater').click(function () {
+        if (viewportWidth < smartphone) {
+            var groupInfoNumber = $(this).closest('tr').index();
+            var groupInfoOpenSrc = 'groupTheater.html#0/' + groupInfoNumber;
+            $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
+            openGroupInfo();
+        } else if (viewportWidth < iPadPro && widthRatio < 6 / 5) {
+            var groupInfoNumber = $(this).closest('tr').index();
+            var groupInfoOpenSrc = 'groupTheater.html#0/' + Math.floor(groupInfoNumber / 2);
+            $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
+            openGroupInfo();
+        } else {
+            var groupInfoNumber = $(this).closest('tr').index();
+            var groupInfoOpenSrc = 'groupTheater.html#0/' + Math.floor(groupInfoNumber / 3);
+            $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
+            openGroupInfo();
+        }
+    });
+    $('.group-perform').click(function () {
+        if (viewportWidth < smartphone) {
+            var groupInfoNumber = $(this).closest('tr').index();
+            var groupInfoOpenSrc = 'groupPerform.html#0/' + groupInfoNumber;
+            $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
+            openGroupInfo();
+        } else if (viewportWidth < iPadPro && widthRatio < 6 / 5) {
+            var groupInfoNumber = $(this).closest('tr').index();
+            var groupInfoOpenSrc = 'groupPerform.html#0/' + Math.floor(groupInfoNumber / 2);
+            $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
+            openGroupInfo();
+        } else {
+            var groupInfoNumber = $(this).closest('tr').index();
+            var groupInfoOpenSrc = 'groupPerform.html#0/' + Math.floor(groupInfoNumber / 3);
+            $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
+            openGroupInfo();
+        }
+    });
+    $('.group-H3').click(function () {
+        if (viewportWidth < smartphone) {
+            var groupInfoNumber = $(this).closest('tr').index();
+            var groupInfoOpenSrc = 'groupH3.html#0/' + groupInfoNumber;
+            $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
+            openGroupInfo();
+        } else if (viewportWidth < iPadPro && widthRatio < 6 / 5) {
+            var groupInfoNumber = $(this).closest('tr').index();
+            var groupInfoOpenSrc = 'groupH3.html#0/' + Math.floor(groupInfoNumber / 2);
+            $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
+            openGroupInfo();
+        } else {
+            var groupInfoNumber = $(this).closest('tr').index();
+            var groupInfoOpenSrc = 'groupH3.html#0/' + Math.floor(groupInfoNumber / 3);
+            $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
+            openGroupInfo();
+        }
+    });
+
 
     //閉じるボタン
     $('.group-info_close').click(function () {

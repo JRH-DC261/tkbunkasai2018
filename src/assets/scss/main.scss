@@ -551,16 +551,17 @@ body.popup {
     height: 90%;
     left: 5vw;
     top: 2.5vh;
-    -webkit-overflow-scrolling: touch !important;
-    overflow-y: scroll !important;
 }
 
 .group-list_cnt {
     z-index: 1000;
+    -webkit-overflow-scrolling: touch !important;
+    overflow-y: scroll !important;
 }
 
 .group-info_cnt {
     z-index: 2000;
+    overflow-x: hidden;
 }
 
 .group-list_iframe{
