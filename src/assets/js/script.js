@@ -148,10 +148,18 @@ $(document).ready(function () {
 
 
     //参加団体一覧開閉
-    function openGroupList() {
+    function openGroupList(group) {
         $('.group-list_cnt, .group-list_close').css('display', 'block').animate({
             opacity: 1
-        }, 400);
+        }, 400, function () {
+            var destinationGroup = "#" + group;
+            var GroupOffset = $('.group-list_iframe').contents().find(destinationGroup).offset().top;
+            $('.group-list_iframe').contents().scrollTop(GroupOffset);
+            $('.group-list_cnt').animate({
+                scrollTop: GroupOffset
+            }, 250, 'swing');
+            //$('.group-list_iframe').contents().find('#whiteout_group-info').removeClass('active');
+        });
         $('#blackout_group-info').addClass('active');
         //bodyのスクロール禁止
         scrollPosition = window.pageYOffset;
@@ -164,6 +172,7 @@ $(document).ready(function () {
         $('.menu-sp_icon.__open').css('display', 'none');
     }
 
+
     function closeGroupList() {
         $('.group-list_cnt, .group-list_close').animate({
             opacity: 0
@@ -175,22 +184,39 @@ $(document).ready(function () {
             $('body').css('margin-top', '0');
             $(window).scrollTop(scrollPosition);
             $('.menu-sp_icon.__open').css('display', 'block');
-            $('.group-list_iframe').attr('src', ' ');
+            //$('.group-list_iframe').attr('src', ' ');
+            //$('.group-list_iframe').contents().find('#whiteout_group-info').addClass('active');
         });
     }
 
     //開く
     $('.group_cnt_exhibit').click(function () {
-        $('.group-list_iframe').attr('src', 'groupList.html#Exhibit');
-        openGroupList();
+        //$('.group-list_iframe').attr('src', 'groupList#Exhibit');
+        openGroupList('Exhibit');
     });
     $('.group_cnt_theater').click(function () {
-        $('.group-list_iframe').attr('src', 'groupList.html#Theater');
-        openGroupList();
+        //$('.group-list_iframe').attr('src', 'groupList');
+        openGroupList('Theater');
     });
     $('.group_cnt_perform').click(function () {
-        $('.group-list_iframe').attr('src', 'groupList.html#Perform');
-        openGroupList();
+        //$('.group-list_iframe').attr('src', 'groupList#Perform');
+        openGroupList('Perform');
+    });
+    $('.group_cnt_h3').click(function () {
+        //$('.group-list_iframe').attr('src', 'groupList#H3');
+        openGroupList('H3');
+    });
+    $('.group_cnt_chuya').click(function () {
+        //$('.group-list_iframe').attr('src', 'groupList#H3');
+        openGroupList('H3');
+    });
+    $('.group_cnt_messe').click(function () {
+        //$('.group-list_iframe').attr('src', 'groupList#Messe');
+        openGroupList('Messe');
+    });
+    $('.group_cnt_list').click(function () {
+        //$('.group-list_iframe').attr('src', 'groupList');
+        openGroupList('Top');
     });
     //閉じるボタン
     $('.group-list_close').click(function () {
@@ -226,17 +252,17 @@ $(document).ready(function () {
     $('.group-exhibit').click(function () {
         if (viewportWidth < smartphone) {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'groupExhibit.html#0/' + groupInfoNumber;
+            var groupInfoOpenSrc = 'groupExhibit#0/' + groupInfoNumber;
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
         } else if (viewportWidth < iPadPro && widthRatio < 6 / 5) {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'groupExhibit.html#0/' + Math.floor(groupInfoNumber / 2);
+            var groupInfoOpenSrc = 'groupExhibit#0/' + Math.floor(groupInfoNumber / 2);
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
         } else {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'groupExhibit.html#0/' + Math.floor(groupInfoNumber / 3);
+            var groupInfoOpenSrc = 'groupExhibit#0/' + Math.floor(groupInfoNumber / 3);
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
         }
@@ -244,17 +270,17 @@ $(document).ready(function () {
     $('.group-theater').click(function () {
         if (viewportWidth < smartphone) {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'groupTheater.html#0/' + groupInfoNumber;
+            var groupInfoOpenSrc = 'groupTheater#0/' + groupInfoNumber;
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
         } else if (viewportWidth < iPadPro && widthRatio < 6 / 5) {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'groupTheater.html#0/' + Math.floor(groupInfoNumber / 2);
+            var groupInfoOpenSrc = 'groupTheater#0/' + Math.floor(groupInfoNumber / 2);
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
         } else {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'groupTheater.html#0/' + Math.floor(groupInfoNumber / 3);
+            var groupInfoOpenSrc = 'groupTheater#0/' + Math.floor(groupInfoNumber / 3);
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
         }
@@ -262,17 +288,17 @@ $(document).ready(function () {
     $('.group-perform').click(function () {
         if (viewportWidth < smartphone) {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'groupPerform.html#0/' + groupInfoNumber;
+            var groupInfoOpenSrc = 'groupPerform#0/' + groupInfoNumber;
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
         } else if (viewportWidth < iPadPro && widthRatio < 6 / 5) {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'groupPerform.html#0/' + Math.floor(groupInfoNumber / 2);
+            var groupInfoOpenSrc = 'groupPerform#0/' + Math.floor(groupInfoNumber / 2);
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
         } else {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'groupPerform.html#0/' + Math.floor(groupInfoNumber / 3);
+            var groupInfoOpenSrc = 'groupPerform#0/' + Math.floor(groupInfoNumber / 3);
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
         }
@@ -280,17 +306,17 @@ $(document).ready(function () {
     $('.group-H3').click(function () {
         if (viewportWidth < smartphone) {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'groupH3.html#0/' + groupInfoNumber;
+            var groupInfoOpenSrc = 'groupH3#0/' + groupInfoNumber;
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
         } else if (viewportWidth < iPadPro && widthRatio < 6 / 5) {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'groupH3.html#0/' + Math.floor(groupInfoNumber / 2);
+            var groupInfoOpenSrc = 'groupH3#0/' + Math.floor(groupInfoNumber / 2);
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
         } else {
             var groupInfoNumber = $(this).closest('tr').index();
-            var groupInfoOpenSrc = 'groupH3.html#0/' + Math.floor(groupInfoNumber / 3);
+            var groupInfoOpenSrc = 'groupH3#0/' + Math.floor(groupInfoNumber / 3);
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
         }

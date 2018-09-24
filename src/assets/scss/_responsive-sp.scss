@@ -64,23 +64,17 @@
     .content.__narrow {
         width: 85vw;
         padding: 1.25vw 2.5vw;
-    }
-
-    //概要
+    } //概要
     #id-about h3 {
         margin-left: 2vw;
     }
     #id-about p {
         margin-left: 4vw;
-    }
-
-    //ご案内
+    } //ご案内
     .information_text {
         width: 90%;
         margin: 0 auto 2.5% auto;
-    }
-
-    //アクセス
+    } //アクセス
     #id-access img {
         width: 90%;
         margin-left: 5%;
@@ -223,34 +217,43 @@
     .group_cnt {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: $group_cnt-row-height-sp $group_cnt-row-height-sp $group_cnt-row-height-sp $group_cnt-row-height-sp $group_cnt-row-height-sp $group_cnt-row-height-sp $group_cnt-row-height-sp;
-        font-size: 4vw;
     }
-    .group_cnt_1 {
+    .group_cnt_exhibit {
         grid-column: 1/2;
         grid-row: 1/4;
+        font-size: 5vw;
     }
-    .group_cnt_2 {
+    .group_cnt_theater {
         grid-column: 2/3;
         grid-row: 1/4;
+        font-size: 5vw;
     }
-    .group_cnt_3 {
+    .group_cnt_perform {
         grid-column: 1/2;
         grid-row: 4/7;
+        font-size: 4.5vw;
     }
-    .group_cnt_4 {
+    .group_cnt_h3 {
         grid-column: 2/3;
         grid-row: 4/5;
+        background: url("../img/group-icon/group-icon_%E4%B8%80%E8%A6%A7.png") no-repeat center;
+        font-size: 4vw;
     }
-    .group_cnt_5 {
+    .group_cnt_messe {
         grid-column: 2/3;
         grid-row: 5/6;
+        background: url("../img/group-icon/group-icon_%E4%B8%80%E8%A6%A7.png") no-repeat center;
+        font-size: 4vw;
     }
-    .group_cnt_6 {
+    .group_cnt_chuya {
         grid-column: 2/3;
         grid-row: 6/7;
+        background: url("../img/group-icon/group-icon_%E4%B8%80%E8%A6%A7.png") no-repeat center;
+        font-size: 4vw;
     }
-    .group_cnt_7 {
+    .group_cnt_list {
         grid-column: 1/3;
         grid-row: 7/8;
+        font-size: 4vw;
     }
 }
