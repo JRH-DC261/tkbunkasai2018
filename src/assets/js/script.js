@@ -56,8 +56,8 @@ $(document).ready(function () {
     //fullpage設定
     $('.fullpage_index').fullpage({
         //anchors: ['Home', 'About', 'Access', 'Group', 'Timetable', 'Downloads'],
-        //anchors: ['Home', 'About', 'Access', 'Group', 'Downloads'],
-        anchors: ['Home', 'About', 'Access', 'Downloads'],
+        anchors: ['Home', 'About', 'Access', 'Group', 'Downloads'],
+        //anchors: ['Home', 'About', 'Access', 'Downloads'],
         lockAnchors: true,
         menu: '#menu',
         slidesNavigation: false,

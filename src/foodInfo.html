@@ -1,69 +1,96 @@
 <!DOCTYPE html>
 <html lang="ja">
+<meta charset="utf-8" />
 
-<!-食品提供状況
-noInfo:     情報提供休止
-wait[]:     []分待ち
-wait[]~:    []分以上待ち
-lineStop:   行列形成休止
-salesStop:  販売休止
-salesEnd:   販売終了
-A: 朝日 N: 中庭 5: 50周年
-->
-
-<!DOCTYPE html>
-<html lang="ja">
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
 
-	<link rel="stylesheet" type="text/css" href="assets/css/jquery.fullPage.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css" />
-	<link rel="stylesheet" type="text/css" href="assets/css/main.css" />
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
-    <script src="assets/js/jquery.slicknav.min.js"></script>
-	<script type="text/javascript" src="assets/js/script.js"></script>
+    <!-- ©筑波大学付属駒場中・高等学校文化祭実行委員会 2018 -->
+    <title>お食事のご案内｜第67回筑駒文化祭公式サイト</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116927226-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-116927226-1');
+    </script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png?v=20180905">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png?v=20180905">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png?v=20180905">
+    <link rel="manifest" href="assets/favicon/site.webmanifest?v=20180905">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg?v=20180905" color="#5ac2d9">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico?v=20180905">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml?v=20180905">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="お食事のご案内｜第67回筑駒文化祭公式サイト">
+    <meta property="og:image" content="http:///tsukukoma.bunkasai.info/assets/og.png">
+    <meta property="og:url" content="http://tsukukoma.bunkasai.info">
+    <meta property="fb:app_id" content="210053346147406">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@tsukukomafesta">
+    <meta name="twitter:description" content="第67回筑駒文化祭 -fluctus- は、2018年11月2日(金)～4日(日)に開催予定です。皆様のご来場をお待ちしております。">
+    <meta name="twitter:image" content="http:///tsukukoma.bunkasai.info/assets/og.png">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+    <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="assets/js/script_foodInfo.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="//typesquare.com/accessor/script/typesquare.js?PmUV0TKqc8Y%3D" charset="utf-8"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+
+    <!--<meta http-equiv="Refresh" content="60">-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
 </head>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<head>
-    <meta http-equiv="Refresh" content="60">
-    <title>食品提供状況</title>
-</head>
-
 
 <body>
-<div id="foodInfoBody">
-    <div style="position:absolute" class="header">
-            <ul>
-                <li style="float:left"><a href="index.html">トップ</a></li>
+    <div id="blackout"></div>
+    <ul id="menu" class="active">
+        <li class="menu_text"><a class="menu_foodInfo">食品提供状況</a></li>
+        <li class="menu_text"><a class="menu_Shokuhin">高3食品班</a></li>
+        <li class="menu_text"><a class="menu_Kissa">高3喫茶班</a></li>
+        <li class="menu_SNS"><a href="https://twitter.com/intent/tweet?text=%E7%AC%AC67%E5%9B%9E%E7%AD%91%E9%A7%92%E6%96%87%E5%8C%96%E7%A5%AD%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%EF%BD%9C&url=https%3A//tsukukoma.bunkasai.info/foodInfo&via=tsukukomafesta" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//tsukukoma.bunkasai.info/foodInfo" target="_blank"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a></li>
+        <a href="https://tsukukoma.bunkasai.info/" target="_blank"><img src="assets/img/logo_black.svg"></a>
+    </ul>
 
-                <li data-menuanchor="H3Cafe" style="float:right"><a href="index.html#Groups">高3喫茶班</a></li>
-                <li data-menuanchor="H3Food" style="float:right"><a href="index.html#Groups">高3食品班</a></li>
-            </ul>
+    <div id="menu-sp">
+        <div class="menu-sp_icon __open"></div>
+        <div class="menu-sp_icon __close"></div>
+        <ul id="menu-sp_nav">
+            <li><a href="https://tsukukoma.bunkasai.info/" target="_blank"><img src="assets/img/logo_black.svg"></a></li>
+            <li class="menu-sp_text"><a class="menu_foodInfo">食品提供状況</a></li>
+            <li class="menu-sp_text"><a class="menu_Shokuhin">高3食品班</a></li>
+            <li class="menu-sp_text"><a class="menu_Kissa">高3喫茶班</a></li>
+            <li class="menu-sp_SNS">
+                <a href="https://twitter.com/intent/tweet?text=%E7%AC%AC67%E5%9B%9E%E7%AD%91%E9%A7%92%E6%96%87%E5%8C%96%E7%A5%AD%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%EF%BD%9C&url=https%3A//tsukukoma.bunkasai.info//foodInfo&via=tsukukomafesta" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//tsukukoma.bunkasai.info/foodInfo" target="_blank"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+        <a class="menu-sp_section"></a>
     </div>
 
-
-        <div id="foodInfo">
-            <h1>食品提供状況</h1>
-            <h3> 更新：18:00</h3>
-            <div id="foodInfoContainer">
+    <div id="fullpage">
+        <div class="section" data-anchor="FoodInfo" id="id-foodInfo">
+            <div class="content">
+                <h1>食品提供状況</h1>
+                <h3>更新：XX:XX</h3>
                 <div id="Asahi">
                     <table class="foodInfoTable">
                         <tr>
@@ -71,42 +98,42 @@ A: 朝日 N: 中庭 5: 50周年
                                 <h2>朝日の広場 (高3食品班)</h2>
                             </td>
                         </tr>
-                        <tr class="wait">
-                            <td>Wifiルーター</td>
-                            <td><img class="waitTime" src="assets/foodInfo/noInfo.svg"></td>
+                        <tr class="foodStatus">
+                            <td>サーフェーサー</td>
+                            <td><img class="status" id="asahi1" src="assets/img/foodInfo/noInfo.svg"></td>
                         </tr>
-                        <tr class="wait">
-                            <td>キッチンタイマー</td>
-                            <td><img class="waitTime" src="assets/foodInfo/wait5.svg"></td>
+                        <tr class="foodStatus">
+                            <td>プライマー</td>
+                            <td><img class="status" id="asahi2" src="assets/img/foodInfo/noInfo.svg"></td>
                         </tr>
-                        <tr class="wait">
-                            <td>プリンター</td>
-                            <td><img class="waitTime" src="assets/foodInfo/lineStop.svg"></td>
+                        <tr class="foodStatus">
+                            <td>エアブラシ</td>
+                            <td><img class="status" id="asahi3" src="assets/img/foodInfo/noInfo.svg"></td>
                         </tr>
-                        <tr class="wait">
-                            <td>フローシート</td>
-                            <td><img class="waitTime" src="assets/foodInfo/wait60~.svg"></td>
+                        <tr class="foodStatus">
+                            <td>デザインナイフ</td>
+                            <td><img class="status" id="asahi4" src="assets/img/foodInfo/noInfo.svg"></td>
                         </tr>
-                        <tr class="wait">
-                            <td>スマートフォン</td>
-                            <td><img class="waitTime" src="assets/foodInfo/salesEnd.svg"></td>
+                        <tr class="foodStatus">
+                            <td>瞬間接着剤</td>
+                            <td><img class="status" id="asahi5" src="assets/img/foodInfo/noInfo.svg"></td>
                         </tr>
                     </table>
                 </div>
-                <div id="Nakaniwa50th">
+                <div id="NakaniwaKissa">
                     <table class="foodInfoTable">
                         <tr>
                             <td class="foodPlace" colspan="2">
                                 <h2>中庭 (高3食品班)</h2>
                             </td>
                         </tr>
-                        <tr class="wait">
+                        <tr class="foodStatus">
                             <td>電気</td>
-                            <td><img class="waitTime" src="assets/foodInfo/wait15.svg"></td>
+                            <td><img class="status" id="nakaniwa1" src="assets/img/foodInfo/noInfo.svg"></td>
                         </tr>
-                        <tr class="wait">
+                        <tr class="foodStatus">
                             <td>魔剤</td>
-                            <td><img class="waitTime" src="assets/foodInfo/wait30.svg"></td>
+                            <td><img class="status" id="nakaniwa2" src="assets/img/foodInfo/noInfo.svg"></td>
                         </tr>
                     </table>
                     <table class="foodInfoTable">
@@ -115,19 +142,29 @@ A: 朝日 N: 中庭 5: 50周年
                                 <h2>50周年記念会館 (高3喫茶班)</h2>
                             </td>
                         </tr>
-                        <tr class="wait">
+                        <tr class="foodStatus">
                             <td>Twitter</td>
-                            <td><img class="waitTime" src="assets/foodInfo/wait120~.svg"></td>
+                            <td><img class="status" id="kissa1" src="assets/img/foodInfo/noInfo.svg"></td>
                         </tr>
-                        <tr class="wait">
+                        <tr class="foodStatus">
                             <td>やる気</td>
-                            <td><img class="waitTime" src="assets/foodInfo/wait90.svg"></td>
+                            <td><img class="status" id="kissa2" src="assets/img/foodInfo/noInfo.svg"></td>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
-</div>
+        <div class="section" data-anchor="Shokuhin" id="id-shokuhin">
+            <div class="content">
+                <h1>高3食品班</h1>
+            </div>
+        </div>
+        <div class="section" data-anchor="Kissa" id="id-kissa">
+            <div class="content">
+                <h1>高3喫茶班</h1>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -2,102 +2,97 @@
 
 @import "_definition";
 
-#foodInfoBody{
-    background-image:url("../img/DSC02203-Dev.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#foodInfo{
-    padding: 2.5vh;
-    margin: 0;
+html::before {
+    content: ' ';
+    background-image:url("../img/bg.jpg");
     display: block;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: -10;
 }
 
-#foodInfo h1{
+
+#id-foodInfo{
+    margin-top: 5vw;
+}
+
+#id-foodInfo h1{
     font-size: 2.5vw;
     text-align: center;
-    margin-top: 2.5vw;
-    margin-bottom: -2.5vw;
 }
 
-#foodInfo h2{
+#id-foodInfo h2{
     font-size: 2vw;
-    line-height: 0;
+}
+#id-foodInfo h2::before {
+    background: url("");
 }
 
-#foodInfo h3{
+#id-foodInfo h3{
     font-size: 1vw;
     text-align: right;
-    margin-top: 1vw;
-    margin-bottom: 2vw;
 }
 
-#foodInfoContainer{
-    display: flex;
-}
 
 #Asahi{
-    margin-left: auto;
-    margin-right: auto;
+    width: 49%;
+    margin-right: 1.5%;
+    display: inline-block;
+    vertical-align: top;
 }
 
-#Nakaniwa50th{
-    margin-left: auto;
-    margin-right: auto;
+#NakaniwaKissa{
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .foodInfoTable{
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
     border-collapse: collapse;
     margin-bottom: 1.5vw;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.5);
 }
-
-
 .foodInfoTable td{
     display: table-cell;
     padding: 1vw;
     text-align: center;
-    font-size: 2vw;
+    font-size: 1.5vw;
     white-space: nowrap;
-    width: 17vw;
+}
+.foodInfoTable td:first-child{
+    width: 40%;
+}
+.foodInfoTable td:nth-child(2){
+    width: 60%;
 }
 
-.wait{
-}
-
-.waitTime{
-    width: 25vw;
-}
 
 
 @media only screen and (max-width: $iPadPro) {
-    //
-    #foodInfo h1{
+    #id-foodInfo h1{
         font-size: 5vw;
     }
-    
-    #foodInfo h2{
+    #id-foodInfo h2{
         font-size: 4vw;
     }
-    
-    #foodInfo h3{
+    #id-foodInfo h3{
         font-size: 2vw;
     }
-
     .foodInfoTable{
-        width: 90vw;
+        width: 100%;
     }
-    .foodInfoTable td{
-        width: 25vw;
-        font-size: 4vw;
+    #Asahi{
+        width: 100%;
     }
-    .waitTime{
-        width: 50vw;
-    }
-    #foodInfoContainer{
-        display: block;
+    #NakaniwaKissa{
+        width: 100%;
     }
 }

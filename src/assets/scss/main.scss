@@ -628,9 +628,10 @@ body.popup {
 
 
 .deco-icon {
-    height: 30px;
+    vertical-align: bottom;
 }
 
 @import "_groupInfo";
 @import "_student";
+@import "_foodInfo";
 @import "_responsive-sp";
