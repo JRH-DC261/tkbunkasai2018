@@ -9,7 +9,6 @@ $(document).ready(function () {
     var viewportHeight = $(window).height();
     var widthRatio = viewportWidth / viewportHeight;
 
-
     //参加団体の1画面当たり表示数決定(iOS)
     if (viewportWidth < smartphone) {
         //1団体表示
@@ -24,12 +23,6 @@ $(document).ready(function () {
         $('.group-slide__extra.__extra2').append($('.group-slide .__L2.__extra2'));
         $('.group-slide__extra.__extra3').append($('.group-slide .__R1.__extra3'));
         $('.group-slide__extra.__extra3').append($('.group-slide .__L2.__extra3'));
-        /*$('.group-slide .__R1').each(function(){
-            $(this).closest('.group-slide__extra').append(this);
-        });
-        $('.group-slide .__L2').each(function(){
-            $(this).closest('.group-slide__extra').append(this);
-        });*/
         $('.group-slide .__L1').removeClass('__display3 __L1').addClass('__display2 __L');
         $('.group-slide .__M1').removeClass('__display3 __M1').addClass('__display2 __R');
         $('.group-slide .__R1').removeClass('__display3 __R1').addClass('__display2 __L');
@@ -225,12 +218,13 @@ $(document).ready(function () {
 
     //参加団体情報開閉
     function openGroupInfo(page) {
-        //参加団体の1画面当たり表示数決定(PC)
-        var parentWidth = $(window, parent.document).width();
+        //参加団体の1画面当たり表示数決定
+        /*var parentWidth = $(window, parent.document).width();
         if (parentWidth < smartphone) {
             //1団体表示
             $('.group-slide div').removeClass('__display3 __L1 __M1 __R1 __L2 __M2 __R2').addClass('slide __display1');
             $('.group-slide').removeClass('slide');
+            alert('a');
         } else if (parentWidth < iPadPro && widthRatio < 6 / 5) {
             //2団体表示
             $('.group-slide__extra').addClass('slide');
@@ -240,19 +234,15 @@ $(document).ready(function () {
             $('.group-slide__extra.__extra2').append($('.group-slide .__L2.__extra2'));
             $('.group-slide__extra.__extra3').append($('.group-slide .__R1.__extra3'));
             $('.group-slide__extra.__extra3').append($('.group-slide .__L2.__extra3'));
-            /*$('.group-slide .__R1').each(function(){
-                $(this).closest('.group-slide__extra').append(this);
-            });
-            $('.group-slide .__L2').each(function(){
-                $(this).closest('.group-slide__extra').append(this);
-            });*/
             $('.group-slide .__L1').removeClass('__display3 __L1').addClass('__display2 __L');
             $('.group-slide .__M1').removeClass('__display3 __M1').addClass('__display2 __R');
             $('.group-slide .__R1').removeClass('__display3 __R1').addClass('__display2 __L');
             $('.group-slide .__L2').removeClass('__display3 __L2').addClass('__display2 __R');
             $('.group-slide .__M2').removeClass('__display3 __M2').addClass('__display2 __L');
             $('.group-slide .__R2').removeClass('__display3 __R2').addClass('__display2 __R');
-        } else {}
+            alert('b');
+        } else {
+            alert('c');}*/
 
         $('.group-list_close', parent.document).animate({
             opacity: 0
@@ -365,5 +355,10 @@ $(document).ready(function () {
     $('#blackout_group-info').click(function () {
         closeGroupList();
         closeGroupInfo();
+    });
+
+    アンロード時
+    $(window).on('beforeunload', function(){
+        $('.group-info_iframe', parent.document).attr('src', '');
     });
 });
