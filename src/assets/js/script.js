@@ -9,7 +9,8 @@ $(document).ready(function () {
     var viewportHeight = $(window).height();
     var widthRatio = viewportWidth / viewportHeight;
 
-    //参加団体の1画面当たり表示数決定
+
+    //参加団体の1画面当たり表示数決定(iOS)
     if (viewportWidth < smartphone) {
         //1団体表示
         $('.group-slide div').removeClass('__display3 __L1 __M1 __R1 __L2 __M2 __R2').addClass('slide __display1');
@@ -61,7 +62,6 @@ $(document).ready(function () {
         lockAnchors: true,
         menu: '#menu',
         slidesNavigation: false,
-        responsiveHeight: 500,
         scrolloverflow: true,
         autoScrolling: false,
         fitToSection: false,
@@ -224,7 +224,36 @@ $(document).ready(function () {
     });
 
     //参加団体情報開閉
-    function openGroupInfo() {
+    function openGroupInfo(page) {
+        //参加団体の1画面当たり表示数決定(PC)
+        var parentWidth = $(window, parent.document).width();
+        if (parentWidth < smartphone) {
+            //1団体表示
+            $('.group-slide div').removeClass('__display3 __L1 __M1 __R1 __L2 __M2 __R2').addClass('slide __display1');
+            $('.group-slide').removeClass('slide');
+        } else if (parentWidth < iPadPro && widthRatio < 6 / 5) {
+            //2団体表示
+            $('.group-slide__extra').addClass('slide');
+            $('.group-slide__extra.__extra1').append($('.group-slide .__R1.__extra1'));
+            $('.group-slide__extra.__extra1').append($('.group-slide .__L2.__extra1'));
+            $('.group-slide__extra.__extra2').append($('.group-slide .__R1.__extra2'));
+            $('.group-slide__extra.__extra2').append($('.group-slide .__L2.__extra2'));
+            $('.group-slide__extra.__extra3').append($('.group-slide .__R1.__extra3'));
+            $('.group-slide__extra.__extra3').append($('.group-slide .__L2.__extra3'));
+            /*$('.group-slide .__R1').each(function(){
+                $(this).closest('.group-slide__extra').append(this);
+            });
+            $('.group-slide .__L2').each(function(){
+                $(this).closest('.group-slide__extra').append(this);
+            });*/
+            $('.group-slide .__L1').removeClass('__display3 __L1').addClass('__display2 __L');
+            $('.group-slide .__M1').removeClass('__display3 __M1').addClass('__display2 __R');
+            $('.group-slide .__R1').removeClass('__display3 __R1').addClass('__display2 __L');
+            $('.group-slide .__L2').removeClass('__display3 __L2').addClass('__display2 __R');
+            $('.group-slide .__M2').removeClass('__display3 __M2').addClass('__display2 __L');
+            $('.group-slide .__R2').removeClass('__display3 __R2').addClass('__display2 __R');
+        } else {}
+
         $('.group-list_close', parent.document).animate({
             opacity: 0
         }, 400, function () {
@@ -250,12 +279,13 @@ $(document).ready(function () {
     }
 
     $('.group-exhibit').click(function () {
-        if (viewportWidth < smartphone) {
+        var parentWidth = $(window, parent.document).width();
+        if (parentWidth < smartphone) {
             var groupInfoNumber = $(this).closest('tr').index();
             var groupInfoOpenSrc = 'groupExhibit#0/' + groupInfoNumber;
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
-        } else if (viewportWidth < iPadPro && widthRatio < 6 / 5) {
+        } else if (parentWidth < iPadPro && widthRatio < 6 / 5) {
             var groupInfoNumber = $(this).closest('tr').index();
             var groupInfoOpenSrc = 'groupExhibit#0/' + Math.floor(groupInfoNumber / 2);
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
@@ -268,12 +298,13 @@ $(document).ready(function () {
         }
     });
     $('.group-theater').click(function () {
-        if (viewportWidth < smartphone) {
+        var parentWidth = $(window, parent.document).width();
+        if (parentWidth < smartphone) {
             var groupInfoNumber = $(this).closest('tr').index();
             var groupInfoOpenSrc = 'groupTheater#0/' + groupInfoNumber;
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
-        } else if (viewportWidth < iPadPro && widthRatio < 6 / 5) {
+        } else if (parentWidth < iPadPro && widthRatio < 6 / 5) {
             var groupInfoNumber = $(this).closest('tr').index();
             var groupInfoOpenSrc = 'groupTheater#0/' + Math.floor(groupInfoNumber / 2);
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
@@ -286,12 +317,13 @@ $(document).ready(function () {
         }
     });
     $('.group-perform').click(function () {
-        if (viewportWidth < smartphone) {
+        var parentWidth = $(window, parent.document).width();
+        if (parentWidth < smartphone) {
             var groupInfoNumber = $(this).closest('tr').index();
             var groupInfoOpenSrc = 'groupPerform#0/' + groupInfoNumber;
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
-        } else if (viewportWidth < iPadPro && widthRatio < 6 / 5) {
+        } else if (parentWidth < iPadPro && widthRatio < 6 / 5) {
             var groupInfoNumber = $(this).closest('tr').index();
             var groupInfoOpenSrc = 'groupPerform#0/' + Math.floor(groupInfoNumber / 2);
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
@@ -304,12 +336,13 @@ $(document).ready(function () {
         }
     });
     $('.group-H3').click(function () {
-        if (viewportWidth < smartphone) {
+        var parentWidth = $(window, parent.document).width();
+        if (parentWidth < smartphone) {
             var groupInfoNumber = $(this).closest('tr').index();
             var groupInfoOpenSrc = 'groupH3#0/' + groupInfoNumber;
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
             openGroupInfo();
-        } else if (viewportWidth < iPadPro && widthRatio < 6 / 5) {
+        } else if (parentWidth < iPadPro && widthRatio < 6 / 5) {
             var groupInfoNumber = $(this).closest('tr').index();
             var groupInfoOpenSrc = 'groupH3#0/' + Math.floor(groupInfoNumber / 2);
             $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);

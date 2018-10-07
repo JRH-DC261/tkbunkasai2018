@@ -121,7 +121,9 @@ ul {
   .br-sp {
     display: inline; }
   .br-pc {
-    display: none; } }
+    display: none; }
+  .group-list tr td {
+    font-size: 3vw; } }
 
 * {
   -ms-user-select: none;
@@ -842,21 +844,6 @@ $palette2: #9fc367 !default;//若葉色
 $palette3: #6ab259 !default;//鮮緑
 $palette4: #357743 !default;//常盤色
 $palette5: #23532d !default;//深緑*/
-html::before {
-  content: ' ';
-  background-image: url("../img/bg.jpg");
-  display: block;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  position: fixed;
-  z-index: -10; }
-
 #id-foodInfo {
   margin-top: 5vw; }
 
@@ -876,7 +863,7 @@ html::before {
 
 #Asahi {
   width: 49%;
-  margin-right: 1.5%;
+  margin-right: 1%;
   display: inline-block;
   vertical-align: top; }
 
@@ -904,7 +891,7 @@ html::before {
 .foodInfoTable td:nth-child(2) {
   width: 60%; }
 
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 1025px) and (max-aspect-ratio: 6 / 5) {
   #id-foodInfo h1 {
     font-size: 5vw; }
   #id-foodInfo h2 {
