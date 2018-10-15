@@ -77,6 +77,9 @@ ul {
 .__indent2 {
   margin-left: 2em; }
 
+.underline {
+  border-bottom: 0.5px solid black; }
+
 @media only screen and (max-width: 1025px) and (max-aspect-ratio: 6 / 5) {
   h1 {
     font-size: 4.5vw; }
@@ -977,8 +980,9 @@ $palette5: #23532d !default;//深緑*/
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 2.5%; }
-  #id-access p {
-    margin-left: 2vw; }
+  /*#id-access p {
+        margin-left: 2vw;
+    }*/
   .access_text {
     width: 80%;
     margin-left: 10%;

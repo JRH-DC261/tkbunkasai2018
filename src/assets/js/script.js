@@ -127,7 +127,7 @@ $(document).ready(function () {
     var targetTime = new Date("Nov 2, 2018").getTime();
     var currentTime = new Date().getTime();
     var remainingTime = targetTime - currentTime;
-    var remainingDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+    var remainingDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24) + 1);
     $('.countdown_days').append(remainingDays);
 
     //トップページ矢印
@@ -138,6 +138,12 @@ $(document).ready(function () {
     //横スライド矢印
     $('.fp-prev').append('<span class="fa fa-angle-left" id="arrowL"></span>');
     $('.fp-next').append('<span class="fa fa-angle-right" id="arrowR"></span>');
+
+    //アコーディオン
+    $('.accordion_nav').click(function () {
+        $(this).toggleClass('active');
+        $(this).next('.accordion_content').toggleClass('active');
+    });
 
 
     //参加団体一覧開閉
@@ -344,6 +350,25 @@ $(document).ready(function () {
             openGroupInfo();
         }
     });
+    $('.group-Messe').click(function () {
+        var parentWidth = $(window, parent.document).width();
+        if (parentWidth < smartphone) {
+            var groupInfoNumber = $(this).closest('tr').index();
+            var groupInfoOpenSrc = 'groupMesse#0/' + groupInfoNumber;
+            $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
+            openGroupInfo();
+        } else if (parentWidth < iPadPro && widthRatio < 6 / 5) {
+            var groupInfoNumber = $(this).closest('tr').index();
+            var groupInfoOpenSrc = 'groupMesse#0/' + Math.floor(groupInfoNumber / 2);
+            $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
+            openGroupInfo();
+        } else {
+            var groupInfoNumber = $(this).closest('tr').index();
+            var groupInfoOpenSrc = 'groupMesse#0/' + Math.floor(groupInfoNumber / 3);
+            $('.group-info_iframe', parent.document).attr('src', groupInfoOpenSrc);
+            openGroupInfo();
+        }
+    });
 
 
     //閉じるボタン
@@ -351,13 +376,13 @@ $(document).ready(function () {
         closeGroupInfo();
     });
 
-    //
-    $('#blackout_group-info').click(function () {
+    //ブラックアウトで閉じる
+    /*$('#blackout_group-info').click(function () {
         closeGroupList();
         closeGroupInfo();
-    });
+    });*/
 
-    アンロード時
+    //リロード時に団体情報割りが乱れる
     $(window).on('beforeunload', function(){
         $('.group-info_iframe', parent.document).attr('src', '');
     });

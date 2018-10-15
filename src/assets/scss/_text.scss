@@ -82,6 +82,10 @@ ul {
     margin-left: 2em;
 }
 
+.underline{
+    border-bottom: 0.5px solid black;
+}
+
 @media only screen and (max-width: $iPadPro) and (max-aspect-ratio: 6/5) {
 
     h1 {
