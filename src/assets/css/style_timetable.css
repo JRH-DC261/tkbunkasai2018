@@ -1,0 +1,166 @@
+html {
+    background-image: url(../img/bg2.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/*文字*/
+body {
+    font-family: "Open Sans", "こぶりなゴシック W3 JIS2004", sans-serif;
+    font-weight: 400;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Open Sans", "こぶりなゴシック W6 JIS2004", sans-serif;
+    font-weight: 600;
+    font-size: 2.5vw;
+    margin: 0.5em 0.5em 0.3em 0.5em;
+}
+
+h3 {
+    text-align: center;
+    font-family: "Open Sans", "こぶりなゴシック W6 JIS2004", sans-serif;
+    font-weight: 600;
+    font-size: 1.25vw;
+    margin: 0;
+}
+
+th {
+    font-family: "Open Sans", "こぶりなゴシック W6 JIS2004", sans-serif;
+    font-weight: 600;
+    vertical-align: baseline;
+    font-size: 2vw;
+    padding: 0.3em;
+    text-align: center;
+}
+
+.currentTime {
+    font-family: "Open Sans", "こぶりなゴシック W6 JIS2004", sans-serif;
+    font-weight: 600;
+    font-size: 2vw;
+    position: absolute;
+    top: 0.1vw;
+    right: 1vw;
+}
+
+/*表*/
+#timetable_cnt {
+    position: absolute;
+    top: 12.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 98%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#timetable {
+    border-collapse: collapse;
+    width: 98%;
+    margin: 1% 1%;
+}
+
+/*装飾*/
+tr {
+    border-bottom: 0.5px solid #888;
+}
+
+tr:nth-child(1) {
+    border-bottom: 3px solid black;
+}
+
+td {
+    padding: 0.2em 0;
+    font-size: 2.25vw;
+    vertical-align: center;
+}
+
+td:nth-child(1) {
+    text-align: center;
+}
+
+td.endTime {
+    text-align: center;
+}
+
+/*デコアイコン*/
+.deco-icon {
+    width: 1em;
+    margin-right: 0.2em;
+    vertical-align: top;
+}
+
+/*各列*/
+.startTime {
+    width: 10%;
+}
+
+.decoIcon {
+    width: 3%;
+    padding: 0;
+}
+
+.group {
+    width: 20%;
+}
+
+.performanceName {
+    width: 38%;
+}
+
+.place,
+.performanceType {
+    width: 15%;
+}
+
+.endTime,
+.page {
+    width: 12%;
+}
+
+/*表示を切り替えるものは一旦非表示*/
+tr {
+    display: none;
+}
+
+.endTime,
+.page,
+.place,
+.performanceType {
+    display: none;
+}
+
+/*activeだと表示(JSで切替)*/
+tr.active {
+    display: table-row;
+}
+
+th.active,
+td.active {
+    display: table-cell;
+}
+
+/*時間が近い公演は点滅(JSでnearStartクラス付与)*/
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+    79% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.nearStart > .startTime {
+    animation: flash 2s infinite;
+}
+
+/*公演が始まったら点滅解除(JSでafterStartクラス付与)*/
+.afterStart > .startTime {
+    animation: none;
+}

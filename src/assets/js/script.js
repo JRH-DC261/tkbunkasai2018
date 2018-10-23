@@ -48,7 +48,7 @@ $(document).ready(function () {
     var pageWidth = viewportWidth - scrollBarWidth;
 
     //fullpage設定
-    $('.fullpage_index').fullpage({
+    $('.fullpage_index, .fullpage_foodInfo').fullpage({
         //anchors: ['Home', 'About', 'Access', 'Group', 'Timetable', 'Downloads'],
         anchors: ['Home', 'About', 'Access', 'Group', 'Downloads'],
         //anchors: ['Home', 'About', 'Access', 'Downloads'],
@@ -94,7 +94,7 @@ $(document).ready(function () {
     $('.menu_access').click(function () {
         $.fn.fullpage.moveTo('Access');
     });
-    $('.menu_group').click(function () {
+    $('.menu_group, .link_group').click(function () {
         $.fn.fullpage.moveTo('Group');
     });
     $('.menu_timetable').click(function () {
@@ -383,7 +383,8 @@ $(document).ready(function () {
     });*/
 
     //リロード時に団体情報割りが乱れる
-    $(window).on('beforeunload', function(){
+    $(window).bind('beforeunload', function(){
         $('.group-info_iframe', parent.document).attr('src', '');
+        $('.group-info_iframe').attr('src', '');
     });
 });

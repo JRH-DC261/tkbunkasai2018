@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<meta charset="utf-8" />
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+
+    <!-- ©筑波大学付属駒場中・高等学校文化祭実行委員会 2018 -->
+    <title>タイムテーブル｜第67回筑駒文化祭公式サイト</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#316544">
+    <meta name="msapplication-TileColor" content="#316544">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style_timetable.css" />
+    <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.csv.js"></script>
+    <script type="text/javascript" src="assets/js/tume.js"></script>
+    <script type="text/javascript" src="assets/js/script_timetable.js"></script>
+
+    <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?PmUV0TKqc8Y%3D&auto_load_font=true" charset="utf-8"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+</head>
+
+<body>
+    <h1>総合タイムテーブル（公演情報）</h1>
+    <h2 class="currentTime">現在時刻&nbsp;<span></span></h2>
+    <h3>表示されている時刻は目安です。混雑状況等により開始前でも入場いただけない場合がございます。「公演中」と表示されている団体は途中からの入場が可能です。</h3>
+    <div id="timetable_cnt">
+        <table id="timetable">
+            <tr data-start-time=9999 class="active">
+                <th class="startTime">開始時刻</th>
+                <th class="decoIcon"></th>
+                <th class="group">団体</th>
+                <th class="performanceName">公演名</th>
+                <th class="place">公演場所</th>
+                <th class="performanceType">公演種類</th>
+                <th></th>
+                <th class="endTime">終了時刻</th>
+                <th class="page">詳細ページ</th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
