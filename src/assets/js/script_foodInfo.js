@@ -1,48 +1,6 @@
 $(document).ready(function () {
-    //fullpage
-    //fullpage設定
-    $('#fullpage').fullpage({
-        anchors: ['FoodInfo', 'Shokuhin', 'Kissa'],
-        lockAnchors: true,
-        menu: '#menu',
-        slidesNavigation: false,
-        scrolloverflow: true,
-        autoScrolling: false,
-        fitToSection: false,
-        bigSectionsDestination: 'top',
-        verticalCentered: true,
-    });
-    //メニュー
-    $('.menu_foodInfo').click(function () {
-        $.fn.fullpage.moveTo('FoodInfo');
-    });
-    $('.menu_shokuhin').click(function () {
-        $.fn.fullpage.moveTo('Shokuhin');
-    });
-    $('.menu_kissa').click(function () {
-        $.fn.fullpage.moveTo('Kissa');
-    });
 
-    $('.menu-sp_icon.__open').click(function () {
-        $('#menu-sp').css('left', '0vw');
-        $('.menu-sp_icon.__open').css('display', 'none');
-        $('.menu-sp_icon.__close').css('display', 'block');
-        $('#blackout').addClass('active');
-    });
-    $('.menu-sp_icon.__close, #blackout').click(function () {
-        $('#menu-sp').removeAttr('style');
-        $('.menu-sp_icon.__open').css('display', 'block');
-        $('.menu-sp_icon.__close').css('display', 'none');
-        $('#blackout').removeClass('active');
-    });
-    $('#menu-sp_nav li').click(function () {
-        $('#menu-sp').removeAttr('style');
-        $('.menu-sp_icon.__open').css('display', 'block');
-        $('.menu-sp_icon.__close').css('display', 'none');
-        $('#blackout').removeClass('active');
-    });
-
-    /*
+    /*凡例
     noInfo:     情報提供休止
     wait[5,15,30,45,60,90]: []分待ち
     wait[60,120]Over:       []分以上待ち
@@ -51,6 +9,9 @@ $(document).ready(function () {
     salesEnd:   販売終了
     */
 
+    //旧データはコメントアウトで残すこと！
+
+    //XX:XX
     var asahi1 = 'wait5';
     var asahi2 = 'wait15';
     var asahi3 = 'wait30';
@@ -61,6 +22,8 @@ $(document).ready(function () {
     var kissa1 = 'salesEnd';
     var kissa2 = 'noInfo';
 
+
+    //画像表示
     function foodInfo(food, status) {
         var statusSrc = 'assets/img/foodInfo/' + status + '.svg';
         var foodID = '#' + food;
@@ -75,4 +38,12 @@ $(document).ready(function () {
     foodInfo('nakaniwa2', nakaniwa2);
     foodInfo('kissa1', kissa1);
     foodInfo('kissa2', kissa2);
+
+    //Smooth Scroll
+    $('a').click(function () {
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+        return false;
+    });
 });

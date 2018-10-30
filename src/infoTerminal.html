@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<meta charset="utf-8" />
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+
+    <!-- ©筑波大学付属駒場中・高等学校文化祭実行委員会 2018 -->
+    <title>タイムテーブル｜第67回筑駒文化祭公式サイト</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#316544">
+    <meta name="msapplication-TileColor" content="#316544">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style_infoTerminal.css" />
+    <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.csv.js"></script>
+    <script type="text/javascript" src="assets/js/script_infoTerminal.js"></script>
+    <script type="text/javascript" src="assets/js/script_foodInfo.js"></script>
+
+    <script type="text/javascript" src="//typesquare.com/3/tsst/script/ja/typesquare.js?PmUV0TKqc8Y%3D&auto_load_font=true" charset="utf-8"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+</head>
+
+<body>
+    <div id="infoTerminal_left">
+        <h1>総合タイムテーブル（公演情報）</h1>
+        <h2 class="currentTime">現在時刻&nbsp;<span></span></h2>
+        <h3>表示されている時刻は目安です。混雑状況等により開始前でも入場いただけない場合がございます。「公演中」と表示されている団体は途中からの入場が可能です。</h3>
+        <div id="timetable_cnt">
+            <table id="timetable">
+                <tr data-start-time=9999 class="active">
+                    <th class="startTime">開始時刻</th>
+                    <th class="decoIcon"></th>
+                    <th class="group">団体</th>
+                    <th class="performanceName">公演名</th>
+                    <th class="place">公演場所</th>
+                    <th class="performanceType">公演種類</th>
+                    <th class="endTime">終了時刻</th>
+                    <th class="page">詳細ページ</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="infoTerminal_right">
+        <h1>食品提供状況</h1>
+            <h3>実際の状況と異なる場合がございます。</h3>
+        <div class="content" id="foodInfo_cnt">
+
+            <div id="Asahi">
+                <table class="foodInfoTable">
+                    <tr>
+                        <th colspan="2">
+                            朝日の広場 (高3食品班)
+                        </th>
+                    </tr>
+                    <tr class="foodStatus">
+                        <td>カレーライス</td>
+                        <td><img class="status" id="asahi1" src="assets/img/foodInfo/noInfo.svg"></td>
+                    </tr>
+                    <tr class="foodStatus">
+                        <td>クリームスープ</td>
+                        <td><img class="status" id="asahi2" src="assets/img/foodInfo/noInfo.svg"></td>
+                    </tr>
+                    <tr class="foodStatus">
+                        <td>キムチーズチヂミ</td>
+                        <td><img class="status" id="asahi3" src="assets/img/foodInfo/noInfo.svg"></td>
+                    </tr>
+                    <tr class="foodStatus">
+                        <td>つくこまぜそば</td>
+                        <td><img class="status" id="asahi4" src="assets/img/foodInfo/noInfo.svg"></td>
+                    </tr>
+                    <tr class="foodStatus">
+                        <td>ドリンク</td>
+                        <td><img class="status" id="asahi5" src="assets/img/foodInfo/noInfo.svg"></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="NakaniwaKissa">
+                <table class="foodInfoTable">
+                    <tr>
+                        <th class="foodPlace" colspan="2">
+                            お祭り広場(高3食品班)
+                        </th>
+                    </tr>
+                    <tr class="foodStatus">
+                        <td>クレープ</td>
+                        <td><img class="status" id="nakaniwa1" src="assets/img/foodInfo/noInfo.svg"></td>
+                    </tr>
+                    <tr class="foodStatus">
+                        <td>タピオカドリンク</td>
+                        <td><img class="status" id="nakaniwa2" src="assets/img/foodInfo/noInfo.svg"></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table class="foodInfoTable">
+                    <tr>
+                        <th class="foodPlace" colspan="2">
+                            50周年記念会館 (高3喫茶班)
+                        </th>
+                    </tr>
+                    <tr class="foodStatus">
+                        <td>イートイン</td>
+                        <td><img class="status" id="kissa1" src="assets/img/foodInfo/noInfo.svg"></td>
+                    </tr>
+                    <tr class="foodStatus">
+                        <td>テイクアウト</td>
+                        <td><img class="status" id="kissa2" src="assets/img/foodInfo/noInfo.svg"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 style="text-align: right">更新：XX:XX</h3>
+        </div>
+    </div>
+</body>
+</html>

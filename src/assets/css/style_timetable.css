@@ -44,6 +44,7 @@ th {
     right: 1vw;
 }
 
+
 /*表*/
 #timetable_cnt {
     position: absolute;
@@ -83,6 +84,35 @@ td.endTime {
     text-align: center;
 }
 
+td.place{
+    font-size: 1.5vw;
+}
+
+.place span{
+    color: white;
+    padding: 0.25em;
+    border-radius: 0.25em;
+}
+
+.orange span{
+    background-color: #f08300;
+}
+.blue span{
+    background-color: #0075c2;
+}
+.red span,
+.messeHall span{
+    background-color: #d83935;
+}
+.st span,
+.gym span{
+    background-color: #753187;
+}
+.omatsuri span,
+.skyHall span{
+    background-color: #3e3a39;
+}
+
 /*デコアイコン*/
 .deco-icon {
     width: 1em;
@@ -101,16 +131,16 @@ td.endTime {
 }
 
 .group {
-    width: 20%;
+    width: 19.5%;
 }
 
 .performanceName {
-    width: 38%;
+    width: 36%;
 }
 
 .place,
 .performanceType {
-    width: 15%;
+    width: 17.5%;
 }
 
 .endTime,

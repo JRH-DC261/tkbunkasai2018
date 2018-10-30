@@ -431,6 +431,28 @@ body.popup {
   width: 50%;
   vertical-align: top; }
 
+#attention_btn,
+.timetable_btn {
+  font-size: 1.5vw;
+  text-align: center;
+  background-color: #283e6f;
+  padding: 0.25em;
+  color: #fff;
+  border-radius: 0.25em;
+  margin: 1em 0.25em; }
+
+.timetable_btn {
+  padding: 0.5em; }
+
+#timetable_btn_day1 {
+  background-color: #57b0bc; }
+
+#timetable_btn_day2 {
+  background-color: #4ca1d4; }
+
+#timetable_btn_day3 {
+  background-color: #134186; }
+
 #id-group {
   text-align: center; }
 
@@ -600,8 +622,10 @@ body.popup {
   position: sticky;
   top: 0px; }
 
+.attention_cnt,
 .group-list_cnt,
-.group-info_cnt {
+.group-info_cnt,
+.timetable_cnt {
   position: fixed;
   border: 0;
   display: none;
@@ -612,12 +636,17 @@ body.popup {
   left: 5vw;
   top: 2.5vh; }
 
+.timetable_cnt {
+  background-color: rgba(255, 255, 255, 0); }
+
+.attention_cnt,
 .group-list_cnt {
   z-index: 1000;
   -webkit-overflow-scrolling: touch !important;
   overflow-y: scroll !important; }
 
-.group-info_cnt {
+.group-info_cnt,
+.timetable_cnt {
   z-index: 2000;
   overflow-x: hidden; }
 
@@ -653,6 +682,14 @@ body.popup {
 
 .deco-icon {
   vertical-align: bottom; }
+
+.timetable_img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
 
 #arrowL {
   font-size: 5vw;
@@ -865,77 +902,6 @@ $palette2: #9fc367 !default;//若葉色
 $palette3: #6ab259 !default;//鮮緑
 $palette4: #357743 !default;//常盤色
 $palette5: #23532d !default;//深緑*/
-#id-foodInfo {
-  margin-top: 5vw; }
-
-#id-foodInfo h1 {
-  font-size: 2.5vw;
-  text-align: center; }
-
-#id-foodInfo h2 {
-  font-size: 2vw; }
-
-#id-foodInfo h2::before {
-  background: url(""); }
-
-#id-foodInfo h3 {
-  font-size: 1vw;
-  text-align: right; }
-
-#Asahi {
-  width: 49%;
-  margin-right: 1%;
-  display: inline-block;
-  vertical-align: top; }
-
-#NakaniwaKissa {
-  width: 49%;
-  display: inline-block;
-  vertical-align: top; }
-
-.foodInfoTable {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1.5vw;
-  background-color: rgba(255, 255, 255, 0.5); }
-
-.foodInfoTable td {
-  display: table-cell;
-  padding: 1vw;
-  text-align: center;
-  font-size: 1.5vw;
-  white-space: nowrap; }
-
-.foodInfoTable td:first-child {
-  width: 40%; }
-
-.foodInfoTable td:nth-child(2) {
-  width: 60%; }
-
-@media only screen and (max-width: 1025px) and (max-aspect-ratio: 6 / 5) {
-  #id-foodInfo h1 {
-    font-size: 5vw; }
-  #id-foodInfo h2 {
-    font-size: 4vw; }
-  #id-foodInfo h3 {
-    font-size: 2vw; }
-  .foodInfoTable {
-    width: 100%; }
-  #Asahi {
-    width: 100%; }
-  #NakaniwaKissa {
-    width: 100%; } }
-
-/*$palette1: #554455 !default;
-$palette2: #ffaa99 !default;
-$palette3: #ffdddd !default;
-$palette4: #dd9999 !default;
-$palette5: #aa6666 !default;*/
-/*$palette1: #82b028 !default;//萌黄色
-$palette2: #9fc367 !default;//若葉色
-$palette3: #6ab259 !default;//鮮緑
-$palette4: #357743 !default;//常盤色
-$palette5: #23532d !default;//深緑*/
 @media only screen and (max-width: 1025px) and (max-aspect-ratio: 6 / 5) {
   #menu-sp {
     display: block; }
@@ -1004,7 +970,11 @@ $palette5: #23532d !default;//深緑*/
   .access_text {
     width: 80%;
     margin-left: 10%;
-    margin-right: 10%; } }
+    margin-right: 10%; }
+  #attention_btn,
+  .timetable_btn {
+    font-size: 4vw;
+    padding: 0.5em; } }
 
 @media only screen and (max-width: 770px) and (max-aspect-ratio: 6 / 5) {
   .home_logo {

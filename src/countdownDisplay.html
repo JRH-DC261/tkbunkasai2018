@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<meta charset="utf-8" />
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+
+    <!-- ©筑波大学付属駒場中・高等学校文化祭実行委員会 2018 -->
+    <title>カウントダウン｜第67回筑駒文化祭公式サイト</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png?v=20180905">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png?v=20180905">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png?v=20180905">
+    <link rel="manifest" href="assets/favicon/site.webmanifest?v=20180905">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg?v=20180905" color="#5ac2d9">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico?v=20180905">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml?v=20180905">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="第67回筑駒文化祭公式サイト">
+    <meta property="og:image" content="http:///tsukukoma.bunkasai.info/assets/og.png">
+    <meta property="og:url" content="http://tsukukoma.bunkasai.info">
+    <meta property="fb:app_id" content="210053346147406">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@tsukukomafesta">
+    <meta name="twitter:description" content="第67回筑駒文化祭 -fluctus- は、2018年11月2日(金)～4日(日)に開催予定です。皆様のご来場をお待ちしております。">
+    <meta name="twitter:image" content="http:///tsukukoma.bunkasai.info/assets/og.png">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style_timetable.css" />
+
+    <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/script-student.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="//typesquare.com/accessor/script/typesquare.js?PmUV0TKqc8Y%3D" charset="utf-8"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+</head>
+
+
+<body>
+    <div id="countdown_cnt">
+        <h1 class="countdown_title" style="text-align: left">第67回筑駒文化祭開場まで</h1>
+        <h1 class="countdown_full"></h1>
+    </div>
+</body>
+
+<style>
+    #countdown_cnt {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+    .countdown_title{
+        font-size: 5vw;
+        margin: 0.5em 0.5em 0.25em ;
+    }
+    .countdown_full{
+        font-size: 8vw;
+        margin: 0 0 0.25em 0;
+    }
+    span.unit{
+        font-size: 5vw
+    }
+</style>
+
+<script>
+    $(document).ready(function() {
+        var refreshRate = 1;
+        $('.refreshRate_Selection').css('color', '#555');
+        $('.refreshRate_100').css('color', '#000');
+
+        function countdown() {
+            //カウントダウン
+            var targetTime = new Date('Nov 2, 2018 09:30:00').getTime();
+            var currentTime = new Date().getTime();
+            var remainingTime = targetTime - currentTime;
+            var remainingDays = ('00' + Math.floor(remainingTime / (1000 * 60 * 60 * 24))).slice(-2);
+            var remainingHours = ('00' + Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).slice(-2);
+            var remainingMinutes = ('00' + Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60))).slice(-2);
+            var remainingSeconds = ('00' + Math.floor((remainingTime % (1000 * 60)) / 1000)).slice(-2);
+            var remainingMiliseconds = ('000' + Math.floor(remainingTime % 1000)).slice(-3);
+            $('.countdown_full').html(remainingDays + '<span class="unit">日 </span>' +
+                remainingHours + '<span class="unit">時間 </span>' + remainingMinutes + '<span class="unit">分 </span>' + remainingSeconds + '<span class="unit">秒 </span>' + remainingMiliseconds);
+        };
+        var runCountdown = setInterval(countdown, refreshRate);
+
+        function refreshCountdown() {
+            $('.section_miliseconds').css('visibility', 'visible');
+            clearInterval(runCountdown);
+            clearInterval(runCountdown);
+            runCountdown = setInterval(countdown, refreshRate);
+            $('.refreshRate_Selection').css('color', '#555');
+        };
+    });
+</script>
+</html>

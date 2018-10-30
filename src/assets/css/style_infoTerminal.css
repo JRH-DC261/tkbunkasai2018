@@ -1,0 +1,274 @@
+html {
+    background-image: url(../img/bg2.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+#infoTerminal_left {
+    margin-top: 5%;
+    width: 79.9%;
+    float: left;
+}
+
+#infoTerminal_right {
+    margin-top: 5%;
+    width: 20%;
+    float: left;
+    border-left: solid 1px black;
+}
+
+/*文字*/
+
+body {
+    font-family: "Open Sans", "こぶりなゴシック W3 JIS2004", sans-serif;
+    font-weight: 400;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Open Sans", "こぶりなゴシック W6 JIS2004", sans-serif;
+    font-weight: 600;
+    font-size: 2.5vw;
+    margin: 0.5em 0.5em 0.3em 0.5em;
+}
+
+h3 {
+    text-align: center;
+    font-family: "Open Sans", "こぶりなゴシック W6 JIS2004", sans-serif;
+    font-weight: 600;
+    font-size: 1vw;
+    margin: 0;
+}
+
+th {
+    font-family: "Open Sans", "こぶりなゴシック W6 JIS2004", sans-serif;
+    font-weight: 600;
+    vertical-align: baseline;
+    font-size: 1.5vw;
+    padding: 0.3em;
+    text-align: center;
+}
+
+.currentTime {
+    font-family: "Open Sans", "こぶりなゴシック W6 JIS2004", sans-serif;
+    font-weight: 600;
+    font-size: 2vw;
+    position: absolute;
+    top: 5vw;
+    right: 22.5vw;
+}
+
+
+/*表*/
+
+#timetable_cnt {
+    margin-left: 0.5%;
+    width: 99%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#timetable {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1%;
+}
+
+/*装飾*/
+
+#timetable tr {
+    border-bottom: 0.5px solid #888;
+}
+
+#timetable tr:nth-child(1) {
+    border-bottom: 3px solid black;
+}
+
+#timetable td {
+    padding: 0.2em 0;
+    font-size: 1.75vw;
+    vertical-align: center;
+}
+
+#timetable td:nth-child(1) {
+    text-align: center;
+}
+
+#timetable td.endTime {
+    text-align: center;
+}
+
+#timetable td.place {
+    font-size: 1.25vw;
+}
+
+.place span {
+    color: white;
+    padding: 0.25em;
+    border-radius: 0.25em;
+}
+
+.orange span {
+    background-color: #f08300;
+}
+
+.blue span {
+    background-color: #0075c2;
+}
+
+.red span,
+.messeHall span {
+    background-color: #d83935;
+}
+
+.st span,
+.gym span {
+    background-color: #753187;
+}
+
+.omatsuri span,
+.skyHall span {
+    background-color: #3e3a39;
+}
+
+/*デコアイコン*/
+
+.deco-icon {
+    width: 1em;
+    margin-right: 0.2em;
+    vertical-align: top;
+}
+
+/*各列*/
+
+.startTime {
+    width: 10%;
+}
+
+.decoIcon {
+    width: 3%;
+    padding: 0;
+}
+
+.group {
+    width: 19.5%;
+}
+
+.performanceName {
+    width: 36%;
+}
+
+.place,
+.performanceType {
+    width: 17.5%;
+}
+
+.endTime,
+.page {
+    width: 12%;
+}
+
+/*表示を切り替えるものは一旦非表示*/
+
+#timetable tr {
+    display: none;
+}
+
+.endTime,
+.page,
+.place,
+.performanceType {
+    display: none;
+}
+
+/*activeだと表示(JSで切替)*/
+
+#timetable tr.active {
+    display: table-row;
+}
+
+#timetable th.active,
+#timetable td.active {
+    display: table-cell;
+}
+
+/*時間が近い公演は点滅(JSでnearStartクラス付与)*/
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+    79% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.nearStart > .startTime {
+    animation: flash 2s infinite;
+}
+
+/*公演が始まったら点滅解除(JSでafterStartクラス付与)*/
+
+.afterStart > .startTime {
+    animation: none;
+}
+
+.foodInfoTable td {
+    text-align: center;
+    font-family: "Open Sans", "こぶりなゴシック W3 JIS2004", sans-serif;
+    font-weight: 400;
+    font-size: 1vw;
+}
+
+.foodInfoTable th {
+    text-align: center;
+    font-family: "Open Sans", "こぶりなゴシック W6 JIS2004", sans-serif;
+    font-weight: 600;
+    font-size: 1.4vw;
+    border-bottom: 3px solid black;
+}
+
+.content {
+    width: 95%;
+    margin: 1.25%;
+}
+.content>div {
+    margin-bottom: 5%;
+    margin-top: 3%;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    margin-right: 1%;
+    display: inline-block;
+    vertical-align: top;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+//レスポンシブ
+.foodInfoTable {
+    width: 100%;
+    border-collapse: collapse
+}
+
+
+.foodInfoTable td {
+    display: table-cell;
+    white-space: nowrap;
+}
+
+.foodInfoTable td:first-child {
+    width: 40%;
+}
+
+.foodInfoTable td:nth-child(2) {
+    width: 60%;
+}
+
+.foodInfoTable tr {
+    height: 2.5vw;
+}

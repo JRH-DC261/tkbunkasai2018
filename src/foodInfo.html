@@ -8,7 +8,7 @@
     <meta name="robots" content="noindex">
 
     <!-- ©筑波大学付属駒場中・高等学校文化祭実行委員会 2018 -->
-    <title>お食事のご案内｜第67回筑駒文化祭公式サイト</title>
+    <title>食事のご案内｜第67回筑駒文化祭公式サイト</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116927226-1"></script>
     <script>
@@ -19,6 +19,7 @@
         }
         gtag('js', new Date());
         gtag('config', 'UA-116927226-1');
+
     </script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png?v=20180905">
@@ -32,7 +33,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="お食事のご案内｜第67回筑駒文化祭公式サイト">
+    <meta property="og:title" content="食事のご案内｜第67回筑駒文化祭公式サイト">
     <meta property="og:image" content="http:///tsukukoma.bunkasai.info/assets/og.png">
     <meta property="og:url" content="http://tsukukoma.bunkasai.info">
     <meta property="fb:app_id" content="210053346147406">
@@ -43,131 +44,156 @@
     <meta name="format-detection" content="telephone=no">
 
     <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/jquery.fullPage.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/index-only.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style_foodInfo.css">
 
     <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="assets/js/scrolloverflow.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
+    <script type="text/javascript" src="assets/js/script_foodInfo.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="//typesquare.com/accessor/script/typesquare.js?PmUV0TKqc8Y%3D" charset="utf-8"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 
     <!--<meta http-equiv="Refresh" content="60">-->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <!--<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Expires" content="0">-->
 </head>
 
 <body>
-    <div id="blackout"></div>
-    <ul id="menu" class="active">
-        <li class="menu_text"><a class="menu_foodInfo">食品提供状況</a></li>
-        <li class="menu_text"><a class="menu_shokuhin">高3食品班</a></li>
-        <li class="menu_text"><a class="menu_kissa">高3喫茶班</a></li>
-        <li class="menu_SNS"><a href="https://twitter.com/intent/tweet?text=%E7%AC%AC67%E5%9B%9E%E7%AD%91%E9%A7%92%E6%96%87%E5%8C%96%E7%A5%AD%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%EF%BD%9C&url=https%3A//tsukukoma.bunkasai.info/foodInfo&via=tsukukomafesta" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//tsukukoma.bunkasai.info/foodInfo" target="_blank"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a></li>
-        <a href="https://tsukukoma.bunkasai.info/" target="_blank"><img src="assets/img/logo_black.svg"></a>
-    </ul>
-
-    <div id="menu-sp">
-        <div class="menu-sp_icon __open"></div>
-        <div class="menu-sp_icon __close"></div>
-        <ul id="menu-sp_nav">
-            <li><a href="https://tsukukoma.bunkasai.info/" target="_blank"><img src="assets/img/logo_black.svg"></a></li>
-            <li class="menu-sp_text"><a class="menu_foodInfo">食品提供状況</a></li>
-            <li class="menu-sp_text"><a class="menu_shokuhin">高3食品班</a></li>
-            <li class="menu-sp_text"><a class="menu_kissa">高3喫茶班</a></li>
-            <li class="menu-sp_SNS">
-                <a href="https://twitter.com/intent/tweet?text=%E7%AC%AC67%E5%9B%9E%E7%AD%91%E9%A7%92%E6%96%87%E5%8C%96%E7%A5%AD%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%EF%BD%9C&url=https%3A//tsukukoma.bunkasai.info//foodInfo&via=tsukukomafesta" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
+    <div class="menu">
+        <ul id="menu_nav">
+            <li class="menu_logo"><a class="menu_nohover" href="https://tsukukoma.bunkasai.info/" target="_blank"><img src="assets/img/logo_black.svg"></a></li>
+            <li class="menu_spacer"></li>
+            <li class="menu_text"><a class="menu_foodInfo" href="#Top">食品提供状況</a></li>
+            <li class="menu_text"><a class="menu_shokuhin" href="#Shokuhin">高3食品班</a></li>
+            <li class="menu_text"><a class="menu_kissa" href="#Kissa">高3喫茶班</a></li>
+            <li class="menu_SNS">
+                <a href="https://twitter.com/intent/tweet?text=食事のご案内｜第67回筑駒文化祭公式サイト｜ &url=https%3A//tsukukoma.bunkasai.info/foodInfo&via=tsukukomafesta" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
+            </li>
+            <li class="menu_SNS">
                 <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//tsukukoma.bunkasai.info/foodInfo" target="_blank"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a>
             </li>
         </ul>
-        <a class="menu-sp_section"></a>
     </div>
 
-    <div id="fullpage" class="fullpage_foodInfo">
-        <div class="section" data-anchor="FoodInfo" id="id-foodInfo">
-            <div class="content">
-                <h1>食品提供状況</h1>
-                <h3>更新：XX:XX</h3>
-                <div id="Asahi">
-                    <table class="foodInfoTable">
-                        <tr>
-                            <td colspan="2">
-                                <h2>朝日の広場 (高3食品班)</h2>
-                            </td>
-                        </tr>
-                        <tr class="foodStatus">
-                            <td>サーフェーサー</td>
-                            <td><img class="status" id="asahi1" src="assets/img/foodInfo/noInfo.svg"></td>
-                        </tr>
-                        <tr class="foodStatus">
-                            <td>プライマー</td>
-                            <td><img class="status" id="asahi2" src="assets/img/foodInfo/noInfo.svg"></td>
-                        </tr>
-                        <tr class="foodStatus">
-                            <td>エアブラシ</td>
-                            <td><img class="status" id="asahi3" src="assets/img/foodInfo/noInfo.svg"></td>
-                        </tr>
-                        <tr class="foodStatus">
-                            <td>デザインナイフ</td>
-                            <td><img class="status" id="asahi4" src="assets/img/foodInfo/noInfo.svg"></td>
-                        </tr>
-                        <tr class="foodStatus">
-                            <td>瞬間接着剤</td>
-                            <td><img class="status" id="asahi5" src="assets/img/foodInfo/noInfo.svg"></td>
-                        </tr>
-                    </table>
-                </div>
-                <div id="NakaniwaKissa">
-                    <table class="foodInfoTable">
-                        <tr>
-                            <td class="foodPlace" colspan="2">
-                                <h2>中庭 (高3食品班)</h2>
-                            </td>
-                        </tr>
-                        <tr class="foodStatus">
-                            <td>電気</td>
-                            <td><img class="status" id="nakaniwa1" src="assets/img/foodInfo/noInfo.svg"></td>
-                        </tr>
-                        <tr class="foodStatus">
-                            <td>魔剤</td>
-                            <td><img class="status" id="nakaniwa2" src="assets/img/foodInfo/noInfo.svg"></td>
-                        </tr>
-                    </table>
-                    <table class="foodInfoTable">
-                        <tr>
-                            <td class="foodPlace" colspan="2">
-                                <h2>50周年記念会館 (高3喫茶班)</h2>
-                            </td>
-                        </tr>
-                        <tr class="foodStatus">
-                            <td>Twitter</td>
-                            <td><img class="status" id="kissa1" src="assets/img/foodInfo/noInfo.svg"></td>
-                        </tr>
-                        <tr class="foodStatus">
-                            <td>やる気</td>
-                            <td><img class="status" id="kissa2" src="assets/img/foodInfo/noInfo.svg"></td>
-                        </tr>
-                    </table>
-                </div>
-                <h3>※時間は目安です。実際の状況と異なる場合もございます。</h3>
-            </div>
+    <a class="anchor" id="Top">　</a>
+    <div class="content" id="foodInfo_cnt">
+        <h1>食品提供状況</h1>
+        <h3>更新：XX:XX</h3>
+        <div id="Asahi">
+            <table class="foodInfoTable">
+                <tr>
+                    <th colspan="2">
+                        朝日の広場 (高3食品班)
+                    </th>
+                </tr>
+                <tr class="foodStatus">
+                    <td>カレーライス</td>
+                    <td><img class="status" id="asahi1" src="assets/img/foodInfo/noInfo.svg"></td>
+                </tr>
+                <tr class="foodStatus">
+                    <td>クリームスープ</td>
+                    <td><img class="status" id="asahi2" src="assets/img/foodInfo/noInfo.svg"></td>
+                </tr>
+                <tr class="foodStatus">
+                    <td>キムチーズチヂミ</td>
+                    <td><img class="status" id="asahi3" src="assets/img/foodInfo/noInfo.svg"></td>
+                </tr>
+                <tr class="foodStatus">
+                    <td>つくこまぜそば</td>
+                    <td><img class="status" id="asahi4" src="assets/img/foodInfo/noInfo.svg"></td>
+                </tr>
+                <tr class="foodStatus">
+                    <td>ドリンク</td>
+                    <td><img class="status" id="asahi5" src="assets/img/foodInfo/noInfo.svg"></td>
+                </tr>
+            </table>
         </div>
-        <div class="section" data-anchor="Shokuhin" id="id-shokuhin">
-            <div class="content">
-                <h1>高3食品班</h1>
-            </div>
+        <div id="NakaniwaKissa">
+            <table class="foodInfoTable">
+                <tr>
+                    <th class="foodPlace" colspan="2">
+                        お祭り広場(高3食品班)
+                    </th>
+                </tr>
+                <tr class="foodStatus">
+                    <td>クレープ</td>
+                    <td><img class="status" id="nakaniwa1" src="assets/img/foodInfo/noInfo.svg"></td>
+                </tr>
+                <tr class="foodStatus">
+                    <td>タピオカドリンク</td>
+                    <td><img class="status" id="nakaniwa2" src="assets/img/foodInfo/noInfo.svg"></td>
+                </tr>
+            </table>
+            <table class="foodInfoTable">
+                <tr>
+                    <th class="foodPlace" colspan="2">
+                        50周年記念会館 (高3喫茶班)
+                    </th>
+                </tr>
+                <tr class="foodStatus">
+                    <td>イートイン</td>
+                    <td><img class="status" id="kissa1" src="assets/img/foodInfo/noInfo.svg"></td>
+                </tr>
+                <tr class="foodStatus">
+                    <td>テイクアウト</td>
+                    <td><img class="status" id="kissa2" src="assets/img/foodInfo/noInfo.svg"></td>
+                </tr>
+            </table>
         </div>
-        <div class="section" data-anchor="Kissa" id="id-kissa">
-            <div class="content">
-                <h1>高3喫茶班</h1>
-            </div>
-        </div>
+        <h3>※時間は目安です。実際の状況と異なる場合もございます。</h3>
+    </div>
+
+    <a class="anchor" id="Shokuhin">　</a>
+    <div class="content" id="shokuhin_cnt">
+        <h1>高3食品班</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <a class="anchor" id="Kissa">　</a>
+    <div class="content" id="kissa_cnt">
+        <img class="kissa_img kissa_pc" src="assets/img/kissa/pc/kissa_web_pc.png">
+        <img class="kissa_img kissa_mobile" src="assets/img/kissa/mobile/01_logo.png">
+        <a href="https://twitter.com/67_kissa" target="_blank"><img class="kissa_img kissa_mobile" src="assets/img/kissa/mobile/02_twitter.png"></a>
+        <img class="kissa_img kissa_mobile" src="assets/img/kissa/mobile/03_menu.png">
+        <img class="kissa_img kissa_mobile" src="assets/img/kissa/mobile/04_eatin.png">
+        <img class="kissa_img kissa_mobile" src="assets/img/kissa/mobile/05_takeout.png">
+        <img class="kissa_img kissa_mobile" src="assets/img/kissa/mobile/06_sandwich.png">
+        <img class="kissa_img kissa_mobile" src="assets/img/kissa/mobile/07_soup.png">
+        <img class="kissa_img kissa_mobile" src="assets/img/kissa/mobile/08_dessert.png">
+        <img class="kissa_img kissa_mobile" src="assets/img/kissa/mobile/09_drink.png">
+        <img class="kissa_img kissa_mobile" src="assets/img/kissa/mobile/10_cookie.png">
     </div>
 </body>
 

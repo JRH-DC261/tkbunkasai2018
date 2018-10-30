@@ -49,8 +49,8 @@ $(document).ready(function () {
 
     //fullpage設定
     $('.fullpage_index, .fullpage_foodInfo').fullpage({
-        //anchors: ['Home', 'About', 'Access', 'Group', 'Timetable', 'Downloads'],
-        anchors: ['Home', 'About', 'Access', 'Group', 'Downloads'],
+        anchors: ['Home', 'About', 'Access', 'Group', 'Timetable', 'Downloads'],
+        //anchors: ['Home', 'About', 'Access', 'Group', 'Downloads'],
         //anchors: ['Home', 'About', 'Access', 'Downloads'],
         lockAnchors: true,
         menu: '#menu',
@@ -97,7 +97,7 @@ $(document).ready(function () {
     $('.menu_group, .link_group').click(function () {
         $.fn.fullpage.moveTo('Group');
     });
-    $('.menu_timetable').click(function () {
+    $('.menu_timetable, .link_timetable').click(function () {
         $.fn.fullpage.moveTo('Timetable');
     });
     $('.menu_downloads, .link_downloads').click(function () {
@@ -145,6 +145,22 @@ $(document).ready(function () {
         $(this).next('.accordion_content').toggleClass('active');
     });
 
+    //ご来場の際のご案内
+    $('#attention_btn').click(function () {
+        $('.attention_cnt, .group-list_close').css('display', 'block').animate({
+            opacity: 1
+        }, 400);
+        $('#blackout_group-info').addClass('active');
+        //bodyのスクロール禁止
+        scrollPosition = window.pageYOffset;
+        scrollPositionTop = -scrollPosition + 'px';
+        $('body').css('position', 'fixed');
+        $('body').css('margin-top', scrollPositionTop);
+        //スクロールバー分の余白挿入
+        $('body').css('width', pageWidth + scrollBarWidth);
+        $('body').css('margin-right', scrollBarWidth);
+        $('.menu-sp_icon.__open').css('display', 'none');
+    });
 
     //参加団体一覧開閉
     function openGroupList(group) {
@@ -173,10 +189,10 @@ $(document).ready(function () {
 
 
     function closeGroupList() {
-        $('.group-list_cnt, .group-list_close').animate({
+        $('.group-list_cnt, .group-list_close, .attention_cnt, .timetable_cnt').animate({
             opacity: 0
         }, 400, function () {
-            $('.group-list_cnt, .group-list_close').css('display', 'none');
+            $('.group-list_cnt, .group-list_close, .attention_cnt, .timetable_cnt').css('display', 'none');
             $('#blackout_group-info').removeClass('active');
             //bodyのスクロール禁止解除
             $('body').css('position', 'static');
@@ -185,6 +201,7 @@ $(document).ready(function () {
             $('.menu-sp_icon.__open').css('display', 'block');
             //$('.group-list_iframe').attr('src', ' ');
             //$('.group-list_iframe').contents().find('#whiteout_group-info').addClass('active');
+            $('.timetable_iframe').attr('src', '');
         });
     }
 
@@ -383,8 +400,36 @@ $(document).ready(function () {
     });*/
 
     //リロード時に団体情報割りが乱れる
-    $(window).bind('beforeunload', function(){
+    $(window).bind('beforeunload', function () {
         $('.group-info_iframe', parent.document).attr('src', '');
         $('.group-info_iframe').attr('src', '');
+    });
+
+    function openTimetable(){
+        $('.timetable_cnt, .group-list_close').css('display', 'block').animate({
+            opacity: 1
+        }, 400);
+        $('#blackout_group-info').addClass('active');
+        //bodyのスクロール禁止
+        scrollPosition = window.pageYOffset;
+        scrollPositionTop = -scrollPosition + 'px';
+        $('body').css('position', 'fixed');
+        $('body').css('margin-top', scrollPositionTop);
+        //スクロールバー分の余白挿入
+        $('body').css('width', pageWidth + scrollBarWidth);
+        $('body').css('margin-right', scrollBarWidth);
+        $('.menu-sp_icon.__open').css('display', 'none');
+    }
+    $('#timetable_btn_day1').click(function(){
+        $('.timetable_iframe').attr('src', 'TT_day1.html');
+        openTimetable();
+    });
+    $('#timetable_btn_day2').click(function(){
+        $('.timetable_iframe').attr('src', 'TT_day2.html');
+        openTimetable();
+    });
+    $('#timetable_btn_day3').click(function(){
+        $('.timetable_iframe').attr('src', 'TT_day3.html');
+        openTimetable();
     });
 });

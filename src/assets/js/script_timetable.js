@@ -1,9 +1,9 @@
 $(document).ready(function () {
     //初期時刻(デバッグ用)
-    var currentTime = 0956;
+    var currentTime = 0925;
 
-    //スケジュールづくり(この後の関数を先に読むこと推奨)
-    function schedule(){
+    //スケジュールづくり(この後を先に読むこと推奨)
+    function schedule() {
         //現在時刻を取得(hhmm)
         function getCurrentTime() {
             //カウントダウン
@@ -78,15 +78,23 @@ $(document).ready(function () {
             performanceList += '<td class="decoIcon">' + '<img class="deco-icon" src="assets/img/deco-icon/deco-icon_' + this[6] + '.png">' + '</td>';
             performanceList += '<td class="group">' + this[4] + '</td>';
             performanceList += '<td class="performanceName">' + this[3] + '</td>';
-            performanceList += '<td class="place ' + this[5] + '"></td>';
+            performanceList += '<td class="place ' + this[10] + '"><span>' + this[5] + '</span></td>';
             performanceList += '<td class="performanceType">' + this[8] + '</td>';
-            performanceList += '<td>' + '</td>';
+            //performanceList += '<td>' + '</td>';
             performanceList += '<td class="endTime">' + endTimeText + '</td>';
             performanceList += '<td class="page">&nbsp;&nbsp;P.' + this[7] + '</td>';
             performanceList += '</tr>';
         });
         //HTMLを表内に出力
         $("#timetable").append(performanceList);
+
+        //各場所ごとに矢印追加
+        $('.orange, .omatsuri, .skyHall, .st, .gym').append(' 🡮');
+        $('.blue').append('  🡪');
+        $('.red, .messeHall').prepend('🡨 ');
+        //文字の始まりをそろえる
+        $('.orange, .omatsuri, .skyHall, .st, .gym').prepend('　&nbsp;');
+        $('.blue').prepend('　&nbsp;');
 
         schedule();
 
@@ -98,7 +106,7 @@ $(document).ready(function () {
     //スケジュールづくりをnミリ秒おきに繰り返す
     setInterval(function () {
         schedule();
-    }, 500);
+    }, 200);
 
     //表示切替をnミリ秒おきに繰り返す
     setInterval(function () {

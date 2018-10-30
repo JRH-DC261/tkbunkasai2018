@@ -93,6 +93,13 @@
         margin-left: 10%;
         margin-right: 10%;
     }
+
+    #attention_btn,
+    .timetable_btn{
+        font-size: 4vw;
+        padding: 0.5em;
+    }
+
 }
 
 @media only screen and (max-width: $iPad) and (max-aspect-ratio: 6/5) {
