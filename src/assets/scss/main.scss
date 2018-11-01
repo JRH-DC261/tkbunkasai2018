@@ -298,7 +298,8 @@ body.popup {
 }
 
 //新着情報
-.news {
+.news,
+.realtime{
     width: 37.5%;
     text-align: center;
     color: #fff;
@@ -306,7 +307,8 @@ body.popup {
     padding: 2.5% 1.25%;
 }
 
-.news_headline {
+.news_headline,
+.realtime_headline{
     font-size: 1.75vw;
     margin-bottom: 5px;
 }
@@ -318,6 +320,15 @@ body.popup {
 
 .news span {
     padding: 10px;
+}
+
+.realtime_text{
+    color: #fff;
+    font-size: 2.2vw;
+}
+.realtime_text.__small{
+    color: #fff;
+    font-size: 1.1vw;
 }
 
 #home_down {

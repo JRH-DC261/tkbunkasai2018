@@ -15,6 +15,7 @@ html::before {
     width: 100%;
     background-color: #fff;
     top: 0;
+    z-index: 10000;
 }
 
 #menu_nav {
@@ -44,7 +45,7 @@ html::before {
 }
 
 #menu_nav li.menu_spacer {
-    width: 52%;
+    width: 50%;
 }
 
 #menu_nav li.menu_text {
@@ -102,6 +103,13 @@ h1 {
     margin: 0.5em 0.5em 0.3em 0.5em;
 }
 
+h2 {
+    text-align: center;
+    font-family: "Open Sans", "こぶりなゴシック W6 JIS2004", sans-serif;
+    font-weight: 600;
+    font-size: 1.75vw;
+    margin: 1em;
+}
 h3 {
     text-align: right;
     font-family: "Open Sans", "こぶりなゴシック W6 JIS2004", sans-serif;
@@ -178,6 +186,62 @@ a {
     width: 60%;
 }
 
+.shokuhin_img_cnt {
+    position: relative;
+    display: inline-block;
+    width: 32.6%;
+}
+.shokuhin_img_cnt:nth-child(7) {
+    width: 100%;
+}
+
+.shokuhin_img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+
+.shokuhin_img.__narrow {
+    display: inline-block;
+    width: 49%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.shokuhin_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 95%;
+}
+
+.shokuhin_img_cnt:hover .overlay {
+    opacity: 1;
+}
+
+.shokuhin_text h3 {
+    font-size: 2vw;
+    text-align: center;
+}
+
+.shokuhin_text p {
+    font-size: 1vw;
+}
+
 .kissa_img {
     width: 100%;
 }
@@ -192,7 +256,7 @@ a {
         font-size: 6vw;
     }
     h2 {
-        font-size: 5vw;
+        font-size: 3vw;
     }
     h3 {
         font-size: 2.5vw;
@@ -252,6 +316,22 @@ a {
     }
     #NakaniwaKissa {
         width: 100%;
+    }
+
+    .shokuhin_img_cnt {
+        width: 100%;
+    }
+
+    .shokuhin_img.__narrow {
+        width: 49%;
+    }
+    .shokuhin_text h3 {
+        font-size: 6vw;
+        text-align: center;
+    }
+
+    .shokuhin_text p {
+        font-size: 3vw;
     }
 
     .kissa_pc {

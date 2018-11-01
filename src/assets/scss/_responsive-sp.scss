@@ -45,18 +45,29 @@
     .countdown_days {
         font-size: 12.5vw;
     }
-    .news {
+    .news,
+    .realtime{
         width: 65%;
         padding: 2.5%;
     }
-    .news_headline {
+    .news_headline,
+    .realtime_headline {
         font-size: 3vw;
         margin-bottom: 7.5px;
+    }
+    .realtime_headline {
+        display: none;
     }
     .news_text {
         font-size: 2vw;
     }
 
+    .realtime_text {
+        font-size: 5vw;
+    }
+    .realtime_text.__small {
+        font-size: 2.5vw;
+    }
     .content {
         width: 85vw;
         padding: 1.25vw 2.5vw;
@@ -84,7 +95,6 @@
     /*#id-access p {
         margin-left: 2vw;
     }*/
-
     .access_cnt {
         //flex-direction: column;
     }
@@ -95,7 +105,7 @@
     }
 
     #attention_btn,
-    .timetable_btn{
+    .timetable_btn {
         font-size: 4vw;
         padding: 0.5em;
     }
@@ -124,7 +134,8 @@
     .countdown_days {
         font-size: 15vw;
     }
-    .news {
+    .news,
+    .realtime {
         width: 70%;
         padding: 5%;
     }
@@ -161,10 +172,10 @@
 
     .home_logo {
         width: 80%;
-        top: 15%;
+        top: 10%;
     }
     .home_content {
-        top: 40%;
+        top: 30%;
         width: 90%;
     }
     .countdown {
@@ -180,7 +191,8 @@
     .countdown_days {
         font-size: 17.5vw;
     }
-    .news {
+    .news,
+    .realtime {
         width: 85%;
         padding: 2.5%;
     }
@@ -190,7 +202,15 @@
     }
     .news_text {
         font-size: 3.5vw;
-    } //トップページ下矢印
+    }
+
+    .realtime_text {
+        font-size: 7vw;
+    }
+    .realtime_text.__small {
+        font-size: 4vw;
+    }
+    //トップページ下矢印
     /*@keyframes home_down {
         0% {
             font-size: $home_down-size-sp;

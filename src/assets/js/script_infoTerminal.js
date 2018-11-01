@@ -1,6 +1,6 @@
 $(document).ready(function () {
     //初期時刻(デバッグ用)
-    var currentTime = 0925;
+    //var currentTime = 0925;
 
     //スケジュールづくり(この後を先に読むこと推奨)
     function schedule() {
@@ -13,16 +13,16 @@ $(document).ready(function () {
             var currentTime = currentHour * 100 + currentMinute;
             return (currentTime);
         };
-        //var currentTime = getCurrentTime();
+        var currentTime = getCurrentTime();
 
         //現在時刻生成(デバッグ用)
         //mmが60以上にならないよう場合分け
-        if (String(currentTime).slice(-2) < 59) {
+        /*if (String(currentTime).slice(-2) < 59) {
             currentTime += 1;
         } else {
             currentTime += 41;
         }
-        console.log(currentTime);
+        console.log(currentTime);*/
 
         $('tr').each(function () {
             //開始・終了時刻を読み取る
@@ -62,7 +62,7 @@ $(document).ready(function () {
 
     //読み込み時の動作
     //csvから公演情報を読み込み→HTMLに出力
-    $.get('assets/timetable.csv', function (data) {
+    $.get('assets/TT_day1.csv', function (data) {
         var csv = $.csv()(data);
         //出力するHTML(最初は空)
         var performanceList = '';
@@ -89,7 +89,7 @@ $(document).ready(function () {
         $("#timetable").append(performanceList);
 
         //各場所ごとに矢印追加
-        $('.orange, .omatsuri, .skyHall, .st, .gym').append(' 🡮');
+        $('.orange, .omatsuri, .skyHall, .st, .gym').append(' 🡫');
         $('.blue').append('  🡪');
         $('.red, .messeHall').prepend('🡨 ');
         //文字の始まりをそろえる
@@ -106,7 +106,7 @@ $(document).ready(function () {
     //スケジュールづくりをnミリ秒おきに繰り返す
     setInterval(function () {
         schedule();
-    }, 200);
+    }, 60000);
 
     //表示切替をnミリ秒おきに繰り返す
     setInterval(function () {

@@ -124,11 +124,11 @@ $(document).ready(function () {
     });
 
     //カウントダウン
-    var targetTime = new Date("Nov 2, 2018").getTime();
+    /*var targetTime = new Date("Nov 2, 2018").getTime();
     var currentTime = new Date().getTime();
     var remainingTime = targetTime - currentTime;
     var remainingDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24) + 1);
-    $('.countdown_days').append(remainingDays);
+    $('.countdown_days').append(remainingDays);*/
 
     //トップページ矢印
     $('#home_down').click(function () {
