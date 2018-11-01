@@ -12,14 +12,14 @@ $(document).ready(function () {
     //旧データはコメントアウトで残すこと！
 
     //XX:XX
-    var asahi1 = 'wait5';
-    var asahi2 = 'wait15';
-    var asahi3 = 'wait30';
-    var asahi4 = 'wait45';
-    var asahi5 = 'wait60';
-    var nakaniwa1 = 'lineStop';
-    var nakaniwa2 = 'salesStop';
-    var kissa1 = 'salesEnd';
+    var asahi1 = 'noInfo';
+    var asahi2 = 'noInfo';
+    var asahi3 = 'noInfo';
+    var asahi4 = 'noInfo';
+    var asahi5 = 'noInfo';
+    var nakaniwa1 = 'noInfo';
+    var nakaniwa2 = 'noInfo';
+    var kissa1 = 'noInfo';
     var kissa2 = 'noInfo';
 
 
