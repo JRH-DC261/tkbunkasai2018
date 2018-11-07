@@ -43,20 +43,19 @@
     <meta name="format-detection" content="telephone=no">
 
     <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style_foodInfo.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style_foodInfo.css?20181103">
 
     <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/scrolloverflow.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="assets/js/iframeResizer.min.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
-    <script type="text/javascript" src="assets/js/script_foodInfo.js"></script>
+    <script type="text/javascript" src="assets/js/script_foodInfo.js?20181103"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="//typesquare.com/accessor/script/typesquare.js?PmUV0TKqc8Y%3D" charset="utf-8"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 
-    <!--<meta http-equiv="Refresh" content="60">-->
-    <!--<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <!--<meta http-equiv="Refresh" content="60000">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">-->
 </head>
@@ -79,73 +78,7 @@
     </div>
 
     <a class="anchor" id="Top">　</a>
-    <div class="content" id="foodInfo_cnt">
-        <h1>食品提供状況</h1>
-        <!--<h2>文化祭期間中はこちらのページで高3食品班・高3喫茶班の各食品の待ち時間をご案内いたします。</h2>-->
-        <h3>更新：XX:XX</h3>
-        <div id="Asahi">
-            <table class="foodInfoTable">
-                <tr>
-                    <th colspan="2">
-                        朝日の広場 (高3食品班)
-                    </th>
-                </tr>
-                <tr class="foodStatus">
-                    <td>カレーライス</td>
-                    <td><img class="status" id="asahi1" src="assets/img/foodInfo/noInfo.svg"></td>
-                </tr>
-                <tr class="foodStatus">
-                    <td>クリームスープ</td>
-                    <td><img class="status" id="asahi2" src="assets/img/foodInfo/noInfo.svg"></td>
-                </tr>
-                <tr class="foodStatus">
-                    <td>キムチーズチヂミ</td>
-                    <td><img class="status" id="asahi3" src="assets/img/foodInfo/noInfo.svg"></td>
-                </tr>
-                <tr class="foodStatus">
-                    <td>つくこまぜそば</td>
-                    <td><img class="status" id="asahi4" src="assets/img/foodInfo/noInfo.svg"></td>
-                </tr>
-                <tr class="foodStatus">
-                    <td>ドリンク</td>
-                    <td><img class="status" id="asahi5" src="assets/img/foodInfo/noInfo.svg"></td>
-                </tr>
-            </table>
-        </div>
-        <div id="NakaniwaKissa">
-            <table class="foodInfoTable">
-                <tr>
-                    <th class="foodPlace" colspan="2">
-                        お祭り広場(高3食品班)
-                    </th>
-                </tr>
-                <tr class="foodStatus">
-                    <td>クレープ</td>
-                    <td><img class="status" id="nakaniwa1" src="assets/img/foodInfo/noInfo.svg"></td>
-                </tr>
-                <tr class="foodStatus">
-                    <td>タピオカドリンク</td>
-                    <td><img class="status" id="nakaniwa2" src="assets/img/foodInfo/noInfo.svg"></td>
-                </tr>
-            </table>
-            <table class="foodInfoTable">
-                <tr>
-                    <th class="foodPlace" colspan="2">
-                        50周年記念会館 (高3喫茶班)
-                    </th>
-                </tr>
-                <tr class="foodStatus">
-                    <td>イートイン</td>
-                    <td><img class="status" id="kissa1" src="assets/img/foodInfo/noInfo.svg"></td>
-                </tr>
-                <tr class="foodStatus">
-                    <td>テイクアウト</td>
-                    <td><img class="status" id="kissa2" src="assets/img/foodInfo/noInfo.svg"></td>
-                </tr>
-            </table>
-        </div>
-        <h3>※時間は目安です。実際の状況と異なる場合もございます。</h3>
-    </div>
+    <iframe class="foodWait_cnt" src="foodWait.html" frameborder="0"></iframe>
 
     <a class="anchor" id="Shokuhin">　</a>
     <div class="content" id="shokuhin_cnt" ontouchstart="">

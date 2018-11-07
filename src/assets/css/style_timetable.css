@@ -186,11 +186,15 @@ td.active {
     }
 }
 
-.nearStart > .startTime {
+.nearStart > .startTime,
+.nearStart > .decoIcon,
+.nearStart > .group {
     animation: flash 2s infinite;
 }
 
 /*公演が始まったら点滅解除(JSでafterStartクラス付与)*/
-.afterStart > .startTime {
+.afterStart > .startTime,
+.afterStart > .decoIcon,
+.afterStart > .group {
     animation: none;
 }

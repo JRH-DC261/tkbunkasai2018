@@ -2,6 +2,12 @@ $(document).ready(function () {
     //初期時刻(デバッグ用)
     //var currentTime = 0925;
 
+    //読み込み時1回ハードリロード
+    /*if (!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload(true);
+    };*/
+
     //スケジュールづくり(この後を先に読むこと推奨)
     function schedule() {
         //現在時刻を取得(hhmm)
@@ -62,7 +68,7 @@ $(document).ready(function () {
 
     //読み込み時の動作
     //csvから公演情報を読み込み→HTMLに出力
-    $.get('assets/TT_day1.csv', function (data) {
+    $.get('assets/TT_day3.csv', function (data) {
         var csv = $.csv()(data);
         //出力するHTML(最初は空)
         var performanceList = '';
@@ -107,6 +113,9 @@ $(document).ready(function () {
     setInterval(function () {
         schedule();
     }, 60000);
+    /*setInterval(function () {
+        window.location.reload(true);
+    }, 120000);*/
 
     //表示切替をnミリ秒おきに繰り返す
     setInterval(function () {

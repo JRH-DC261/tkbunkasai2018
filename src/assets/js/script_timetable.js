@@ -44,11 +44,11 @@ $(document).ready(function () {
                 $(this).removeClass('scheduled');
                 $(this).removeClass('active');
             };
-            //公演3分前になったらnearStartクラス付与
+            //公演5分前になったらnearStartクラス付与
             //10進数で分を扱っているのでmm=が60以上になってしまう→mm=00の3分前が97ではなく57になるように場合分け
-            if (String(startTime).slice(-2) >= 3 && startTime < currentTime + 4) {
+            if (String(startTime).slice(-2) >= 5 && startTime < currentTime + 6) {
                 $(this).addClass('nearStart');
-            } else if (String(startTime).slice(-2) < 3 && startTime < currentTime + 43) {
+            } else if (String(startTime).slice(-2) < 5 && startTime < currentTime + 45) {
                 $(this).addClass('nearStart');
             };
         });
@@ -62,7 +62,7 @@ $(document).ready(function () {
 
     //読み込み時の動作
     //csvから公演情報を読み込み→HTMLに出力
-    $.get('assets/TT_day1.csv', function (data) {
+    $.get('assets/TT_day3.csv', function (data) {
         var csv = $.csv()(data);
         //出力するHTML(最初は空)
         var performanceList = '';
