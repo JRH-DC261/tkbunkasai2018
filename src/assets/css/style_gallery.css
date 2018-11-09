@@ -90,13 +90,28 @@ body {
     display: inline-block;
     height: 100vh;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 .afterOverlay h2 {
     position: absolute;
     top: 280%;
     text-shadow: 0 0 7.5px #222;
+}
+
+.SNS{
+    position: absolute;
+    top: 275%;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0 0 7.5px #222;
+}
+
+.SNS a{
+    font-size: 3vw;
+    text-decoration: none;
+    color: #fff;
+    margin: 0.5em;
 }
 
 @media only screen and (max-width: 1025px) and (max-aspect-ratio: 6/5) {
@@ -120,6 +135,12 @@ body {
         position: absolute;
         top: 290%;
     }
+    .SNS{
+        top: 287.5%;
+    }
+    .SNS a{
+        font-size: 5vw;
+    }
 }
 
 @media only screen and (max-width: 600px) and (max-aspect-ratio: 6/5) {
@@ -135,5 +156,8 @@ body {
     .logo {
         width: 60%;
         top: 47.5%;
+    }
+    .SNS a{
+        font-size: 7vw;
     }
 }
